@@ -18,12 +18,12 @@ class Table:
     time_travel_ts: UTC
     """
 
-    def __init__(self, name, pkey=[], ts_col=None, from_time_stamp=None, time_travel_ts=None, to_time_stamp=None,
+    def __init__(self, name, pkey=None, ts_col=None, from_time_stamp=None, time_travel_ts=None, to_time_stamp=None,
                  ss=None, filter=None):
         self.name = name
         self.size = 0
         self.schema = pd.DataFrame()
-        self.pkey = pkey
+        self.pkey = pkey if pkey is not None else []
         self.pkey_aliases = [f"pkey{i}" for i in range(len(self.pkey))]
         self.pkey_aliases_clause = ",".join([f"{k} AS pkey{i}" for i, k in enumerate(self.pkey)])
         self.ss = ss
@@ -127,14 +127,13 @@ class Validator:
         print(eds_table.schema.merge(edw_table.schema, indicator=True, how='left').query('_merge == "left_only"').drop(
             '_merge', axis=1))
 
-    """
-      Returns any pkeys which exist in EDW that are missing from EDS, if base_system='edw'.
-      Returns any pkeys which exist in EDS that are missing from EDW, if base_system='eds'.
-  
-      base_system is either 'edw' or 'eds'
-    """
-
     def run_pkey_existence_check(self, base_system='edw'):
+        """
+        Returns any pkeys which exist in EDW that are missing from EDS, if base_system='edw'.
+        Returns any pkeys which exist in EDS that are missing from EDW, if base_system='eds'.
+
+        base_system is either 'edw' or 'eds'
+        """
         if base_system.lower() == 'edw':
             base_table = self.edw_table
             comp_system = 'eds'
@@ -167,7 +166,10 @@ class Validator:
     """
         missing_records_res = print_and_run_query(self.ss, q, True)
         record_count = len(missing_records_res)
-        record_pct = round(100 * record_count / base_table.size, 2)
+        if base_table.size > 0:
+            record_pct = round(100 * record_count / base_table.size, 2)
+        else:
+            record_pct = 0.0
 
         if record_count == 0:
             msg = f"No pkeys that exist in {base_system.upper()} are missing from {comp_system.upper()}."
