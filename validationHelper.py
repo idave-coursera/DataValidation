@@ -3,8 +3,8 @@ import pandas as pd
 import sys
 
 
-def print_and_run_query(ss, q, supress_ouput=False):
-    if not supress_ouput:
+def print_and_run_query(ss, q, supress_output=False):
+    if not supress_output:
         print(q)
     return ss.sql(q).toPandas()
 
@@ -158,14 +158,14 @@ class Validator:
     (
       SELECT {comp_table.pkey_aliases_clause}
       FROM {comp_table.name} {comp_table.time_travel_clause}
-      {base_table.ts_filter_clause}
+      {comp_table.ts_filter_clause}
       GROUP BY {",".join(comp_table.pkey_aliases)}
     )
     SELECT * FROM pkeys_base
     MINUS
     SELECT * FROM pkeys_comp
     """
-        missing_records_res = res = print_and_run_query(self.ss, q, True)
+        missing_records_res = print_and_run_query(self.ss, q, True)
         record_count = len(missing_records_res)
         record_pct = round(100 * record_count / base_table.size, 2)
 
@@ -180,7 +180,8 @@ class Validator:
             return 1, msg, missing_records_res
 
     def run_column_spot_check(self, sample_pct, truncate_ts=False):
-        assert sample_pct <= 100 and sample_pct >= 0
+        if not (0 <= sample_pct <= 100):
+            raise ValueError(f"sample_pct must be between 0 and 100, got {sample_pct}")
 
         limit_val = int(self.edw_table.size / 100 * sample_pct)
 
@@ -206,7 +207,7 @@ class Validator:
     SELECT {self.edw_table.pkey_aliases_clause}
     FROM {self.edw_table.name} {self.edw_table.time_travel_clause}
     {self.edw_table.ts_filter_clause}
-    ORDER BY RANDOM()
+    ORDER BY RAND()
     LIMIT {limit_val}
     """
         res = print_and_run_query(self.ss, q, True)
