@@ -1,25 +1,61 @@
 from datetime import datetime
 import pandas as pd
 import sys
+from typing import List, Optional, Tuple, Dict, Any
 
 
-def print_and_run_query(ss, q, supress_output=False):
+def print_and_run_query(ss: Any, q: str, supress_output: bool = False) -> pd.DataFrame:
+    """
+    Executes a SQL query using the provided SparkSession and returns the result as a Pandas DataFrame.
+
+    Args:
+        ss: The SparkSession object used to execute the query.
+        q (str): The SQL query string to execute.
+        supress_output (bool, optional): If True, suppresses printing the query to stdout. Defaults to False.
+
+    Returns:
+        pd.DataFrame: The result of the query as a Pandas DataFrame.
+    """
     if not supress_output:
         print(q)
     return ss.sql(q).toPandas()
 
 
-def size_in_mb(obj):
+def size_in_mb(obj: Any) -> float:
+    """
+    Calculates the size of a Python object in Megabytes (MB).
+
+    Args:
+        obj: The Python object to measure.
+
+    Returns:
+        float: The size of the object in MB, rounded to 3 decimal places.
+    """
     return round(sys.getsizeof(obj) / 1024 / 1024, 3)
 
 
 class Table:
     """
-    time_travel_ts: UTC
+    Represents a database table with support for time travel and timestamp filtering.
+    Used to construct queries and perform checks on specific table snapshots.
     """
 
-    def __init__(self, name, pkey=None, ts_col=None, from_time_stamp=None, time_travel_ts=None, to_time_stamp=None,
-                 ss=None, filter=None):
+    def __init__(self, name: str, pkey: Optional[List[str]] = None, ts_col: Optional[str] = None,
+                 from_time_stamp: Optional[str] = None, time_travel_ts: Optional[datetime] = None,
+                 to_time_stamp: Optional[str] = None, ss: Any = None, filter: Optional[str] = None):
+        """
+        Initialize a Table object.
+
+        Args:
+            name (str): The name of the table in the database.
+            pkey (list of str, optional): List of column names constituting the primary key. Defaults to empty list.
+            ts_col (str, optional): The name of the timestamp column for filtering.
+            from_time_stamp (str, optional): The start timestamp for filtering (inclusive), format as string.
+            time_travel_ts (datetime, optional): The timestamp for time travel (Snapshots), if supported.
+            to_time_stamp (str, optional): The end timestamp for filtering (inclusive), format as string.
+            ss (Any): The SparkSession object.
+            filter (str, optional): Additional SQL filter clause (without 'WHERE').
+        """
         self.name = name
         self.size = 0
         self.schema = pd.DataFrame()
@@ -67,9 +103,16 @@ class Table:
         q = f"DESCRIBE {self.name};"
         self.schema = print_and_run_query(self.ss, q, True)[['col_name', 'data_type']]
 
-    def query_table(self, query):
+    def query_table(self, query: str) -> pd.DataFrame:
         """
-        Write the SQL query using {tb} as the placeholder for your table.
+        Executes a query against the table context, injecting time travel and filter clauses.
+
+        Args:
+            query (str): The SQL query fragment to execute. Use '{tb}' as a placeholder for the table (CTE).
+                         Example: "SELECT * FROM {tb} LIMIT 10"
+
+        Returns:
+            pd.DataFrame: The query result.
         """
         base_query = f"""
       WITH base AS(
@@ -83,7 +126,16 @@ class Table:
         print(complete_query)
         return self.ss.sql(complete_query)
 
-    def run_primary_key_check(self):
+    def run_primary_key_check(self) -> Tuple[int, str, pd.DataFrame]:
+        """
+        Checks for duplicate primary keys in the table.
+
+        Returns:
+            Tuple[int, str, pd.DataFrame]:
+                - int: 0 if check passed (no duplicates), 1 if failed.
+                - str: Status message.
+                - pd.DataFrame: DataFrame containing the duplicated primary keys and their counts.
+        """
         q = f"""
     WITH pkey_counts as
     (
@@ -109,7 +161,18 @@ class Table:
 
 
 class Validator:
-    def __init__(self, edw_table: Table, eds_table: Table, ss):
+    """
+    Orchestrates validation checks between two tables (EDW and EDS).
+    """
+    def __init__(self, edw_table: Table, eds_table: Table, ss: Any):
+        """
+        Initialize a Validator object.
+
+        Args:
+            edw_table (Table): The source/reference table (e.g., EDW).
+            eds_table (Table): The target/comparison table (e.g., EDS).
+            ss (Any): The SparkSession object.
+        """
         self.edw_table = edw_table
         self.eds_table = eds_table
         self.ss = ss
@@ -127,12 +190,21 @@ class Validator:
         print(eds_table.schema.merge(edw_table.schema, indicator=True, how='left').query('_merge == "left_only"').drop(
             '_merge', axis=1))
 
-    def run_pkey_existence_check(self, base_system='edw'):
+    def run_pkey_existence_check(self, base_system: str = 'edw') -> Tuple[int, str, pd.DataFrame]:
         """
-        Returns any pkeys which exist in EDW that are missing from EDS, if base_system='edw'.
-        Returns any pkeys which exist in EDS that are missing from EDW, if base_system='eds'.
+        Checks if primary keys from the base system exist in the comparison system.
 
-        base_system is either 'edw' or 'eds'
+        Args:
+            base_system (str, optional): The system to treat as the source of truth.
+                                         'edw' checks for keys in EDW missing from EDS.
+                                         'eds' checks for keys in EDS missing from EDW.
+                                         Defaults to 'edw'.
+
+        Returns:
+            Tuple[int, str, pd.DataFrame]:
+                - int: 0 if all keys exist, 1 if some are missing.
+                - str: Status message.
+                - pd.DataFrame: DataFrame containing the missing primary keys.
         """
         if base_system.lower() == 'edw':
             base_table = self.edw_table
@@ -181,7 +253,19 @@ class Validator:
             print(msg)
             return 1, msg, missing_records_res
 
-    def run_column_spot_check(self, sample_pct, truncate_ts=False):
+    def run_column_spot_check(self, sample_pct: float, truncate_ts: bool = False) -> Tuple[Dict[str, pd.DataFrame], int]:
+        """
+        Performs a spot check by comparing column values for a sample of records.
+
+        Args:
+            sample_pct (float): The percentage of records to sample (0-100).
+            truncate_ts (bool, optional): If True, truncates timestamps to the second before comparison. Defaults to False.
+
+        Returns:
+            Tuple[Dict[str, pd.DataFrame], int]:
+                - Dict[str, pd.DataFrame]: A dictionary where keys are column names and values are DataFrames containing differing rows.
+                - int: The total number of records in the sample.
+        """
         if not (0 <= sample_pct <= 100):
             raise ValueError(f"sample_pct must be between 0 and 100, got {sample_pct}")
 
