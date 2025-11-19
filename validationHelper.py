@@ -68,29 +68,22 @@ class Table:
         self.ts_col = ts_col
         self.from_time_stamp = from_time_stamp
         self.to_time_stamp = to_time_stamp
-        self.ts_filter_clause = ""
-        if self.ts_col is not None:
-            if self.from_time_stamp is not None:
-                self.ts_filter_clause = f"WHERE {self.ts_col} >= \"{self.from_time_stamp}\""
-            if self.to_time_stamp is not None:
-                if self.ts_filter_clause:
-                    self.ts_filter_clause += f" AND {self.ts_col} <= \"{self.to_time_stamp}\""
-                else:
-                    self.ts_filter_clause = f"WHERE {self.ts_col} <= \"{self.to_time_stamp}\""
-        if self.filter is not None:
-            if self.ts_filter_clause:
-                self.ts_filter_clause += f" AND {self.filter}"
-            else:
-                self.ts_filter_clause = f"WHERE {self.filter}"
+        conditions = []
+        if self.ts_col:
+            if self.from_time_stamp:
+                conditions.append(f'{self.ts_col} >= "{self.from_time_stamp}"')
+            if self.to_time_stamp:
+                conditions.append(f'{self.ts_col} <= "{self.to_time_stamp}"')
+        if self.filter:
+            conditions.append(self.filter)
+
+        self.ts_filter_clause = f"WHERE {' AND '.join(conditions)}" if conditions else ""
 
         print(f"filter clause is {self.ts_filter_clause}")
 
         self.time_travel_ts = time_travel_ts
-        if self.time_travel_ts is not None:
-            time_travel_ts_str = self.time_travel_ts.strftime("%Y-%m-%d %H:%M:%S.%f")
-            self.time_travel_clause = f"TIMESTAMP AS OF \"{time_travel_ts_str}\""
-        else:
-            self.time_travel_clause = ""
+        self.time_travel_clause = (f"TIMESTAMP AS OF \"{self.time_travel_ts.strftime('%Y-%m-%d %H:%M:%S.%f')}\"" 
+                                   if self.time_travel_ts else "")
 
         q = f"""
       SELECT COUNT(*) cnt
@@ -207,13 +200,9 @@ class Validator:
                 - pd.DataFrame: DataFrame containing the missing primary keys.
         """
         if base_system.lower() == 'edw':
-            base_table = self.edw_table
-            comp_system = 'eds'
-            comp_table = self.eds_table
+            base_table, comp_table, comp_system = self.edw_table, self.eds_table, 'eds'
         elif base_system.lower() == 'eds':
-            base_table = self.eds_table
-            comp_system = 'edw'
-            comp_table = self.edw_table
+            base_table, comp_table, comp_system = self.eds_table, self.edw_table, 'edw'
         else:
             raise ValueError(f"Base system {base_system} not recognized! Must be one of 'edw' or 'eds'.")
 
@@ -245,13 +234,13 @@ class Validator:
 
         if record_count == 0:
             msg = f"No pkeys that exist in {base_system.upper()} are missing from {comp_system.upper()}."
-            print(msg)
-            return 0, msg, missing_records_res
+            status = 0
         else:
-
             msg = f"{record_count} records ({record_pct}%) that exist in {base_system.upper()} are missing from {comp_system.upper()} (i.e. {base_system.upper()} contains records that do not exist in {comp_system.upper()}). This may be because {base_system.upper()} data is fresher than {comp_system.upper()} data, or there is a logical error in the workflow which populates the table."
-            print(msg)
-            return 1, msg, missing_records_res
+            status = 1
+
+        print(msg)
+        return status, msg, missing_records_res
 
     def run_column_spot_check(self, sample_pct: float, truncate_ts: bool = False) -> Tuple[Dict[str, pd.DataFrame], int]:
         """
