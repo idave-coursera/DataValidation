@@ -1,6 +1,8 @@
+import json
 import os
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, lit, when, regexp_replace, concat, count, array_contains, udf
+import pyspark.sql.functions as f
 import yaml
 
 
@@ -25,43 +27,52 @@ def analyze_jira_tickets(df):
     status_counts = {row['status']: row['count'] for row in status_counts_rows}
     done_count = status_counts.get("Done", 0)
     wont_do_count = status_counts.get("Won't Do", 0)
-    df_done = df.filter(col("status") == "Done").fillna("not_updated", subset=["is_table_replaced"])
-    replaced_counts_rows = df_done.groupBy("is_table_replaced").count().collect()
+    df_done = (df.fillna("not_updated", subset=["is_table_replaced","eds_equivalent_table"])
+               .filter(col("status") == "Done"))
+    df_done_not_replaced_eds_updated = (df_done.filter(col("is_table_replaced").isin("No", "not_updated") )
+                                        .filter(col("eds_equivalent_table") != "not_updated"))
+    df_done_eds_name_updated = df_done.filter(col("eds_equivalent_table") != "not_updated")
+    eds_name_not_updated_count = df_done.filter(col("eds_equivalent_table") == "not_updated").count()
+    eds_name_updated_count = df_done_eds_name_updated.count()
+    replaced_counts_rows = df_done_eds_name_updated.groupBy("is_table_replaced").count().collect()
     replaced_dict = {row['is_table_replaced']: row['count'] for row in replaced_counts_rows}
     replaced_count = replaced_dict.get("Yes", 0)
     not_replaced_count = replaced_dict.get("No", 0)
     replaced_status_unknown_count = replaced_dict.get("not_updated", 0)
-    print(f"There are {total_count} tickets under EDSMIG-25,{done_count} done + {wont_do_count} marked won't do")
-    print(
-        f"{replaced_count} replaced , {not_replaced_count} not replaced and {replaced_status_unknown_count} with replacement status unknown")
-    return df_done
+    print("-" * 50)
+    print(f"JIRA Analysis Summary (EDSMIG-25)")
+    print("-" * 50)
+    print(f"Total tickets: {total_count}")
+    print(f"  • Done: {done_count}")
+    print(f"  • Won't Do: {wont_do_count}")
+    print(f"\nBreakdown of 'Done' tickets:")
+    print(f"  • EDS Name not updated: {eds_name_not_updated_count}")
+    print(f"  • EDS Name updated: {eds_name_updated_count}")
+    print(f"  • Replaced: {replaced_count}")
+    print(f"  • Not Replaced: {not_replaced_count}")
+    print(f"  • Status Unknown: {replaced_status_unknown_count}")
+    print(f"  • Done + EDS name available + unmapped pointback or no pointback: {df_done_not_replaced_eds_updated.count()}")
+    print("-" * 50)
+    return df_done_not_replaced_eds_updated
 
 
-def process_not_replaced_tables(df_done):
-    df_done.select("is_table_replaced").distinct().show()
-    df_done_not_replaced = df_done.filter(col("is_table_replaced") == "No")
-    df_done_not_replaced = df_done_not_replaced.withColumn(
-        "edw_table",
-        regexp_replace(col("edw_table"), "prod", "coursera_warehouse.edw_prod")
-    )
-    df_done_not_replaced = df_done_not_replaced.withColumn(
-        "eds_base_table",
-        regexp_replace(
-            regexp_replace(
-                regexp_replace(
-                    regexp_replace(col("eds_equivalent_table"), "silver", "silver_base"),
-                    "gold", "gold_base"
-                ),
-                "bronze", "bronze_base"
-            ),
-            "_vw", ""
+def add_cw_name(df_done):
+    df_done_not_replaced = (
+        df_done
+        .withColumn(
+            "edw_table", regexp_replace(col("edw_table"), "prod", "coursera_warehouse.edw_prod")
         )
+        .withColumn("eds_base_table", col("eds_equivalent_table"))
+        .withColumn("eds_base_table", regexp_replace("eds_base_table", "silver", "silver_base"))
+        .withColumn("eds_base_table", regexp_replace("eds_base_table", "gold", "gold_base"))
+        .withColumn("eds_base_table", regexp_replace("eds_base_table", "bronze", "bronze_base"))
+        .withColumn("eds_base_table", regexp_replace("eds_base_table", "_vw", ""))
     )
 
     return df_done_not_replaced
 
 
-def loadIngestionKeys(spark):
+def load_ingestion_keys(spark):
     input_file = "resources/ingestionPath.txt"
     ans = []
     with open(input_file, "r") as file:
@@ -83,10 +94,28 @@ def loadIngestionKeys(spark):
 def join_with_ingestion_keys(spark, df_tickets, ingestion_keys_path):
     if not os.path.exists(ingestion_keys_path):
         raise FileNotFoundError(f"File not found: {ingestion_keys_path}")
-    df_ik = loadIngestionKeys(spark)
+    df_ik = load_ingestion_keys(spark)
     merged = (df_tickets
-              .join(df_ik, col("eds_equivalent_table").endswith(concat(lit("."), col("table"), lit("_vw"))), "inner"))
+              .join(df_ik, col("eds_equivalent_table").endswith(concat(lit("."), col("table"), lit("_vw"))), "left"))
     return merged
+
+def analyse_pk_data(merged_df):
+    total_joined = merged_df.count()
+    
+    # Tables that have PKs (where key_cols is not null)
+    # Since we did a left join, if there was no match in ingestion keys, key_cols will be null
+    with_pk_count = merged_df.filter(col("key_cols").isNotNull()).count()
+    without_pk_count = total_joined - with_pk_count
+
+    print("-" * 50)
+    print("Primary Key Analysis Summary")
+    print("-" * 50)
+    print(f"Total tables analyzed: {total_joined}")
+    print(f"  • With PK defined: {with_pk_count}")
+    print(f"  • Without PK defined: {without_pk_count}")
+    print("-" * 50)
+    
+    return merged_df
 
 
 if __name__ == "__main__":
@@ -94,14 +123,18 @@ if __name__ == "__main__":
         .appName("JiraAnalyser") \
         .getOrCreate()
 
-    spark.sparkContext.setLogLevel("ERROR")
     try:
-        pass
         df = load_and_clean_jira_data(spark, "./resources/jira_tickets.csv")
         df_done = analyze_jira_tickets(df)
-        df_done_not_replaced = process_not_replaced_tables(df_done)
-        final_result = join_with_ingestion_keys(spark, df_done_not_replaced, "./resources/ingestionKeys.csv")
-        final_result.coalesce(1).write.mode("overwrite").json("./compared_tickets_spark_output.json")
+        df_done_not_replaced = add_cw_name(df_done)
+        sortColumn = [
+            when(col("key_cols").isNotNull(), 0).otherwise(1),
+            when(col("is_table_replaced") == "No", 0).otherwise(1)
+        ]
+        final_result = join_with_ingestion_keys(spark, df_done_not_replaced, "./resources/ingestionKeys.csv").orderBy(*sortColumn)
+        analyse_pk_data(final_result)
+        with open('.output/bulk_validation_compare.json', 'w') as fp:
+            json.dump(final_result.rdd.map(lambda row: row.asDict()).collect(), fp)
     except Exception as e:
         print(f"An error occurred: {e}")
         import traceback

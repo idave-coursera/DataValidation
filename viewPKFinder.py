@@ -1,20 +1,21 @@
 import yaml
 
-def process_view_paths(input_file="resources/viewPaths.txt"):
-    with open(input_file, "r") as f:
-        paths = [line.strip() for line in f if line.strip()]
-
+def load_view_keys():
+    input_file = "resources/viewPaths.txt"
+    ans = []
+    with open(input_file, "r") as file:
+        paths = [line.strip() for line in file if line.strip()]
     for path in paths:
-        try:
-            with open(path, "r") as f2:
-                data = yaml.safe_load(f2)
-                if data and 'models' in data and len(data['models']) > 0:
-                    model = data['models'][0]
-                    print(model.get('name'), model.get('description'))
-        except FileNotFoundError:
-            print(f"Warning: File not found: {path}")
-        except Exception as e:
-            print(f"Error processing {path}: {e}")
+        with open(path, "r") as f2:
+            yobj = yaml.safe_load(f2)
+            table = path.split("/")[-1].split(".")[0]
+            description = yobj.get("models",[{}])[0].get("description","")
+            primary_keys = description
+
+            print(table, primary_keys)
+            ans.append(primary_keys)
+
+
 
 if __name__ == "__main__":
-    process_view_paths()
+    load_view_keys()
