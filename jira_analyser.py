@@ -124,21 +124,20 @@ if __name__ == "__main__":
         .getOrCreate()
 
     try:
-        df = load_and_clean_jira_data(spark, "./resources/jira_tickets.csv")
+        df = load_and_clean_jira_data(spark, "./resources/jira_migration_tickets.csv")
         df_done = analyze_jira_tickets(df)
         df_done_not_replaced = add_cw_name(df_done)
         sortColumn = [
             when(col("key_cols").isNotNull(), 0).otherwise(1),
             when(col("is_table_replaced") == "No", 0).otherwise(1)
         ]
-        final_result = join_with_ingestion_keys(spark, df_done_not_replaced, "./resources/ingestionKeys.csv").orderBy(*sortColumn)
+        final_result = join_with_ingestion_keys(spark, df_done_not_replaced, "./resources/table_primary_keys.csv").orderBy(*sortColumn)
         analyse_pk_data(final_result)
-        with open('./output/bulk_validation_compare.json', 'w') as fp:
+        with open('./output/bulk_validation_results.json', 'w') as fp:
             json.dump(final_result.rdd.map(lambda row: row.asDict()).collect(), fp)
     except Exception as e:
         print(f"An error occurred: {e}")
         import traceback
-
         traceback.print_exc()
     finally:
         pass
