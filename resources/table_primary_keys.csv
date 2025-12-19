@@ -1,0 +1,746 @@
+,table,key_cols
+0,kinesis_forums,['forum_id']
+1,kinesis_forum_posts,['post_id']
+2,kinesis_forum_post_votes,"['post_id', 'user_id']"
+3,kinesis_forum_post_flags,"['post_id', 'user_id']"
+4,kinesis_forum_subscriptions,"['forum_id', 'user_id']"
+5,kinesis_forum_post_subscriptions,"['post_id', 'user_id']"
+6,kinesis_assignment_question_metadata,['assignment_question_id']
+7,kinesis_assignment_question_evaluations,"['submission_id', 'question_id']"
+8,kinesis_assignment_evaluations,
+9,kinesis_course_branch_grades,"['course_branch_id', 'user_id', 'course_branch_grade_ts']"
+10,kinesis_course_grades,"['course_id', 'user_id', 'course_grade_ts']"
+11,kinesis_grading_events_latest,"['item_interaction_id', 'user_id']"
+12,kinesis_course_branch_accesses,"['hierarchy_course_branch_access_key', 'hierarchy_course_branch_access_version', 'hierarchy_course_branch_access_modified_ts']"
+13,kinesis_branch_grades_latest,"['course_branch_id', 'user_id']"
+14,kinesis_user_item_states,"['hierarchy_user_state_key', 'hierarchy_user_state_version', 'hierarchy_latest_event_ts']"
+15,payments_cart_item_relations,"['cart_item_id', 'related_cart_item_id', 'relation_type']"
+16,payments_iap_receipts,['payment_transaction_id']
+17,payments_iap_receipts,['payment_transaction_id']
+18,payments_ownable_product_fulfillment_configurations,['ownable_product_configuration_id']
+19,payments_payment_transactions_start,['id']
+20,payments_subscription_trials,['subscription_trial_id']
+21,payments_financial_aid_applications,['financial_aid_application_id']
+22,payments_ownable_products_price_configurations,['price_configuration_id']
+23,payments_coupons,['id']
+24,payments_promotion_eligible_products,"['product_type', 'product_item_id']"
+25,payments_promotion_eligible_products,"['product_type', 'product_item_id']"
+26,payments_product_transactions,['product_transaction_id']
+27,payments_promotions,['promotion_id']
+28,payments_coursera_plus_enrollment_transactions,['id']
+29,payments_cart_taxes,['cart_id']
+30,payments_ownable_product_partner_revshare,['ownable_product_partner_revshare_id']
+31,payments_promo_codes,['code']
+32,payments_promo_codes,['code']
+33,payments_recurring_payments,['recurring_payment_id']
+34,payments_ownable_product_fulfillment_price_config,['product_price_configuration_id']
+35,payments_products,['product_id']
+36,payments_payment_transactions_end,['transaction_id']
+37,payments_currency_daily_exchange_rates,['currency_daily_exchange_rate_id']
+38,payments_cart_items,['id']
+39,payments_product_prices,['price_id']
+40,payments_subscriptions,['id']
+41,payments_support_refund_logs,['support_refund_log_id']
+42,payments_support_refund_logs,['support_refund_log_id']
+43,payments_carts,['id']
+44,payments_product_partners,"['product_id', 'partner_id']"
+45,payment_wallets,['payment_wallet_id']
+46,payments_iap_sku_products,['apple_sku_id']
+47,payments_iap_sku_products,['apple_sku_id']
+48,payments_subscription_revision_history,['id']
+49,payments_ownable_products,['ownable_product_id']
+50,payments_promotion_products,['id']
+51,payments_currencies,['currency_id']
+52,payments_support_refund_log_carts,"['original_cart_id', 'refund_cart_id']"
+53,payments_support_refund_log_carts,"['original_cart_id', 'refund_cart_id']"
+54,payments_enterprise_contract_terms,['enterprise_contract_term_id']
+55,payments_enterprise_contracts,['enterprise_contract_id']
+56,payments_enterprise_contract_transactions,['enterprise_contract_transaction_id']
+57,payments_enterprise_contract_payments,['enterprise_contract_payment_id']
+58,payments_enterprise_coupons,['enterprise_coupon_id']
+59,payments_enterprise_coupons,['enterprise_coupon_id']
+60,payments_enterprise_contract_activity_logs,"['contract_id', 'timestamp']"
+61,payments_enterprise_contract_activity_logs,"['contract_id', 'timestamp']"
+62,payments_enterprise_promotions,['enterprise_promotion_id']
+63,payments_enterprise_promotions,['enterprise_promotion_id']
+64,payments_enterprise_contract_invoices,['enterprise_contract_invoice_id']
+65,payments_enterprise_contract_failed_payments,['enterprise_contract_failed_payment_id']
+66,payments_enterprise_contract_failed_payments,['enterprise_contract_failed_payment_id']
+67,payments_enterprise_contract_invoice_task_tokens,"['enterprise_contract_invoice_id', 'task_token']"
+68,payments_enterprise_contract_invoice_task_tokens,"['enterprise_contract_invoice_id', 'task_token']"
+69,payments_enterprise_contract_renewal_opt_ins,"['enterprise_contract_id', 'created_at_ts']"
+70,payments_enterprise_contract_renewal_opt_ins,"['enterprise_contract_id', 'created_at_ts']"
+71,enterprise_badge_application_templates,"['badge_template_id', 'badge_activity_id']"
+72,enterprise_whitelist_domains,"['enterprise_program_id', 'enterprise_roster_id', 'email_domain']"
+73,enterprise_program_invitations,['invitation_id']
+74,enterprise_contract_program_invitations_prep,"['invitation_id', 'roster_id']"
+75,enterprise_user_rosters,['id']
+76,enterprise_license_requests,
+77,enterprise_program_enrollment_transactions,['id']
+78,enterprise_program_membership_actions,['enterprise_program_membership_action_id']
+79,enterprise_program_memberships,"['program_id', 'user_id', 'created_at', 'roster_id']"
+80,program_enterprise_contract_orders,['id']
+81,enterprise_content_assignments,"['program_id', 'user_key', 'content_type', 'content_id']"
+82,enterprise_user_target_skill_profile_states,"['user_id', 'target_skill_profile_id']"
+83,enterprise_mysql_user_product_state_records,['id']
+84,enterprise_badge_application_transactions,['badge_transaction_record_id']
+85,maestro_accounts_signaturetrackprofile,['id']
+86,maestro_instructors_universities,['id']
+87,maestro_universities,['id']
+88,maestro_email_addresses,['email']
+89,maestro_organizations,['organization_id']
+90,maestro_instructors,['id']
+91,maestro_auth_user,['id']
+92,static_course_builder_workflows_v1,['id']
+93,dynamodb_course_branch_earned_graded_assignment_group_progress_latest,"['user_id', 'course_id', 'course_branch_id', 'graded_assignment_group_index']"
+94,dynamodb_learner_object_history,"['user_id', 'scope', 'scope_id', 'attribute_key', 'updated_at']"
+95,dynamodb_sfc_video_activity_tracking,"['user_id', 'course_id', 'atom_id', 'session_number', 'session_start_ms']"
+96,dynamodb_curation_builder_program_outline,"['contract_id', 'program_outline_id']"
+97,dynamodb_payment_stripe_subscription_creation,"['id', 'payment_processor_name']"
+98,dynamodb_payment_analytics_subscription_creations,"['id', 'payment_processor_name']"
+99,dynamodb_payment_analytics_wallet_creations,"['id', 'payment_processor_name']"
+100,dynamodb_payment_stripe_pre_checkout,"['id', 'payment_processor_name']"
+101,dynamodb_payment_stripe_subscription_charge,"['id', 'payment_processor_name']"
+102,dynamodb_payment_analytics_subscription_charge,"['id', 'payment_processor_name']"
+103,dynamodb_payment_analytics_sale_transactions,"['id', 'payment_processor_name']"
+104,dynamodb_curation_builder_curation_outline,"['curation_outline_id', 'program_outline_id']"
+105,learning_sessions_realtime,['id']
+106,dynamodb_notification_preferences,"['contact_channel_category_composite_id', 'scope_id']"
+107,dynamodb_certificate_main,"['content_id', 'user_id', 'certificate_type']"
+108,learner_activity_heartbeat_events,['uuid']
+109,dynamodb_ai_graded_challenges,['challenge_id']
+110,dynamodb_ai_graded_challenge_submissions,['challenge_submission_id']
+111,dynamodb_curation_builder_content_suggestions,['curation_outline_id']
+112,atom_summative_contents,"['atomId', 'atomVersion']"
+113,dynamodb_s12n_progress_history,"['specialization_id', 'user_id', 'version']"
+114,dynamodb_s12n_progress,"['specialization_id', 'user_id']"
+115,dynamodb_s12n_progress_course_requirements,['specialization_id']
+116,dynamodb_s12n_progress_course_requirements_primary_courses,"['specialization_id', 'primary_course_order']"
+117,dynamodb_s12n_progress_course_requirements_substitute_courses,"['specialization_id', 'primary_course_order', 'substitute_course_order']"
+118,flashcards,['flashcard_id']
+119,verified_skill_assessment_parts_completion,"['user_id', 'assessment_id_assessment_part_id']"
+120,verified_skill_expressions_attainment,"['user_id', 'skill_expression_id']"
+121,dynamodb_course_branch_item_progress_history,"['user_id', 'course_id', 'course_branch_id', 'course_branch_item_id', 'item_interaction_id', 'record_version']"
+122,dynamodb_learning_hierarchy_migration_status_latest,['user_id']
+123,dynamodb_learning_hierarchy_migration_status_history,"['user_id', 'record_modification_time']"
+124,dynamodb_course_branch_earned_graded_assignment_group_progress_history,"['user_id', 'course_id', 'course_branch_id', 'course_branch_record_version', 'graded_assignment_group_index']"
+125,dynamodb_course_branch_current_graded_assignment_group_progress_history,"['user_id', 'course_id', 'course_branch_id', 'course_branch_record_version', 'graded_assignment_group_index']"
+126,dynamodb_course_branch_progress_history,"['user_id', 'course_id', 'course_branch_id', 'record_version']"
+127,dynamodb_course_branch_module_completion_history,"['user_id', 'course_id', 'course_branch_id', 'course_branch_record_version', 'module_id']"
+128,dynamodb_course_progress_history,"['user_id', 'course_id', 'record_version']"
+129,dynamodb_atom_progress_history,"['user_id', 'item_interaction_id', 'record_version']"
+130,course_builder_v2_workflows,['id']
+131,dynamodb_degree_progress_user_plan,['user_plan_id']
+132,dynamodb_scoped_translation_config_history,"['scope_key', 'sequence_number']"
+133,dynamodb_scoped_translation_config,['scope_key']
+134,dynamodb_core_skills_taxonomy_node,"['branch_name', 'id']"
+135,dynamodb_degree_progress_categories,['category_id']
+136,dynamodb_integrity_proctoring_session_recording_events,"['proctoring_session_id', 'recording_event_index']"
+137,dynamodb_integrity_proctoring_sessions,['proctoring_session_id']
+138,dynamodb_integrity_proctoring_assets,['asset_id']
+139,dynamodb_role_skill_mapping_node,"['branch_name', 'role_id']"
+140,dynamodb_ulbajobelements,"['job_id', 'gsi1_partition_key']"
+141,dynamodb_skills_tag_labeling,"['user_id', 'content_id', 'sequence_number']"
+142,dynamodb_eligible_products_configuration,"['scope_id', 'modified_time']"
+143,dynamodb_subtitle_translation_preference,['course_id']
+144,dynamodb_unregistered_user_pii_delete_request_confirmations,"['email', 'data_source_name']"
+145,dynamodb_course_builder_restrictions_latest,"['partner_id', 'restriction_level', 'restriction']"
+146,program_product_mappings,"['programId', 'sequenceNum']"
+147,dynamodb_degree_progress_segments,['segment_id']
+148,skillstracking,"['id', 'skillId']"
+149,dynamodb_core_skills_taxonomy_branch,"['name', 'created_at']"
+150,skillsets_authoring,"['id', 'version']"
+151,dynamodb_degree_progress_curriculum,['curriculum_id']
+152,dynamodb_user_portfolio_projects,"['user_id', 'project_id']"
+153,dynamodb_degree_progress_segment_courses,['segment_course_id']
+154,dynamodb_course_dub_config,['id']
+155,dynamodb_user_historical_max_skill_scores,"['user_id', 'skill_id']"
+156,dynamodb_integrity_proctoring_enablements,['enablement_id']
+157,dynamodb_video_dub_config,['id']
+158,dynamodb_integrity_recordings,['recording_id']
+159,dynamodb_role_skill_mapping_branch,['name']
+160,aurora_proctor_configs,['id']
+161,recruiting_positions,['id']
+162,pre_enrollment_products,['id']
+163,user_product_pre_enrollments,"['id', 'user_id']"
+164,gsheet_enterprise_agreements,
+165,gsheet_degree_admission_deadlines_and_targets,
+166,gsheet_degree_admission_deadlines_and_targets_log,
+167,gsheet_skills_pathway_mapping,
+168,gsheet_degree_at_risk_tier_thresholds,
+169,gsheet_degree_program_census_day,
+170,gsheet_highcred_eoi_sources_mapping,
+171,gsheet_mtuc_degree_program_data,
+172,gsheet_degree_webinars,
+173,gsheet_degree_program_policies,
+174,learner_object_occupations_mapping,['free_form_role']
+175,gsheet_destination_degree_list,
+176,gsheet_b2c_funnel_user_state_mapping,
+177,gsheet_degree_program_special_metadata,
+178,gsheet_marketing_dashboards_utm_overrides,
+179,gsheet_marketing_channel_translations,
+180,gsheet_enterprise_nextgen_ns_filters_on_item,
+181,gsheet_enterprise_nextgen_ns_filters_on_gl,
+182,gsheet_mtuc_degree_program_terms,
+183,gsheet_ects_recommended_degrees,
+184,gsheet_ace_recommended_degrees,
+185,gsheet_degree_program_design,
+186,gsheet_degree_data_homebase,
+187,gsheet_partner_website_mapping,
+188,gsheet_salesforce_education_mapping,
+189,gsheet_enterprise_integrations_api_provisioning,
+190,widget_session_providers_latest,['widget_session_provider_id']
+191,static_mobile_phoenix_course_enrollments,"['user_id', 'course_id']"
+192,static_phoenix_specialization_memberships,"['phoenix_specialization_id', 'user_id', 'phoenix_specialization_membership_last_modified_ts']"
+193,static_course_memberships,"['course_id', 'user_id', 'course_membership_ts']"
+194,courral_api_degree_program_term_enrollments,"['third_party_organization_id', 'student_id', 'degree_program_slug', 'program_status', 'academic_term_id']"
+195,courral_course_stories,['doc_key']
+196,courral_instructor_profiles,['user_profile_id']
+197,courral_university_student_invitations,['doc_key']
+198,courral_university_student_invitations_log_new,['doc_key']
+199,courral_id_verification_main,['user_id']
+200,courral_user_profile_skills_wanted,"['doc_key', 'skills_wanted_index']"
+201,courral_user_profile_interested_careers,"['doc_key', 'interested_career_index']"
+202,courral_user_profiles,['doc_key']
+203,courral_user_profile_work_history,"['doc_key', 'interested_career_index']"
+204,courral_user_profile_individual_privacy_settings,['user_id']
+205,courral_user_profile_education_history,"['user_id', 'education_history_index']"
+206,courral_group_memberships,['doc_key']
+207,courral_university_student_records,['doc_key']
+208,courral_survey_responses,['doc_key']
+209,courral__an_survey_res_main__survey_question_responses,"['doc_key', 'survey_question_id_index', 'survey_question_response_type_index', 'survey_question_response_id_index']"
+210,widget_session_providers_all,['widget_session_provider_id']
+211,courral_widgets_all,['widget_id']
+212,courral_wes_contract_orders_v2_main,"['wes_contract_order_unique_id', 'order_id', 'contract_id']"
+213,courral_labs_templates,['template_id']
+214,courral_labs_images,['id_record']
+215,courral__wkspc_img_au_main__scopes,"['doc_key', 'course_id_index']"
+216,courral_labs_launchers,['launcher_id']
+217,courral_labs_workspaces,['doc_key']
+218,courral_labs_workspaces_access_scopes,"['doc_key', 'explode_on_index']"
+219,courral_peer_skips,['doc_key']
+220,courral_staff_graded_assignments_config_latest,['doc_key']
+221,courral_raw_peer_review_authoring_complete_markers,"['author_id', 'assignment_id']"
+222,courral_phoenix_specializations_learning_objectives,"['doc_key', 'idx']"
+223,courral_phoenix_specializations_premium_experiences,"['doc_key', 'phoenix_specialization_premium_experience_order']"
+224,courral_phoenix_specializations_domains,"['doc_key', 'phoenix_specialization_domain_order']"
+225,courral_phoenix_specializations_primary_capstones,['doc_key']
+226,courral_phoenix_specializations,['doc_key']
+227,courral_phoenix_specializations_substitute_capstones,"['doc_key', 'phoenix_specialization_capstone_course_id']"
+228,courral_specialization_faqs,"['doc_key', 'faq_position']"
+229,courral_professional_certificates,['prof_cert_id']
+230,courral_staff_graded_assignment_submission_parts,"['version', 'doc_key', 'explode_on_index']"
+231,courral_staff_graded_assignment_submission_evaluation_schema_parts,"['version', 'doc_key', 'evaluation_schema_part_id']"
+232,courral_staff_graded_assignment_part_ordering_v3,"['doc_key', 'version', 'definition_id']"
+233,courral_staff_graded_assignments,"['version', 'doc_key']"
+234,courral_staff_graded_assignment_submission_schema_parts,"['staff_graded_assignment_id', 'staff_graded_assignment_version', 'staff_graded_assignment_submission_schema_part_id', 'explode_on_index']"
+235,courral_staff_graded_assignment_evaluation_parts,"['staff_graded_assignment_id', 'staff_graded_assignment_version', 'evaluation_part_index']"
+236,courral_staff_graded_assignment_submission_evaluation_schema_part_options_details_options,"['staff_graded_assignment_id', 'staff_graded_assignment_version', 'staff_graded_assignment_submission_evaluation_schema_part_index', 'staff_graded_assignment_submission_evaluation_schema_part_options_details_option_index']"
+237,courral_recruit_mentor_main,['course_mentor_recruitment_id']
+238,courral_raw_peer_review_complete_markers_main,['doc_key']
+239,courral_raw_peer_review_complete_markers_parts_main,"['doc_key', 'part_id']"
+240,courral__rvw_prcss_cmplt_mrkr_main,['doc_key']
+241,courral__rvw_prcss_cmplt_mrkr_main__complete_marker_parts,"['doc_key', 'part_index']"
+242,courral_skill_tags_feedback,['doc_key']
+243,courral_scoped_content_rules,['doc_key']
+244,courral_versioned_phoenix_specializations,"['version', 'doc_key']"
+245,courral_raw_peer_review_complete_markers_v2_main,['doc_key']
+246,courral_raw_peer_review_complete_markers_v2_parts_main,"['doc_key', 'part_id']"
+247,courral__rvw_prcss_cmplt_mrkr_v2_main,['doc_key']
+248,courral__rvw_prcss_cmplt_mrkr_v2_main__review_parts,"['doc_key', 'part_index']"
+249,courral__stfgrd_submits_fixed_main,['doc_key']
+250,courral__stfgrd_submits_fixed_main__submission_responses,"['doc_key', 'response_index']"
+251,courral_phoenix_specialization_memberships,"['doc_key', 'phoenix_specialization_membership_last_modified_ts']"
+252,courral_raw_peer_review_complete_marker_parts,"['doc_key', 'part_id', 'transact_seq']"
+253,courral_raw_peer_review_complete_markers_history,"['doc_key', 'modified_ts']"
+254,courral__stfgrd_submits_fixed_history,"['doc_key', 'modified_ts']"
+255,courral__stfgrd_submits_fixed_history__submission_responses,"['doc_key', 'modified_ts', 'response_index']"
+256,courral_triggers_main,['doc_key']
+257,courral_triggered_message_main,['doc_key']
+258,courral_trgtmssg_sent_main,['doc_key']
+259,courral_third_party_organizations,['doc_key']
+260,courral_video_asset_ids,['doc_key']
+261,subtitle_job_transcription_vendor,['subtitle_job_id']
+262,subtitle_job_manually_uploaded_languages,"['subtitle_job_id', 'subtitle_language']"
+263,subtitle_job_subtitle_asset_ids,"['subtitle_job_id', 'subtitle_language']"
+264,courral_an_survey_questions_content,"['doc_key', 'questions_index']"
+265,courral_an_surveys,['doc_key']
+266,courral_an_survey_sections,"['doc_key', 'survey_section_id']"
+267,courral_an_survey_questions,"['doc_key', 'questions_index']"
+268,courral_an_survey_options,"['surveys_raw_id', 'questions_index', 'survey_question_index', 'survey_options_index']"
+269,courral_quiz_assessment_question_options,"['doc_key', 'version', 'option_id']"
+270,courral_quiz_assessment_questions_possible_answers_flag,"['doc_key', 'transact_seq']"
+271,courral_quiz_assessment_question_checkbox_correct_options,"['doc_key', 'version', 'option_id']"
+272,courral_quiz_assessment_questions,"['version', 'doc_key']"
+273,courral__assess_question_all__question_options,"['doc_key', 'version', 'option_index']"
+274,courral__assess_question_all__possible_answers,"['doc_key', 'version', 'possible_answer_index']"
+275,courral__assess_question_all,"['version', 'doc_key']"
+276,courral_quiz_assessment_questions_video,"['doc_key', 'transact_seq']"
+277,courral_quiz_assessment_questions_formative_weight,"['doc_key', 'transact_seq']"
+278,courral_quiz_assessment_questions_formative,"['doc_key', 'version', 'question_group_id', 'internal_question_id']"
+279,courral_quiz_assessments,"['doc_key', 'version']"
+280,courral_quiz_assessment_questions_formative_extra_credit,"['doc_key', 'transact_seq']"
+281,courral_quiz_assessment_questions_formative_order,"['doc_key', 'transact_seq']"
+282,courral__assess_assessment_all__in_video_questions,"['doc_key', 'version', 'question_index']"
+283,courral__assess_assessment_all__question_groups,"['doc_key', 'version', 'question_group_index']"
+284,courral__assess_assessment_all__quiz_questions,"['doc_key', 'version', 'question_group_index', 'question_index']"
+285,courral__assess_assessment_all,"['doc_key', 'version']"
+286,courral_video_subtitle_metadata,['doc_key']
+287,courral_assets,['doc_key']
+288,courral_asset_tags,"['asset_id', 'tag_name', 'tag_value']"
+289,courral_staff_graded_assignment_submission_evaluation_response_parts,"['output_key', 'doc_key']"
+290,courral_workflow_executions,['doc_key']
+291,courral_workflow_execution_outputs,"['doc_key', 'version', 'transact_seq']"
+292,courral_readings,"['doc_key', 'version']"
+293,courral_atom_metadata_all,"['atom_id', 'atom_version_id']"
+294,courral_authoring_course_branch_grading_late_penalties,"['doc_key', 'item_id']"
+295,courral_authoring_course_branch_graded_assignment_groups,"['doc_key', 'graded_assignment_group_id']"
+296,courral_authoring_course_branches_info,['doc_key']
+297,courral_authoring_course_branch_graded_assignment_group_items,"['doc_key', 'graded_assignment_group_id', 'graded_assignment_group_item_id']"
+298,courral_authoring_course_branch_lesson_order,"['doc_key', 'module_id', 'lesson_id']"
+299,courral_authoring_course_branch_honors_lessons,"['doc_key', 'honors_lesson_id']"
+300,courral_authoring_course_branch_required_elements,"['doc_key', 'required_element_id']"
+301,courral_authoring_course_branch_lessons,"['doc_key', 'lesson_id']"
+302,courral_authoring_course_branch_module_order,"['doc_key', 'module_id']"
+303,courral_authoring_course_branch_grading_policies,"['doc_key', 'grading_policy']"
+304,courral_authoring_course_branch_lesson_elements,"['doc_key', 'lesson_element_id']"
+305,courral_authoring_course_branch_grading_weights,"['doc_key', 'item_id']"
+306,courral_authoring_course_branch_items,"['doc_key', 'item_id']"
+307,courral_authoring_course_branch_modules,"['doc_key', 'module_id']"
+308,courral_authoring_course_branch_item_learning_objectives,"['doc_key', 'item_id']"
+309,courral_authoring_learning_objective_course_branches,"['learning_objective_id', 'course_branch_id', 'learning_objective_index']"
+310,courral_authoring_learning_objective_course_branch_modules,"['course_branch_module_id', 'learning_objective_id', 'course_branch_id']"
+311,courral_authoring_learning_objective_course_branch_items_v2,"['learning_objective_id', 'course_branch_id', 'course_branch_item_id']"
+312,courral_authoring_course_branch_schedules,"['raw_id', 'module_id']"
+313,courral_authoring_course_branch_launch_schedules,"['authoring_course_branch_schedule_id', 'authoring_course_branch_schedule_ts']"
+314,courral__au_atom_latest,['doc_key']
+315,courral_au_etl_jobs,['doc_key']
+316,courral_authoring_course_settings,['course_id']
+317,courral_authoring_course_faqs,"['course_id', 'faq_position']"
+318,courral_user_preferred_domains,['user_id']
+319,courral_votes,"['doc_key', 'vote_ts']"
+320,courral_uofl_resit_coursework_gag_mapping,"['session_id', 'coursework_number', 'gag_id']"
+321,courral_user_onboarding_domains,"['doc_key', 'preferred_domain_id', 'preferred_subdomain_id']"
+322,courral_user_onboarding_interests,['doc_key']
+323,courral_od_crs_expt_main,['doc_key']
+324,courral_mailspin_template_main,['template_id']
+325,courral_notifications_preference,"['doc_key', 'preference_category']"
+326,courral_aurora_mailspin_campaign,['doc_key']
+327,courral_graded_lab_contents,"['doc_key', 'version']"
+328,courral_team_review_contents,"['version', 'doc_key']"
+329,courral_reading_contents,"['version', 'doc_key']"
+330,courral_ungraded_lab_contents,"['doc_key', 'version']"
+331,courral_lecture_contents,"['version', 'doc_key']"
+332,courral_widget_contents,"['version', 'doc_key']"
+333,courral_quiz_contents,"['version', 'doc_key']"
+334,courral_staff_graded_contents,"['version', 'doc_key']"
+335,courral_atoms,"['version', 'doc_key']"
+336,courral_program_assign_contents,"['version', 'doc_key']"
+337,courral_lti_tool_contents,"['version', 'doc_key']"
+338,courral_discussion_prompt_contents,"['version', 'doc_key']"
+339,courral_peer_review_assign_contents,"['version', 'doc_key']"
+340,courral_placeholder_contents,"['version', 'doc_key']"
+341,courral_coach_contents,"['version', 'doc_key']"
+342,courral_degree_course_enrollment_indicators,['doc_key']
+343,courral_course_type_metadata,['doc_key']
+344,courral_catalog_mastertrack_main,['doc_key']
+345,courral_authoring_course_branch_id_map,"['doc_key', 'authoring_course_branch_id']"
+346,courral_course_session_memberships_all,"['version', 'doc_key']"
+347,courral_course_memberships,"['doc_key', 'course_membership_ts']"
+348,courral_certificates,['doc_key']
+349,courral_banner_ad_campaigns,['banner_ad_campaign_id']
+350,courral_atom_relations_history,"['doc_key', 'modified_ts']"
+351,courral_course_languages,"['doc_key', 'idx']"
+352,courral_course_subtitles,"['doc_key', 'idx']"
+353,courral_course_premium_experiences,"['version', 'doc_key', 'idx']"
+354,courral_course_universities,"['doc_key', 'idx']"
+355,courral_courses,['doc_key']
+356,courral_course_domains,"['doc_key', 'domainId', 'subdomainId']"
+357,courral_course_instructors,"['doc_key', 'instructor_id']"
+358,courral_course_learning_objectives,"['doc_key', 'idx']"
+359,courral__course_metadata_latest__category_ids,"['doc_key', 'category_id_index']"
+360,courral_course_sessions,['doc_key']
+361,courral_course_session_module_deadlines,"['doc_key', 'course_branch_id', 'course_module_id']"
+362,courral_course_session_item_deadlines,"['doc_key', 'course_branch_id', 'course_item_id']"
+363,courral_atom_relations,['doc_key']
+364,courral_catalog_degree_main,['doc_key']
+365,courral_course_schedule_experience_configuration,['branch_id']
+366,courral_versioned_courses,"['version', 'doc_key']"
+367,courral_course_item_change_log,"['version', 'doc_key']"
+368,courral_course_secret,['doc_key']
+369,courral_degree_course_mappings,['doc_key']
+370,courral_degree_enrollment_config,['doc_key']
+371,courral_degree_student_associations,['doc_key']
+372,courral_degree_term_course_instances,['doc_key']
+373,courral_degree_onboarding_sessions,['doc_key']
+374,courral_degree_program_academic_terms,['doc_key']
+375,courral_degree_membership_history,"['doc_key', 'transact_seq']"
+376,courral__discussion_prompt_question_ctx_history,"['doc_key', 'modified_ts']"
+377,courral_degree_groups_metadata,['doc_key']
+378,courral_degree_memberships,['doc_key']
+379,courral_degree_programs,['doc_key']
+380,courral_degree_enrollment_checklist_user_settings_history,"['doc_key', 'transact_seq']"
+381,courral_degree_onboarding_sessions_history,
+382,courral_group_entitlement_redemptions_main,['group_entitlement_redemption_id']
+383,courral_groups,['doc_key']
+384,courral_group_scope_ids,"['doc_key', 'scope_id']"
+385,courral_private_community_groups,['group_id']
+386,courral_feedback_latest,['doc_key']
+387,courral_feedback_ratings_latest,['doc_key']
+388,courral_feedback_comments_latest,"['doc_key', 'feedback_category']"
+389,courral_grid_executor_main,['grid_executor_id']
+390,courral_feedback_comment_status,"['version', 'doc_key']"
+391,courral_feedback_all,"['doc_key', 'version']"
+392,courral_feedback_ratings,"['version', 'doc_key']"
+393,courral_feedback_unmarked_vote_counts,"['version', 'doc_key']"
+394,courral_feedback_detailed_contexts,"['version', 'doc_key']"
+395,courral_feedback_comments,"['version', 'doc_key', 'feedback_category']"
+396,courral_feedback_helpful_vote_counts,"['version', 'doc_key']"
+397,courral__feedback_all__comments,"['version', 'doc_key', 'comment_index']"
+398,courral__feedback_all,"['doc_key', 'version']"
+399,courral_forum_helpers,"['user_id', 'course_id', 'version']"
+400,courral_cheating_case_evidence_items_details,"['doc_key', 'evidence_item_index', 'evidence_item_type']"
+401,courral_cheating_case_evidence_items,"['doc_key', 'evidence_item_index']"
+402,courral_cheating_case_evidence_items_details_submission_flagged_by_similarity_check_system,"['doc_key', 'evidence_item_index', 'similarity_check_id']"
+403,courral_cheating_case_comments,"['doc_key', 'evidence_id']"
+404,courral_cheating_case_evidence_items_details_outsourcing_agent_rubric_response_parts,"['doc_key', 'evidence_item_index', 'response_part_index']"
+405,courral_cheating_cases,['doc_key']
+406,courral_action_plan_results,['act_pln_rslt_id']
+407,courral_question_blocks_all,"['version', 'doc_key']"
+408,courral_qualification_surveys,['doc_key']
+409,courral_ecb_user_evaluations,"['doc_key', 'ecb_evaluation_id']"
+410,courral_enterprise_versioned_target_skill_profiles,"['version', 'doc_key']"
+411,courral_enterprise_versioned_target_skill_profile_proficiencies,"['enterprise_target_skill_profile_id', 'enterprise_target_skill_profile_version', 'target_skill_proficiencies_index']"
+412,courral_enterprise_eligible_products,"['kvs_id', 'product_id_index']"
+413,enterprise_settings,['doc_key']
+414,courral_ent_private_courses_main,"['doc_key', 'course_id']"
+415,courral_enterprise_content_collections_main,['enterprise_content_collection_id']
+416,courral_ecb_evaluator_author,['doc_key']
+417,courral_ecb_user_evaluations_historical,"['doc_key', 'ecb_evaluation_id']"
+418,courral_enterprise_product_restrictions_main,['doc_key']
+419,courral_ecb_evaluations,"['doc_key', 'ecb_evaluator_id']"
+420,courral_enterprise_contract_tags_history,"['doc_key', 'added_at', 'is_deleted']"
+421,courral__enterprise_contract_tags_main,['doc_key']
+422,courral_ecb_engines,"['version', 'doc_key', 'ecb_engine_id']"
+423,courral_enterprise_client_partner_mappings,"['client_scope', 'client_id', 'partner_id']"
+424,courral_ecb_evaluators,['doc_key']
+425,learner_goals,['raw_id']
+426,learner_goal_progress_info,"['raw_id', 'progress_key']"
+427,courral_learner_course_schedule_latest_items,"['doc_key', 'item_id']"
+428,courral_learner_course_schedule_latest_modules,"['doc_key', 'module_id']"
+429,courral_learner_item_grades,"['doc_key', 'transact_seq']"
+430,courral_learner_item_evaluations_all,"['kvs_id', 'kvs_version']"
+431,courral_learner_item_evaluation_late_penalties_all,['versioned_learner_item_evaluation_id']
+432,courral_lti_tools,"['version', 'doc_key']"
+433,courral_learn_objective_main,['doc_key']
+434,courral_levelset_sessions_versions,"['version', 'doc_key']"
+435,courral_levelset_sessions_scores,"['doc_key', 'question_id']"
+436,courral_learner_item_evaluations,['doc_key']
+437,courral_learner_item_evaluation_late_penalties,['versioned_learner_item_evaluation_id']
+438,courral_raw_peer_submission_parts,"['doc_key', 'part_id']"
+439,courral_raw_peer_submission_contents_main,['doc_key']
+440,courral__peer_submissions_main__submission_parts,"['doc_key', 'submission_part_index']"
+441,courral__peer_submissions_main,['doc_key']
+442,courral_partner_memberships_main,"['user_id', 'university_id', 'university_membership_role', 'university_membership_ts']"
+443,courral_raw_peer_review_contents_main,['doc_key']
+444,courral_raw_peer_review_parts,"['doc_key', 'part_id']"
+445,courral__peer_review_main,['doc_key']
+446,courral__peer_review_main__review_parts,"['doc_key', 'review_part_index']"
+447,courral_partner_secret_main,['doc_key']
+448,courral_raw_peer_submission_contents_history,"['doc_key', 'modified_ts']"
+449,courral_raw_peer_submission_parts_history,"['doc_key', 'modified_ts', 'part_id']"
+450,courral__peer_submissions_history,
+451,courral__peer_submissions_history__submission_parts,
+452,courral_partner_group_memberships_main,"['group_id', 'university_id', 'university_group_membership_role']"
+453,courral_peer_assignments_all,"['version', 'doc_key']"
+454,courral_peer_assignment_review_schema_part_options_all,"['version', 'doc_key', 'part_order', 'option_order']"
+455,courral_peer_assignment_review_schema_parts_all,"['version', 'doc_key', 'part_id']"
+456,courral_peer_assignment_submission_schema_parts_all,"['version', 'doc_key', 'part_id']"
+457,courral_partner_secret_history,"['doc_key', 'modified_ts']"
+458,courral_peer_comments,['doc_key']
+459,courral_peer_assignments_latest,['doc_key']
+460,courral_discussion_prompt_assignments,"['discussion_prompt_assignment_id', 'version']"
+461,courral_productownership_main,"['doc_key', 'ownership_interval_order']"
+462,preset_collections,['preset_collection_id']
+463,preset_collection_items,"['preset_collection_id', 'curriculum_item_index']"
+464,courral_programming_submissions,['doc_key']
+465,courral_programming_submission_breakdown,['doc_key']
+466,courral_programming_submission_part_evaluations,"['doc_key', 'part_id']"
+467,courral_programming_submission_part_submissions,"['doc_key', 'part_id']"
+468,courral_programming_submission_part_grid_grading_statuses,"['doc_key', 'part_id']"
+469,courral__prgming_submission_main,['doc_key']
+470,courral__prgming_submission_main__submission_parts,"['doc_key', 'submission_part_index']"
+471,courral__prgming_submission_main__evaluation_parts,"['doc_key', 'evaluation_part_index']"
+472,courral__prgming_submission_main__grading_status_parts,"['doc_key', 'grading_status_part_index']"
+473,courral_curriculum_elective_tracks,"['doc_key', 'track_id']"
+474,courral_curriculum_core_tracks,"['doc_key', 'track_id']"
+475,courral_curriculum_type,['doc_key']
+476,courral_curriculum_elective_tracks_metadata,"['doc_key', 'track_id', 'createdAt']"
+477,courral_curriculum_core_tracks_metadata,"['doc_key', 'track_id', 'createdAt']"
+478,courral_curriculum_elective_track_courses,"['doc_key', 'elective_tracks_index', 'curriculum_item_id', 'curriculum_item_index']"
+479,courral_curriculum_track_courses,"['doc_key', 'core_tracks_index', 'curriculum_item_id', 'curriculum_item_index']"
+480,courral_programming_assignments,"['version', 'doc_key']"
+481,courral_programming_assignment_submission_schema_part_grid_schemas,"['version', 'doc_key', 'part_id']"
+482,courral_programming_assignment_submission_schema_part_possible_responses_numeric,"['version', 'doc_key', 'part_id', 'explode_on_index_1']"
+483,courral_programming_assignment_submission_schema_part_possible_responses_regex,"['version', 'doc_key', 'part_id', 'explode_on_index_1']"
+484,courral_programming_assignment_submission_schema_parts,"['version', 'doc_key', 'part_id']"
+485,courral__prgming_assignment_all,"['version', 'doc_key']"
+486,courral__prgming_assignment_all__submission_schema_parts,"['version', 'doc_key', 'submission_schema_part_index']"
+487,courral__prgming_assignment_all__submission_schema_part__possible_answers,"['version', 'doc_key', 'submission_schema_part_index', 'possible_answer_index']"
+488,courral__prgming_assignment_all__submission_schema_part__possible_responses,"['version', 'doc_key', 'submission_schema_part_index', 'possible_response_index']"
+489,courral_program_all,"['version', 'doc_key']"
+490,courral_enterprise_versioned_program_target_skill_profiles,"['version', 'doc_key', 'linked_target_skill_profiles_index']"
+491,courral_learner_course_schedules,"['user_id', 'course_id', 'version']"
+492,courral_learner_course_schedule_modules,"['user_id', 'course_id', 'module_id', 'version']"
+493,courral_learner_course_schedule_items,"['user_id', 'course_id', 'item_id', 'version']"
+494,finsys_partner_rev_share_terms,
+495,unified_course_enrollments_spark,
+496,adwords_click_performance,['id']
+497,adwords_ad_groups,['id']
+498,adwords_ad_performance,['id']
+499,adwords_campaigns,['id']
+500,adwords_ads,['id']
+501,adwords_campaign_performance,['id']
+502,linkedin_standardized_seniorities,['id']
+503,linkedin_search_appearances,['received_dt']
+504,linkedin_followers,['received_dt']
+505,linkedin_standardized_industries,['id']
+506,instagram_posts,"['insights_id', 'received_dt']"
+507,linkedin_visitors,['received_dt']
+508,linkedin_newsletters_subscriptions_demographics,"['targetEntity', 'received_dt', 'dimensionType', 'dimensionValue']"
+509,linkedin_visitors_demographics,['received_dt']
+510,linkedin_standardized_geo_locations,['id']
+511,instagram_profile,['received_dt']
+512,linkedin_shares,"['share', 'received_dt']"
+513,facebook_reels,"['id', 'received_dt']"
+514,linkedin_newsletters_subscriptions_daily,"['targetEntity', 'start_dt']"
+515,tiktok_post_metrics,"['item_id', 'received_dt']"
+516,linkedin_standardized_titles,['id']
+517,linkedin_posts,"['ugcPost', 'received_dt']"
+518,facebook_profile,"['id', 'end_time_1']"
+519,linkedin_followers_demographics,['received_dt']
+520,linkedin_standardized_functions,['id']
+521,linkedin_total_followers,['received_dt']
+522,instagram_stories,"['id', 'received_dt']"
+523,tiktok_profile_metrics,['metrics_date']
+524,facebook_posts,"['insights_id', 'received_dt']"
+525,linkedin_posts_details,"['id', 'received_dt']"
+526,facebook_stories,"['id', 'received_dt']"
+527,linkedin_newsletters,"['contentSeriesUrn', 'received_dt']"
+528,reddit_ads_ad_groups,
+529,reddit_ads_ad_performance,"['ad_id', 'date', 'country']"
+530,reddit_ads_campaigns,
+531,reddit_ads_ads,
+532,reddit_ads_accounts,
+533,kochava_session_begin_android,
+534,kochava_session_begin_ios,
+535,google_ads_click_performance,['gcl_id']
+536,google_ads_ad_groups,['ad_group_id']
+537,google_ads_ad_performance,"['ad_id_and_date', 'ad_network_type']"
+538,google_ads_campaigns,['campaign_id']
+539,google_ads_ads,['ad_id']
+540,google_ads_campaign_performance,"['campaign_id_and_date', 'ad_network_type']"
+541,google_ads_ad_group_performance,"['ad_group_id_and_date', 'ad_network_type']"
+542,google_ads_geo_performance,"['geo_composite_key', 'resource_name', 'ad_network_type']"
+543,google_ads_keyword_performance,"['date', 'keyword_id', 'ad_group_id']"
+544,google_ads_campaign_geo_performance,"['geo_composite_key', 'resource_name', 'ad_network_type']"
+545,google_ads_geo,['geo_id']
+546,articles_users,['user_id']
+547,articles_metadata,['entry_id']
+548,bing_ads_ad_groups,['id']
+549,bing_ads_keyword_performance_report,"['account_id', 'ad_group_id', 'ad_id', 'keyword', 'keyword_id', 'device_os']"
+550,bing_ads_ad_performance,['unique_id']
+551,bing_ads_campaigns,['id']
+552,bing_ads_geolocations,['location_id']
+553,bing_ads_ads,['id']
+554,bing_ads_campaign_performance,['unique_id']
+555,bing_ads_ad_group_performance,['unique_id']
+556,bing_ads_account_performance,['unique_id']
+557,bing_ads_geographic_performance,['unique_id']
+558,static_bing_ads_country_code,
+559,facebook_ads_insights,['unique_id']
+560,facebook_ads_campaigns,['id']
+561,facebook_ads_ads,['id']
+562,facebook_ads_adsets,['id']
+563,facebook_ads_ad_accounts,['id']
+564,kochava_installs_ios,['install_id']
+565,kochava_installs_android,['install_id']
+566,kochava_all_event_android,"['date_occurred', 'event_id']"
+567,kochava_all_event_ios,"['date_occurred', 'event_id']"
+568,affiliate_click_performance,['action_id']
+569,affiliate_placement_cost,"['flat_fee_date', 'program_id', 'partner_id']"
+570,affiliate_refunds,['order_id']
+571,affiliate_partner_details,['partner_id']
+572,degree_pathway_upsells,"['source_id', 'target_id']"
+573,degree_attributes,['degree_id']
+574,salesforce_learner_services_application,['id']
+575,salesforce_learner_services_permission_set_assignment,['id']
+576,salesforce_learner_services_contact,['id']
+577,salesforce_learner_services_task,['id']
+578,salesforce_learner_services_degree_enrollment,['id']
+579,salesforce_learner_services_account,['id']
+580,salesforce_learner_services_interest,['id']
+581,salesforce_learner_services_interest_all,['id']
+582,salesforce_learner_services_lead,['id']
+583,salesforce_learner_services_feed_item,['id']
+584,salesforce_learner_services_user,['id']
+585,salesforce_learner_services_permission_set,['id']
+586,salesforce_learner_services_account_history,['id']
+587,salesforce_learner_services_customer_satisfaction,['id']
+588,salesforce_learner_services_case_comment,['id']
+589,salesforce_learner_services_opportunity,['id']
+590,salesforce_learner_services_feed_comment,['id']
+591,salesforce_learner_services_knowledge_kav,['id']
+592,salesforce_learner_services_case,['id']
+593,salesforce_learner_services_live_chat_transcript,['id']
+594,salesforce_content_version_five9_transcript_analysis,['content_version_id']
+595,salesforce_content_document,['id']
+596,salesforce_content_document_link,['id']
+597,salesforce_content_version,['id']
+598,clari_forecast_new_expansion_c4c_users,"['user_id', 'vertical']"
+599,clari_forecast_new_expansion_c4c_timeframes,"['time_frame_id', 'vertical']"
+600,clari_forecast_new_expansion_c4c_entries,['file_name']
+601,clari_forecast_new_expansion_c4c_fields,"['field_id', 'vertical']"
+602,clari_forecast_new_expansion_c4c_timeperiods,"['time_period_id', 'vertical']"
+603,clari_forecast_new_expansion_c4b_entries,['file_name']
+604,clari_forecast_new_expansion_c4b_timeframes,"['time_frame_id', 'vertical']"
+605,clari_forecast_new_expansion_c4b_users,"['user_id', 'vertical']"
+606,clari_forecast_new_expansion_c4b_fields,"['field_id', 'vertical']"
+607,clari_forecast_new_expansion_c4b_timeperiods,"['time_period_id', 'vertical']"
+608,zoom_webinar_leads_backfill,"['eoi_response_id', 'zoom_source_type']"
+609,zoom_webinar_leads_backfill,"['eoi_response_id', 'zoom_source_type']"
+610,enterprise_revplans_posted,['posting_period_in_file_name']
+611,clari_forecast_new_expansion_c4g_fields,"['field_id', 'vertical']"
+612,clari_forecast_new_expansion_c4g_timeperiods,"['time_period_id', 'vertical']"
+613,clari_forecast_new_expansion_c4g_users,"['user_id', 'vertical']"
+614,clari_forecast_new_expansion_c4g_entries,['file_name']
+615,clari_forecast_new_expansion_c4g_timeframes,"['time_frame_id', 'vertical']"
+616,slate_degree_applications_stream,
+617,slate_degree_applications_log_summary,
+618,enterprise_direct_ns_nextgen_fx_entries,
+619,degree_rev_metrics_ibm,
+620,clari_forecast_narr_summary,['file_name']
+621,clari_forecast_new_business_c4b,['file_name']
+622,salesforce_degree_applications_stream,
+623,zoom_webinar_poll_results,"['webinar_id', 'explode_on_value.email', 'explode_on_value_1.polling_id']"
+624,recommender_configuration_experiments_rankers,"['hash', 'index']"
+625,recommender_configuration_experiments_candidate_generators,"['hash', 'index']"
+626,recommender_configurations_experiments,['hash']
+627,clari_forecast_expansion_c4c,['file_name']
+628,meritto_degree_applications_stream,
+629,clari_forecast_expansion_c4b,['file_name']
+630,clari_forecast_new_business_c4c,['file_name']
+631,clari_forecast_renewal_c4g,['file_name']
+632,clari_forecast_bookings_summary,['file_name']
+633,recommender_configuration_rankers,"['hash', 'index']"
+634,recommender_configurations,['hash']
+635,recommender_configuration_candidate_generators,"['hash', 'index']"
+636,zoom_webinar_leads,"['eoi_response_id', 'zoom_source_type']"
+637,enterprise_direct_ns_nextgen_bad_debt,
+638,enterprise_revplans_combined,
+639,degree_transactions,"['partner', 'program_slug', 'sourced_id', 'user_sourced_id']"
+640,surveymonkey_survey_pages,"['survey_id', 'survey_page_id']"
+641,surveymonkey_surveys,['survey_id']
+642,surveymonkey_survey_responses_answers,"['survey_id', 'survey_question_id', 'survey_response_id', 'survey_answer_id']"
+643,surveymonkey_survey_responses,"['survey_id', 'survey_question_id', 'survey_response_id']"
+644,surveymonkey_survey_questions,"['survey_id', 'survey_question_id']"
+645,clari_forecast_expansion_c4g,['file_name']
+646,enterprise_report_learner_profiles,['raw_id']
+647,slate_degree_applications_log_details,
+648,clari_forecast_renewal_c4b,['file_name']
+649,clari_forecast_renewal_c4c,['file_name']
+650,recommender_configurations_rollouts,['hash']
+651,recommender_configuration_rollouts_candidate_generators,"['hash', 'index']"
+652,recommender_configuration_rollouts_rankers,"['hash', 'index']"
+653,zoom_webinar_leads,"['eoi_response_id', 'zoom_source_type']"
+654,clari_forecast_new_business_c4g,['file_name']
+655,pendo_author_poll_responses,"['guide_id', 'poll_id', 'time']"
+656,pendo_author_guides,['guide_id']
+657,pendo_author_polls,"['guide_id', 'poll_id']"
+658,pendo_learner_poll_responses,"['guide_id', 'poll_id', 'time']"
+659,pendo_learner_polls,"['guide_id', 'poll_id']"
+660,pendo_learner_guides,['guide_id']
+661,lightcast_job_postings_totals_by_skill,
+662,lightcast_skills,
+663,lightcast_ddn_defining_skills,
+664,lightcast_ddn_necessary_skills,
+665,lightcast_ddn_distinguishing_skills,
+666,lightcast_occupations,
+667,degree_term_courses,['source_id']
+668,degree_program_memberships,"['source_id', 'program_org_source_id', 'user_source_id', 'admit_term_source_id']"
+669,degree_terms,['sourced_id']
+670,degree_course_memberships,['sourced_id']
+671,degree_term_memberships,['sourced_id']
+672,degree_students,['source_id']
+673,degree_programs,['sourced_id']
+674,degree_courses,"['source_id', 'org_source_id']"
+675,xactly_credit_type,['file_name']
+676,xactly_quota,['file_name']
+677,xactly_period,['file_name']
+678,xactly_credit_summary,['file_name']
+679,xactly_quota_summary,['file_name']
+680,xactly_position,['file_name']
+681,xactly_pos_hierarchy_hist,['file_name']
+682,xactly_quota_assignment,['file_name']
+683,xactly_credit,['file_name']
+684,xactly_pos_hierarchy,['file_name']
+685,xactly_participant,['file_name']
+686,xactly_title,['file_name']
+687,xactly_pos_part_assignment,['file_name']
+688,xactly_pos_title_assignment,['file_name']
+689,xactly_position_hist,['file_name']
+690,eventing,
+691,email_events,
+692,cleaned_events,
+693,collections,['collection_id']
+694,learning_hierarchy_user_states,"['collection_key', 'version']"
+695,item_versioning_comments,['id']
+696,authoring_changelog_branch_has_atom,"['atom_id', 'branch_id']"
+697,enterprise_curriculum_builder_accreditation_tags,"['organization_id', 'product_id', 'program_id']"
+698,permissions_user_roles_history,['id']
+699,authoring_changelog_change_type,['id']
+700,ai_coach_chat_session,['id']
+701,ai_grading_suggestion,['id']
+702,assessment_generation_requests,['id']
+703,collection_visibility_scopes,"['collection_id', 'collection_type', 'visibility_scope']"
+704,authoring_changelog_course_item_change,"['atom_id', 'sequence']"
+705,generation_requests,['id']
+706,ai_coach_chat_ai_metadata,['id']
+707,product_tags_product_tag_mapping,['id']
+708,authoring_changelog_change_source_atom,"['course_item_change_atom_id', 'course_item_change_sequence']"
+709,ai_generated_question_ratings,['id']
+710,ai_grading_suggestion_feedback,['id']
+711,permissions_mysql_permission_user_roles,['id']
+712,enterprise_program_session_associations,"['course_id', 'program_id', 'session_id']"
+713,authoring_changelog_change_source_branch,"['course_item_change_atom_id', 'course_item_change_sequence']"
+714,rds_career_academy_reference_curriculum,['id']
+715,rds_branch_specific_entity_changes,"['entity_id', 'sequence', 'branch_id']"
+716,collection_attributes,"['collection_id', 'attribute_type', 'attribute_value']"
+717,ai_grading_ai_peer_configs,['assignment_id']
+718,ai_coach_chat_message,['id']
+719,rds_role_object_permission_objects,['id']
+720,braze_whatsapp_inboundreceive,['id']
+721,braze_sms_delivery,['id']
+722,braze_sms_send,['id']
+723,braze_sms_rejection,['id']
+724,braze_sms_inbound_receive,['id']
+725,braze_sms_abort,['id']
+726,braze_email_unsubscribe,['id']
+727,braze_inappmessage_click,['id']
+728,braze_whatsapp_failure,['id']
+729,braze_push_bounce,['id']
+730,braze_inappmessage_impression,['id']
+731,braze_whatsapp_send,['id']
+732,braze_email_softbounce,['id']
+733,braze_email_send,['id']
+734,braze_email_bounce,['id']
+735,braze_subscription_global_state_change,['id']
+736,braze_inappmessage_abort,['id']
+737,braze_email_open,['id']
+738,braze_subscription_state_change,['id']
+739,braze_whatsapp_delivery,['id']
+740,braze_whatsapp_click,['id']
+741,braze_email_click,['id']
+742,braze_whatsapp_read,['id']
+743,braze_push_send,['id']
+744,braze_email_abort,['id']
