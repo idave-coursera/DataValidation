@@ -133,7 +133,7 @@ if __name__ == "__main__":
         ]
         final_result = join_with_ingestion_keys(spark, df_done_not_replaced, "./resources/ingestionKeys.csv").orderBy(*sortColumn)
         analyse_pk_data(final_result)
-        with open('.output/bulk_validation_compare.json', 'w') as fp:
+        with open('./output/bulk_validation_compare.json', 'w') as fp:
             json.dump(final_result.rdd.map(lambda row: row.asDict()).collect(), fp)
     except Exception as e:
         print(f"An error occurred: {e}")
