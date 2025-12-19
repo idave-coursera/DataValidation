@@ -1,10 +1,13 @@
 import yaml
 
+from config import BASE_PATH
+
+
 def load_view_keys():
     input_file = "resources/viewPaths.txt"
     ans = []
     with open(input_file, "r") as file:
-        paths = [line.strip() for line in file if line.strip()]
+        paths = [BASE_PATH+line.strip() for line in file if line.strip()]
     for path in paths:
         with open(path, "r") as f2:
             yobj = yaml.safe_load(f2)

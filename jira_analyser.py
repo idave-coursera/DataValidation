@@ -5,6 +5,8 @@ from pyspark.sql.functions import col, lit, when, regexp_replace, concat, count,
 import pyspark.sql.functions as f
 import yaml
 
+from config import BASE_PATH
+
 
 def load_and_clean_jira_data(spark, jira_csv_path):
     if not os.path.exists(jira_csv_path):
@@ -76,7 +78,7 @@ def load_ingestion_keys(spark):
     input_file = "resources/ingestionPath.txt"
     ans = []
     with open(input_file, "r") as file:
-        paths = [line.strip() for line in file if line.strip()]
+        paths = [BASE_PATH+line.strip() for line in file if line.strip()]
     for path in paths:
         with open(path, "r") as f2:
             yobj = yaml.safe_load(f2).get('configurations', [])
@@ -91,9 +93,7 @@ def load_ingestion_keys(spark):
     return spark.createDataFrame(ans, ["table", "key_cols"])
 
 
-def join_with_ingestion_keys(spark, df_tickets, ingestion_keys_path):
-    if not os.path.exists(ingestion_keys_path):
-        raise FileNotFoundError(f"File not found: {ingestion_keys_path}")
+def join_with_ingestion_keys(spark, df_tickets):
     df_ik = load_ingestion_keys(spark)
     merged = (df_tickets
               .join(df_ik, col("eds_equivalent_table").endswith(concat(lit("."), col("table"), lit("_vw"))), "left"))
@@ -131,7 +131,7 @@ if __name__ == "__main__":
             when(col("key_cols").isNotNull(), 0).otherwise(1),
             when(col("is_table_replaced") == "No", 0).otherwise(1)
         ]
-        final_result = join_with_ingestion_keys(spark, df_done_not_replaced, "./resources/table_primary_keys.csv").orderBy(*sortColumn)
+        final_result = join_with_ingestion_keys(spark, df_done_not_replaced).orderBy(*sortColumn)
         analyse_pk_data(final_result)
         with open('./output/bulk_validation_results.json', 'w') as fp:
             json.dump(final_result.rdd.map(lambda row: row.asDict()).collect(), fp)
