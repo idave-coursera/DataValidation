@@ -2,13 +2,17 @@ import sys
 from typing import List, Union, Optional
 from pyspark.sql import SparkSession
 from pyspark.sql.classic.dataframe import DataFrame
+import pyspark.sql.functions as f
 from pyspark.sql.functions import col, lit, when, regexp_replace, concat, count, array_contains, udf
-from pyspark.sql.types import (
-    StructType, IntegerType, StringType, FloatType, DoubleType, ArrayType, MapType,
-    BooleanType, ByteType, ShortType, LongType, TimestampType, DateType, BinaryType
-)
+from pyspark.sql.types import *
 
 spark = SparkSession.builder.appName("validationUtils").getOrCreate()
+
+
+def ts(df):
+    df.show(20, False)
+    return df
+
 
 def temp_dev_name(name: str) -> Union[str, int]:
     """
@@ -111,9 +115,12 @@ def create_sample_df(name: str, columns_to_select: List[str], size_in_mb: int) -
 #             print(spaces,"primitive",sf.name,sf.dataType)
 
 
-def compareDFs(df1 : DataFrame, df2: DataFrame) :
-    df1_schema_map = {x.name : x.dataType for x in df1.schema}
-    df2_schema_map = {x.name : x.dataType for x in df2.schema}
+def df_shared_schema(df1: DataFrame, df2: DataFrame):
+    """
+    returns shared schema column names for df1 and df2
+    """
+    df1_schema_map = {x.name: x.dataType for x in df1.schema}
+    df2_schema_map = {x.name: x.dataType for x in df2.schema}
     print(df1_schema_map)
     print(df1_schema_map)
     shared_schemas = []
@@ -122,13 +129,34 @@ def compareDFs(df1 : DataFrame, df2: DataFrame) :
             shared_schemas.append(name)
 
     print(shared_schemas)
+    return shared_schemas
 
 
+def hash_df(df: DataFrame, columns_to_hash: List[str], columns_to_keep: List[str]):
+    for colName in columns_to_hash:
+        df = df.withColumn(colName, col(colName).cast(StringType()))
+    ans = df.withColumn("hash", f.hash(*columns_to_hash)).select(*(columns_to_keep + ["hash"]))
+    ans.show()
+    return ans
 
 
+def compareDFs(df1: DataFrame, df2: DataFrame, pk_cols: List[str] = None, columns_to_compare: List[str] = None):
+    shared_schema_columns = df_shared_schema(df1, df2)
+    if not columns_to_compare:
+        columns_to_compare = shared_schema_columns
+    for col in columns_to_compare:
+        if col not in shared_schema_columns:
+            raise ValueError(f"column_to_compare {col} is not present in shared_schema")
+    for col in pk_cols:
+        if col not in shared_schema_columns:
+            raise ValueError(f"pk_column {col} is not present in shared_schema")
+    df1_truncated = df1.select(*columns_to_compare)
+    df2_truncated = df2.select(*columns_to_compare)
+    # comparing what fraction of rows of df1 are present in df2
+    df1_truncated.join(df2_truncated, on=pk_cols, how="inner").transform(ts)
 
 
 # compare PK when its comparable, get PK for gold base tables with sampling
 # compare hash of table with sampling
-#compare PK without sampling
+# compare PK without sampling
 # compare hash of table without sampling

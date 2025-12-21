@@ -8,17 +8,19 @@ import yaml
 from config import BASE_PATH
 
 
-def load_and_clean_jira_data(spark, jira_csv_path):
+def load_jira_data(spark, jira_csv_path):
     if not os.path.exists(jira_csv_path):
         raise FileNotFoundError(f"File not found: {jira_csv_path}")
     df = spark.read.option("header", "true").option("inferSchema", "true").csv(jira_csv_path)
+    schemaCol = f.split(col("eds_equivalent_table"), "\.")
     df_renamed = df.select(
         col("Custom field (EDW table)").alias("edw_table"),
         col("Custom field (EDS equivalent table)").alias("eds_equivalent_table"),
         col("Status").alias("status"),
         col("Custom field (EDW table replaced with external table?)").alias("is_table_replaced"),
-        col("Issue key").alias("issue_key")
-    )
+        col("Issue key").alias("issue_key"),
+        when(col("eds_equivalent_table").isNotNull() & (f.size(schemaCol) > 1), (schemaCol.getItem(1))).alias("eds_schema")
+        )
 
     return df_renamed
 
@@ -42,7 +44,7 @@ def analyze_jira_tickets(df):
     not_replaced_count = replaced_dict.get("No", 0)
     replaced_status_unknown_count = replaced_dict.get("not_updated", 0)
     print("-" * 50)
-    print(f"JIRA Analysis Summary (EDSMIG-25)")
+    print(f"JIRA Analysis Summary ")
     print("-" * 50)
     print(f"Total tickets: {total_count}")
     print(f"  • Done: {done_count}")
@@ -101,7 +103,7 @@ def join_with_ingestion_keys(spark, df_tickets):
 
 def analyse_pk_data(merged_df):
     total_joined = merged_df.count()
-    
+
     # Tables that have PKs (where key_cols is not null)
     # Since we did a left join, if there was no match in ingestion keys, key_cols will be null
     with_pk_count = merged_df.filter(col("key_cols").isNotNull()).count()
@@ -114,8 +116,14 @@ def analyse_pk_data(merged_df):
     print(f"  • With PK defined: {with_pk_count}")
     print(f"  • Without PK defined: {without_pk_count}")
     print("-" * 50)
-    
+
     return merged_df
+
+def write_output(final_result):
+    # eds_schemas = final_result.select("eds_schema").distinct().collect().map(lambda x: x['eds_schema'])
+    # print(eds_schemas)
+    with open('./output/bulk_validation_results.json', 'w') as fp:
+        json.dump(final_result.rdd.map(lambda row: row.asDict()).collect(), fp)
 
 
 if __name__ == "__main__":
@@ -124,7 +132,7 @@ if __name__ == "__main__":
         .getOrCreate()
 
     try:
-        df = load_and_clean_jira_data(spark, "./resources/jira_migration_tickets.csv")
+        df = load_jira_data(spark, "./resources/jira_migration_tickets.csv")
         df_done = analyze_jira_tickets(df)
         df_done_not_replaced = add_cw_name(df_done)
         sortColumn = [
@@ -133,8 +141,7 @@ if __name__ == "__main__":
         ]
         final_result = join_with_ingestion_keys(spark, df_done_not_replaced).orderBy(*sortColumn)
         analyse_pk_data(final_result)
-        with open('./output/bulk_validation_results.json', 'w') as fp:
-            json.dump(final_result.rdd.map(lambda row: row.asDict()).collect(), fp)
+        write_output(final_result)
     except Exception as e:
         print(f"An error occurred: {e}")
         import traceback
