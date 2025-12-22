@@ -1,0 +1,71 @@
+[
+    {
+        "edw_table": "pii.raw_events",
+        "eds_equivalent_table": "prod.silver_pii.cleaned_events_all_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-4346",
+        "eds_schema": "silver_pii",
+        "eds_base_table": "prod.silver_base_pii.cleaned_events_all",
+        "table": null,
+        "key_cols": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prodgroup_memberships",
+        "eds_equivalent_table": "prod.silver_pii.courral_group_memberships_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5061",
+        "eds_schema": "silver_pii",
+        "eds_base_table": "prod.silver_base_pii.courral_group_memberships",
+        "table": "courral_group_memberships",
+        "key_cols": [
+            "doc_key"
+        ],
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prodcourse_stories",
+        "eds_equivalent_table": "prod.silver_pii.courral_course_stories_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5401",
+        "eds_schema": "silver_pii",
+        "eds_base_table": "prod.silver_base_pii.courral_course_stories",
+        "table": "courral_course_stories",
+        "key_cols": [
+            "doc_key"
+        ],
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prodpayment_wallets",
+        "eds_equivalent_table": "prod.silver_pii.payment_wallets_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5764",
+        "eds_schema": "silver_pii",
+        "eds_base_table": "prod.silver_base_pii.payment_wallets",
+        "table": "payment_wallets",
+        "key_cols": [
+            "payment_wallet_id"
+        ],
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_produser_profile_interested_careers",
+        "eds_equivalent_table": "prod.silver_pii.courral_user_profile_interested_careers_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-6063",
+        "eds_schema": "silver_pii",
+        "eds_base_table": "prod.silver_base_pii.courral_user_profile_interested_careers",
+        "table": "courral_user_profile_interested_careers",
+        "key_cols": [
+            "doc_key",
+            "interested_career_index"
+        ],
+        "batch_id": 0
+    }
+]

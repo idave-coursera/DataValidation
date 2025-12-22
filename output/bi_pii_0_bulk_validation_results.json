@@ -1,0 +1,26 @@
+[
+    {
+        "edw_table": "pii.braze_email_sends",
+        "eds_equivalent_table": "prod.bi_pii.braze_email_sends",
+        "status": "Done",
+        "is_table_replaced": "not_updated",
+        "issue_key": "EDSMIG-3660",
+        "eds_schema": "bi_pii",
+        "eds_base_table": "prod.bi_pii.braze_email_sends",
+        "table": null,
+        "key_cols": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "pii.email_sends",
+        "eds_equivalent_table": "prod.bi_pii.email_sends",
+        "status": "Done",
+        "is_table_replaced": "not_updated",
+        "issue_key": "EDSMIG-3885",
+        "eds_schema": "bi_pii",
+        "eds_base_table": "prod.bi_pii.email_sends",
+        "table": null,
+        "key_cols": null,
+        "batch_id": 0
+    }
+]

@@ -4,6 +4,9 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, lit, when, regexp_replace, concat, count, array_contains, udf
 import pyspark.sql.functions as f
 import yaml
+from pyspark.sql import Window
+
+from pyspark.sql.types import StringType, IntegerType
 
 from config import BASE_PATH
 
@@ -120,10 +123,14 @@ def analyse_pk_data(merged_df):
     return merged_df
 
 def write_output(final_result):
-    # eds_schemas = final_result.select("eds_schema").distinct().collect().map(lambda x: x['eds_schema'])
-    # print(eds_schemas)
-    with open('./output/bulk_validation_results.json', 'w') as fp:
-        json.dump(final_result.rdd.map(lambda row: row.asDict()).collect(), fp)
+    w = Window.partitionBy("eds_schema").orderBy("issue_key")
+    final_result_batched = final_result.withColumn("batch_id",(f.row_number().over(w) / 100).cast("int"))
+    schema_batch = final_result_batched.select("eds_schema", "batch_id").distinct()
+    schema_batch_list = [(x["eds_schema"], x["batch_id"] )for x in schema_batch.collect() if "/" not in x["eds_schema"]]
+    print(schema_batch_list)
+    for schema, batch_id in schema_batch_list:
+        with open(f'./output/{schema}_{batch_id}_bulk_validation_results.json', 'w') as fp:
+            json.dump(final_result_batched.filter((col("eds_schema") == schema) & (col("batch_id") == batch_id)).rdd.map(lambda row: row.asDict()).collect(), fp,indent=4)
 
 
 if __name__ == "__main__":
