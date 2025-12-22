@@ -12,7 +12,7 @@ def load_jira_data(spark, jira_csv_path):
     if not os.path.exists(jira_csv_path):
         raise FileNotFoundError(f"File not found: {jira_csv_path}")
     df = spark.read.option("header", "true").option("inferSchema", "true").csv(jira_csv_path)
-    schemaCol = f.split(col("eds_equivalent_table"), "\.")
+    schemaCol = f.split(col("eds_equivalent_table"), r"\.")
     df_renamed = df.select(
         col("Custom field (EDW table)").alias("edw_table"),
         col("Custom field (EDS equivalent table)").alias("eds_equivalent_table"),
@@ -64,13 +64,13 @@ def add_cw_name(df_done):
     df_done_not_replaced = (
         df_done
         .withColumn(
-            "edw_table", regexp_replace(col("edw_table"), "prod", "coursera_warehouse.edw_prod")
+            "edw_table", regexp_replace(col("edw_table"), r"^prod\.", "coursera_warehouse.edw_prod")
         )
         .withColumn("eds_base_table", col("eds_equivalent_table"))
         .withColumn("eds_base_table", regexp_replace("eds_base_table", "silver", "silver_base"))
         .withColumn("eds_base_table", regexp_replace("eds_base_table", "gold", "gold_base"))
         .withColumn("eds_base_table", regexp_replace("eds_base_table", "bronze", "bronze_base"))
-        .withColumn("eds_base_table", regexp_replace("eds_base_table", "_vw", ""))
+        .withColumn("eds_base_table", regexp_replace("eds_base_table", "_vw$", ""))
     )
 
     return df_done_not_replaced
