@@ -9,6 +9,7 @@ from pyspark.sql import Window
 from pyspark.sql.types import StringType, IntegerType
 
 from config import BASE_PATH
+from validationUtils import ts
 
 
 def load_jira_data(spark, jira_csv_path):
@@ -64,10 +65,11 @@ def analyze_jira_tickets(df):
 
 
 def add_cw_name(df_done):
+    edw_schema_col_expr = f.concat(lit("coursera_warehouse.edw_"),col("edw_table"))
     df_done_not_replaced = (
         df_done
         .withColumn(
-            "edw_table", regexp_replace(col("edw_table"), r"^prod\.", "coursera_warehouse.edw_prod")
+            "edw_table",edw_schema_col_expr
         )
         .withColumn("eds_base_table", col("eds_equivalent_table"))
         .withColumn("eds_base_table", regexp_replace("eds_base_table", "silver", "silver_base"))
