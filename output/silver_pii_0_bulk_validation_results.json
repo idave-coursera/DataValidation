@@ -59,18 +59,5 @@
             "interested_career_index"
         ],
         "batch_id": 0
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_pii.raw_events",
-        "eds_equivalent_table": "prod.silver_pii.cleaned_events_all_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-4346",
-        "eds_schema": "silver_pii",
-        "eds_base_table": "prod.silver_base_pii.cleaned_events_all",
-        "table": null,
-        "view_table": null,
-        "primary_keys": null,
-        "batch_id": 0
     }
 ]

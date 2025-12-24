@@ -171,18 +171,5 @@
             "sfc_progress_ts"
         ],
         "batch_id": 0
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.short_form_content_course_ga_allowlist",
-        "eds_equivalent_table": "prod.gold_base.short_form_content_course_ga_allowlist",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5924",
-        "eds_schema": "gold_base",
-        "eds_base_table": "prod.gold_base_base.short_form_content_course_ga_allowlist",
-        "table": null,
-        "view_table": null,
-        "primary_keys": null,
-        "batch_id": 0
     }
 ]

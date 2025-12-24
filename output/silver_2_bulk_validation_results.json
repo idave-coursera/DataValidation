@@ -444,31 +444,5 @@
             "doc_key"
         ],
         "batch_id": 2
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_finsys.finsys_international_vat_rates_item_completions",
-        "eds_equivalent_table": "prod.silver.finsys_international_vat_rates_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-8064",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.finsys_international_vat_rates",
-        "table": null,
-        "view_table": null,
-        "primary_keys": null,
-        "batch_id": 2
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_finsys.finsys_us_state_tax_rates_item_completions",
-        "eds_equivalent_table": "prod.silver.finsys_us_state_tax_rates_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-8073",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.finsys_us_state_tax_rates",
-        "table": null,
-        "view_table": null,
-        "primary_keys": null,
-        "batch_id": 2
     }
 ]

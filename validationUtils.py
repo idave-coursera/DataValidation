@@ -3,7 +3,7 @@ from typing import List, Union, Optional
 from pyspark.sql import SparkSession
 from pyspark.sql.classic.dataframe import DataFrame
 import pyspark.sql.functions as f
-from pyspark.sql.functions import col, lit, when, regexp_replace, concat, count, array_contains, udf
+from pyspark.sql.functions import col, lit, when, regexp_replace, concat, count, array_contains, udf, date_trunc
 from pyspark.sql.types import *
 
 spark = SparkSession.builder.appName("validationUtils").getOrCreate()
@@ -65,8 +65,6 @@ def create_sample_df(name: str, columns_to_select: List[str], size_in_mb: int) -
         target_bytes = size_in_mb * 1024 * 1024
         num_rows = int(target_bytes / avg_row_size) if avg_row_size > 0 else None
 
-        print(f"selecting {num_rows} rows for {name}")
-
         if num_rows and num_rows > 0:
             table_name = temp_dev_name(name)
             if table_name == -1:
@@ -74,7 +72,7 @@ def create_sample_df(name: str, columns_to_select: List[str], size_in_mb: int) -
 
             columns = ", ".join(columns_to_select)
             s = f"CREATE OR REPLACE TABLE {table_name} AS SELECT {columns} FROM {name} TABLESAMPLE ({num_rows} ROWS)"
-            print(s.replace("SELECT", "\nSELECT").replace("FROM", "\nFROM").replace("TABLESAMPLE", "\nTABLESAMPLE"))
+            # print(s.replace("SELECT", "\nSELECT").replace("FROM", "\nFROM").replace("TABLESAMPLE", "\nTABLESAMPLE"))
 
             try:
                 spark.sql(s)
@@ -88,47 +86,16 @@ def create_sample_df(name: str, columns_to_select: List[str], size_in_mb: int) -
         print(f"Unexpected error in create_sample_df: {e}")
         return -1
 
-
-# primitive_types = [
-#     IntegerType(),
-#     FloatType(),
-#     DoubleType(),
-#     StringType(),
-#     BooleanType(),
-#     ByteType(),
-#     ShortType(),
-#     LongType(),
-#     TimestampType(),
-#     DateType(),
-#     BinaryType()
-# ]
-# array_of_primitive_types = [ArrayType(x) for x in primitive_types]
-# map_of_primitive_types = [MapType(x,y) for x in primitive_types for y in primitive_types]
-# print(map_of_primitive_types)
-# def parseSchema(schema: StructType,spaces = "") :
-#     for sf in schema:
-#         if sf.dataType in primitive_types :
-#             print(spaces,"primitive",sf.name,sf.dataType)
-#         if sf.dataType in array_of_primitive_types :
-#             print(spaces,"array of primitive",sf.name,sf.dataType)
-#         elif sf.dataType in map_of_primitive_types :
-#             print(spaces,"primitive",sf.name,sf.dataType)
-
-
 def df_shared_schema(df1: DataFrame, df2: DataFrame):
     """
     returns shared schema column names for df1 and df2
     """
     df1_schema_map = {x.name: x.dataType for x in df1.schema}
     df2_schema_map = {x.name: x.dataType for x in df2.schema}
-    print(df1_schema_map)
-    print(df1_schema_map)
     shared_schemas = {}
     for name, dtype in df1_schema_map.items():
         if name in df2_schema_map and df2_schema_map[name] == dtype:
             shared_schemas[name] = dtype
-
-    print(shared_schemas)
     return shared_schemas
 
 
@@ -136,7 +103,6 @@ def hash_df(df: DataFrame, columns_to_hash: List[str], columns_to_keep: List[str
     for colName in columns_to_hash:
         df = df.withColumn(colName, col(colName).cast(StringType()))
     ans = df.withColumn("hash", f.hash(*columns_to_hash)).select(*(columns_to_keep + ["hash"]))
-    ans.show()
     return ans
 
 def compare_schemas(df1: DataFrame, df2: DataFrame):
@@ -154,7 +120,7 @@ def compare_schemas(df1: DataFrame, df2: DataFrame):
         "diff_types": {k: (df1_schema_map[k], df2_schema_map[k]) for k in common_keys if df1_schema_map[k] != df2_schema_map[k]}
     }
 
-def compareDFs(df1: DataFrame, df2: DataFrame, pk_cols: List[str] = None, columns_to_compare: List[str] = None):
+def compareDFs(df1: DataFrame, df2: DataFrame, pk_cols, columns_to_compare: List[str] = None,sample_df1 : bool = False):
     shared_schema_columns = df_shared_schema(df1, df2).keys()
     if not columns_to_compare:
         columns_to_compare = shared_schema_columns
@@ -164,10 +130,16 @@ def compareDFs(df1: DataFrame, df2: DataFrame, pk_cols: List[str] = None, column
     for col in pk_cols:
         if col not in shared_schema_columns:
             raise ValueError(f"pk_column {col} is not present in shared_schema")
-    df1_truncated = df1.select(*columns_to_compare)
-    df2_truncated = df2.select(*columns_to_compare)
+    if sample_df1:
+        df1 = create_sample_df(df1, shared_schema_columns)
+    hash_columns = [x for x in shared_schema_columns if x not in pk_cols]
+    df1_truncated = hash_df(df1.select(*columns_to_compare),hash_columns,pk_cols)
+    df2_truncated = hash_df(df2.select(*columns_to_compare),hash_columns,pk_cols)
     # comparing what fraction of rows of df1 are present in df2
-    df1_truncated.join(df2_truncated, on=pk_cols, how="inner").transform(ts)
+    match_df = df1_truncated.join(df2_truncated, on=pk_cols, how="inner")\
+    .withColumn("hash_match",df1_truncated["hash"] == df2_truncated["hash"]).filter(f.col("hash_match"))
+
+    return match_df.count()/df1_truncated.count()
 
 
 

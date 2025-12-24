@@ -163,8 +163,12 @@ def write_output(final_result_df):
         when(col("is_table_replaced") == "No", 0).otherwise(1)
     ]
     for schema, batch_id in schema_batch_list:
-        with open(f'./output/{schema}_{batch_id}_bulk_validation_results.json', 'w') as fp:
-            json.dump(batched_result_df.filter((col("eds_schema") == schema) & (col("batch_id") == batch_id)).orderBy(*sort_keys).rdd.map(lambda row: row.asDict()).collect(), fp,indent=4)
+        final_df = batched_result_df.filter(
+            (col("eds_schema") == schema) & (col("batch_id") == batch_id) & (col("primary_keys").isNotNull())).orderBy(
+            *sort_keys)
+        if final_df.count() > 0:
+            with open(f'./output/{schema}_{batch_id}_bulk_validation_results.json', 'w') as fp:
+                json.dump(final_df.rdd.map(lambda row: row.asDict()).collect(), fp,indent=4)
 
 
 if __name__ == "__main__":
