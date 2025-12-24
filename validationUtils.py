@@ -123,10 +123,10 @@ def df_shared_schema(df1: DataFrame, df2: DataFrame):
     df2_schema_map = {x.name: x.dataType for x in df2.schema}
     print(df1_schema_map)
     print(df1_schema_map)
-    shared_schemas = []
+    shared_schemas = {}
     for name, dtype in df1_schema_map.items():
         if name in df2_schema_map and df2_schema_map[name] == dtype:
-            shared_schemas.append(name)
+            shared_schemas[name] = dtype
 
     print(shared_schemas)
     return shared_schemas
@@ -139,9 +139,23 @@ def hash_df(df: DataFrame, columns_to_hash: List[str], columns_to_keep: List[str
     ans.show()
     return ans
 
+def compare_schemas(df1: DataFrame, df2: DataFrame):
+    df1_schema_map = {x.name: x.dataType for x in df1.schema}
+    df2_schema_map = {x.name: x.dataType for x in df2.schema}
+
+    df1_keys = set(df1_schema_map.keys())
+    df2_keys = set(df2_schema_map.keys())
+    common_keys = df1_keys.intersection(df2_keys)
+
+    return {
+        "df1_only": {k: df1_schema_map[k] for k in df1_keys - df2_keys},
+        "df2_only": {k: df2_schema_map[k] for k in df2_keys - df1_keys},
+        "same_types": {k: df1_schema_map[k] for k in common_keys if df1_schema_map[k] == df2_schema_map[k]},
+        "diff_types": {k: (df1_schema_map[k], df2_schema_map[k]) for k in common_keys if df1_schema_map[k] != df2_schema_map[k]}
+    }
 
 def compareDFs(df1: DataFrame, df2: DataFrame, pk_cols: List[str] = None, columns_to_compare: List[str] = None):
-    shared_schema_columns = df_shared_schema(df1, df2)
+    shared_schema_columns = df_shared_schema(df1, df2).keys()
     if not columns_to_compare:
         columns_to_compare = shared_schema_columns
     for col in columns_to_compare:

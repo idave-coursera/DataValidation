@@ -1,0 +1,4351 @@
+{
+    "braze_user_lifecycle_course_recs": [
+        "external_id"
+    ],
+    "enterprise_monthly_email_reports_w_contract": [
+        "report_month",
+        "unique_pk"
+    ],
+    "enterprise_admin_homepage_freq_coord": [
+        "table_name",
+        "column_name"
+    ],
+    "enterprise_admin_monthly_email_report": [
+        "admin_id",
+        "report_month",
+        "enterprise_organization_id",
+        "contract_billing_filter",
+        "unique_pk"
+    ],
+    "enterprise_admin_homepage_skills_insights_t2": [
+        "unique_pk"
+    ],
+    "enterprise_admin_monthly_email_report_skills": [
+        "admin_id",
+        "enterprise_organization_id",
+        "report_month"
+    ],
+    "enterprise_admin_monthly_email_report_combined": [
+        "admin_id",
+        "report_month",
+        "enterprise_organization_id",
+        "contract_billing_filter",
+        "unique_pk"
+    ],
+    "enterprise_program_homepage_skills_insights_t2": [
+        "unique_pk"
+    ],
+    "enterprise_analytics_learner_activity_raw": [
+        "enterprise_program_id",
+        "user_id",
+        "course_id",
+        "enterprise_course_ownership_id",
+        "ownership_start_dt"
+    ],
+    "enterprise_admin_monthly_email_report_license_enrollment": [
+        "admin_id",
+        "report_month",
+        "enterprise_organization_id",
+        "contract_billing_filter"
+    ],
+    "enterprise_admin_homepage_learning_activity_insights_t2_w_contract": [
+        "enterprise_organization_id",
+        "time_window_days",
+        "unique_pk"
+    ],
+    "enterprise_admin_homepage_most_engaged_courses": [
+        "enterprise_organization_id",
+        "enterprise_contract_id",
+        "enterprise_program_id",
+        "time_period",
+        "course_id"
+    ],
+    "enterprise_admin_homepage_reports_w_contract": [
+        "enterprise_organization_id"
+    ],
+    "enterprise_admin_homepage_industry_benchmark": [
+        "enterprise_organization_type",
+        "binned_industry",
+        "time_period",
+        "skill_id"
+    ],
+    "enterprise_analytics_enrollment_utilization": [
+        "enterprise_course_ownership_id"
+    ],
+    "enterprise_admin_homepage_contract_utilization": [
+        "enterprise_organization_id",
+        "enterprise_contract_id",
+        "enterprise_program_id",
+        "time_period"
+    ],
+    "enterprise_admin_homepage_most_recommended_actions": [
+        "userId",
+        "enterprise_organization_id",
+        "admin_type",
+        "month"
+    ],
+    "enterprise_program_homepage_reports": [
+        "enterprise_program_id"
+    ],
+    "enterprise_admin_homepage_learning_activity_insights_revamp": [
+        "enterprise_organization_id",
+        "contract_billing_filter",
+        "time_period",
+        "unique_pk"
+    ],
+    "partner_daily_monthly_active_learner": [
+        "partner_slug",
+        "cal_dt"
+    ],
+    "specialization_dashboard_reach_topline_vw": [
+        "base_phoenix_specialization_id",
+        "partner_slug"
+    ],
+    "partner_quiz_submissions_daily_count_aggregate": [
+        "partner_slug",
+        "course_id",
+        "course_slug",
+        "course_branch_id",
+        "course_item_id",
+        "course_branch_item_name",
+        "quiz_id",
+        "quiz_version",
+        "submitted_date"
+    ],
+    "partner_organization_all_courses": [
+        "partner_id",
+        "partner_created_course_id",
+        "enterprise_organization_id",
+        "enterprise_program_id"
+    ],
+    "partner_quiz_submissions_first_last_score": [
+        "partner_slug",
+        "course_id",
+        "course_slug",
+        "course_branch_id",
+        "course_item_id",
+        "course_branch_item_name",
+        "quiz_id",
+        "quiz_version",
+        "attempt_type",
+        "bucket_score"
+    ],
+    "specialization_dashboard_reach_student_status_vw": [
+        "base_phoenix_specialization_id",
+        "partner_slug"
+    ],
+    "partner_course_reach_country": [
+        "course_id",
+        "country_name",
+        "country_cd",
+        "partner_slug"
+    ],
+    "partner_reach_gender": [
+        "partner_slug",
+        "gender"
+    ],
+    "partner_assessment_ism_aggregate_vw": [
+        "partner_slug",
+        "course_slug",
+        "course_branch_id",
+        "course_item_id",
+        "response_answer"
+    ],
+    "course_insights_assessments_attempt_stats": [
+        "partner_slug",
+        "assessment_type",
+        "grade_setting",
+        "assessment_base_id",
+        "assessment_id",
+        "course_id",
+        "course_branch_id",
+        "course_item_id"
+    ],
+    "partner_quiz_attempt_distribution": [
+        "partner_slug",
+        "course_id",
+        "course_slug",
+        "course_branch_id",
+        "course_item_id",
+        "course_branch_item_name",
+        "quiz_version",
+        "is_attempt_pass"
+    ],
+    "partner_assignment_attempt_distribution": [
+        "partner_slug",
+        "course_slug",
+        "course_branch_id",
+        "course_item_id",
+        "course_branch_item_name",
+        "assignment_id",
+        "assignment_version",
+        "is_attempt_pass"
+    ],
+    "course_dashboard_overview": [
+        "course_id",
+        "course_branch_id",
+        "cal_dt"
+    ],
+    "specialization_dashboard_reach_education_level_vw": [
+        "base_phoenix_specialization_id",
+        "partner_slug",
+        "education_level"
+    ],
+    "partner_quiz_submissions_aggregate": [
+        "partner_slug",
+        "course_id",
+        "course_slug",
+        "course_branch_id",
+        "course_item_id",
+        "course_branch_item_name",
+        "quiz_id",
+        "quiz_version"
+    ],
+    "specialization_dashboard_overview_retention_benchmark": [
+        "partner_slug",
+        "phoenix_specialization_id"
+    ],
+    "partner_specialization_page_views_agg": [
+        "cal_dt",
+        "phoenix_specialization_id"
+    ],
+    "partner_assessment_attempt_distribution_vw": [
+        "partner_id",
+        "course_id",
+        "course_branch_id",
+        "course_item_id",
+        "number_of_attempts",
+        "is_attempt_pass"
+    ],
+    "partner_course_reach_student_status": [
+        "partner_slug",
+        "course_id",
+        "student_status"
+    ],
+    "partner_course_reach_employee_status": [
+        "partner_slug",
+        "course_id",
+        "employment_status"
+    ],
+    "course_quiz_aggregated": [
+        "course_id",
+        "course_slug"
+    ],
+    "partner_quiz_ism_aggregate": [
+        "unique_key"
+    ],
+    "course_progress_funnel_agg": [
+        "course_branch_progress_funnel_id"
+    ],
+    "specialization_dashboard_reach_employment_status_vw": [
+        "base_phoenix_specialization_id",
+        "partner_slug",
+        "employment_status"
+    ],
+    "course_insights_base_assessments_attempt_stats": [
+        "partner_slug",
+        "assessment_type",
+        "grade_setting",
+        "assessment_base_id",
+        "course_id",
+        "course_branch_id",
+        "course_item_id"
+    ],
+    "partner_organization_sfc_video_completion_analysis": [
+        "unique_pk"
+    ],
+    "specialization_overview_dashboard": [
+        "phoenix_specialization_id",
+        "cal_dt"
+    ],
+    "partner_reach_country": [
+        "partner_slug",
+        "country_name"
+    ],
+    "partner_overview_dashboard_embedded_item_usage_timeline": [
+        "cal_dt",
+        "partner_id"
+    ],
+    "partner_feedback_flag_likes": [
+        "cal_dt",
+        "course_id",
+        "course_branch_id"
+    ],
+    "partner_specialization_reach_daily": [
+        "base_phoenix_specialization_id",
+        "gender",
+        "age_group",
+        "continent_cd",
+        "country_cd",
+        "student_status",
+        "education_level",
+        "employment_status"
+    ],
+    "partner_course_reach_gender": [
+        "partner_slug",
+        "course_id",
+        "gender"
+    ],
+    "partner_specialization_overview_dashboard": [
+        "partner_slug",
+        "phoenix_specialization_id",
+        "cal_dt"
+    ],
+    "partner_dashboard_overview_unified_course_enrollments": [
+        "cal_dt",
+        "partner_id"
+    ],
+    "course_branch_progress_funnel_agg": [
+        "course_branch_progress_funnel_id"
+    ],
+    "partner_reach_continent": [
+        "partner_slug",
+        "continent_name",
+        "continent_cd"
+    ],
+    "partner_reach_employment_status": [
+        "partner_slug",
+        "employment_status"
+    ],
+    "partner_dashboard_overview_course_comparison": [
+        "cal_dt",
+        "partner_id",
+        "course_id"
+    ],
+    "specialization_dashboard_reach_countries_vw": [
+        "base_phoenix_specialization_id",
+        "country_cd",
+        "partner_slug"
+    ],
+    "course_overview_course_comparison": [
+        "cal_dt",
+        "course_id"
+    ],
+    "partner_organization_enrolled_user_by_date": [
+        "partner_id",
+        "partner_created_course_id",
+        "enterprise_organization_id",
+        "enrollment_date",
+        "organization_enrollments_user"
+    ],
+    "partner_assignment_submissions_first_last_score": [
+        "partner_slug",
+        "course_id",
+        "course_slug",
+        "course_branch_id",
+        "course_item_id",
+        "course_branch_item_name",
+        "assignment_id",
+        "assignment_version",
+        "attempt_type",
+        "bucket_score"
+    ],
+    "partner_dashboard_overview_portfolios": [
+        "partner_id",
+        "underlying_product_item_id",
+        "underlying_product_canonical_type"
+    ],
+    "course_insights_assessments_topline_metrics": [
+        "partner_slug",
+        "course_id",
+        "course_branch_id",
+        "grade_setting",
+        "assessment_type"
+    ],
+    "partner_course_reach_continent": [
+        "partner_slug",
+        "course_id",
+        "continent_name",
+        "continent_cd"
+    ],
+    "partner_assignment_submissions_aggregate": [
+        "partner_slug",
+        "course_slug",
+        "course_branch_id",
+        "course_item_id",
+        "course_branch_item_name",
+        "assignment_id",
+        "assignment_version"
+    ],
+    "partner_overview_dashboard_embedded_content_stats": [
+        "partner_id",
+        "o_course_id",
+        "o_course_item_id",
+        "cal_dt"
+    ],
+    "autograded_assignment_question_submission_sequence": [
+        "question_id",
+        "submission_id"
+    ],
+    "partner_assessment_submissions_first_last_score_vw": [
+        "partner_id",
+        "course_id",
+        "course_item_id",
+        "attempt_type"
+    ],
+    "partner_reach_student_status": [
+        "partner_slug",
+        "student_status"
+    ],
+    "partner_reach_age_group": [
+        "partner_slug",
+        "age_group"
+    ],
+    "specialization_dashboard_reach_continent_vw": [
+        "base_phoenix_specialization_id",
+        "continent_cd",
+        "partner_slug"
+    ],
+    "partner_assignment_ism_aggregate": [
+        "partner_slug",
+        "course_slug",
+        "course_branch_id",
+        "course_item_id",
+        "assignment_id",
+        "assignment_version",
+        "question_id",
+        "response_answer"
+    ],
+    "specialization_dashboard_overview_course_agg": [
+        "partner_slug",
+        "phoenix_specialization_id",
+        "course_slug"
+    ],
+    "partner_dashboard_reach_topline": [
+        "partner_slug"
+    ],
+    "specialization_dashboard_reach_age_vw": [
+        "base_phoenix_specialization_id",
+        "age_group",
+        "partner_slug"
+    ],
+    "partner_course_reach_age_group": [
+        "partner_slug",
+        "course_id",
+        "age_group"
+    ],
+    "partner_course_dashboard_overview": [
+        "course_id",
+        "partner_id",
+        "course_branch_id",
+        "cal_dt"
+    ],
+    "specialization_dashboard_reach_gender_vw": [
+        "base_phoenix_specialization_id",
+        "partner_slug"
+    ],
+    "partner_reach_education_level": [
+        "partner_slug",
+        "education_level"
+    ],
+    "partner_course_reach_education_level": [
+        "partner_slug",
+        "course_id",
+        "education_level"
+    ],
+    "braze_cdi_weekly_digest_email": [
+        "external_id",
+        "updated_at",
+        "attribute_name"
+    ],
+    "braze_cdi_learner_objects_aggregated": [
+        "external_id",
+        "updated_at"
+    ],
+    "braze_cdi_reroute_recommendations_aggregated": [
+        "external_id",
+        "updated_at"
+    ],
+    "braze_cdi_at_risk_interventions": [
+        "external_id",
+        "updated_at",
+        "attribute_name"
+    ],
+    "braze_catalog_entities_w_deletion": [
+        "id",
+        "updated_at"
+    ],
+    "braze_cdi_job_summary": [
+        "run_date",
+        "job_name",
+        "object_name"
+    ],
+    "braze_cdi_reroute_recommendations": [
+        "external_id",
+        "updated_at",
+        "attribute_name"
+    ],
+    "braze_cdi_product_churn_risk_aggregated": [
+        "external_id",
+        "updated_at"
+    ],
+    "braze_cdi_weekly_streaks": [
+        "external_id",
+        "updated_at",
+        "attribute_name"
+    ],
+    "braze_user_enrollment_status": [
+        "user_id"
+    ],
+    "braze_cdi_learner_objects": [
+        "external_id",
+        "updated_at",
+        "attribute_name"
+    ],
+    "braze_cdi_at_risk_interventions_aggregated": [
+        "external_id",
+        "updated_at"
+    ],
+    "braze_cdi_weekly_digest_email_aggregated": [
+        "external_id",
+        "updated_at"
+    ],
+    "braze_cdi_product_churn_risk": [
+        "external_id",
+        "updated_at",
+        "attribute_name"
+    ],
+    "braze_cdi_weekly_streaks_aggregated": [
+        "external_id",
+        "updated_at"
+    ],
+    "quiz_assessment_single_numeric_patterns": [
+        "assessment_question_id",
+        "assessment_pattern_id",
+        "assessment_pattern_type_id"
+    ],
+    "quiz_assessment_text_exact_match_patterns": [
+        "assessment_question_id",
+        "assessment_pattern_id"
+    ],
+    "cookie_user_visits_legacy": [
+        "cuv_id"
+    ],
+    "enterprise_target_skill_profile_skill_proficiencies": [
+        "enterprise_organization_id",
+        "tsp_id",
+        "skill_id"
+    ],
+    "quiz_assessment_questions": [
+        "assessment_id",
+        "assessment_question_id",
+        "assessment_question_internal_id"
+    ],
+    "quiz_assessment_options": [
+        "assessment_question_id",
+        "assessment_option_id"
+    ],
+    "quiz_assessment_math_expression_patterns": [
+        "assessment_question_id",
+        "assessment_pattern_id"
+    ],
+    "enterprise_target_skill_profiles": [
+        "enterprise_organization_id",
+        "tsp_id"
+    ],
+    "enterprise_mysql_permission_enterprise_admin_roles": [
+        "user_id",
+        "role_template_id"
+    ],
+    "enterprise_monthly_active_user_learner": [
+        "enterprise_organization_id",
+        "user_id",
+        "month",
+        "type",
+        "contract_tags"
+    ],
+    "enterprise_programs_tsps": [
+        "enterprise_program_id",
+        "tsp_id"
+    ],
+    "enterprise_monthly_email_report_sfc_prep_w_contract": [
+        "unique_pk"
+    ],
+    "cheating_incident": [
+        "act_pln_rslt_id",
+        "cheating_case_id"
+    ],
+    "enterprise_learners_tsp_saved": [
+        "enterprise_organization_id",
+        "user_id",
+        "tsp_id"
+    ],
+    "enterprise_application_contracts": [
+        "enterprise_contract_id"
+    ],
+    "sfc_sessions": [
+        "user_id",
+        "course_id",
+        "atom_id",
+        "item_id",
+        "course_branch_id",
+        "session_number",
+        "session_start_ms"
+    ],
+    "enterprise_learner_sfc_activity": [
+        "user_id",
+        "course_item_id",
+        "sfc_progress_ts"
+    ],
+    "enterprise_contracts_programs": [
+        "enterprise_contract_id",
+        "enterprise_program_id"
+    ],
+    "enterprise_user_course_progress_in_latest_branch": [
+        "user_id",
+        "course_id"
+    ],
+    "survey_response_answers": [
+        "survey_response_id"
+    ],
+    "enterprise_phoenix_specialization_ownerships": [
+        "enterprise_phoenix_specialization_ownership_id",
+        "ownership_start_ts",
+        "user_id",
+        "phoenix_specialization_id",
+        "enterprise_program_id"
+    ],
+    "survey_responses": [
+        "survey_response_id"
+    ],
+    "enterprise_organizations": [
+        "enterprise_organization_id"
+    ],
+    "enterprise_phoenix_specialization_utilized_enrollments": [
+        "user_id",
+        "phoenix_specialization_id"
+    ],
+    "salesforce_enterprise_implementations": [
+        "case_id",
+        "customer_pulse_id"
+    ],
+    "enterprise_anonymized_users": [
+        "user_id",
+        "enterprise_organization_id"
+    ],
+    "enterprise_learner_levelsets_t2": [
+        "enterprise_organization_id",
+        "enterprise_program_id",
+        "user_id",
+        "skill_id"
+    ],
+    "enterprise_utilized_enrollments": [
+        "user_id",
+        "course_id"
+    ],
+    "enterprise_monthly_email_report_course_prep_w_contract": [
+        "unique_pk"
+    ],
+    "enterprise_rosters": [
+        "enterprise_roster_id"
+    ],
+    "enterprise_programs": [
+        "enterprise_program_id"
+    ],
+    "enterprise_course_ownerships": [
+        "ownership_start_ts",
+        "user_id",
+        "course_id",
+        "enterprise_program_id"
+    ],
+    "enterprise_wes_transactions": [
+        "enterprise_customer_id",
+        "enterprise_contract_id",
+        "term_order",
+        "transaction_order"
+    ],
+    "survey_response_options": [
+        "survey_response_id"
+    ],
+    "enterprise_learner_skills_assessments_180d_t2": [
+        "user_id",
+        "course_id",
+        "course_item_id",
+        "attempt_ts"
+    ],
+    "enterprise_specialization_ownerships": [
+        "enterprise_specialization_ownership_id"
+    ],
+    "curriculum_track_courses_all": [
+        "curriculum_id",
+        "track_id",
+        "course_id",
+        "program_id"
+    ],
+    "enterpise_user_org_role_mapping": [
+        "user_id"
+    ],
+    "rde_users_courses_completions": [
+        "user_id",
+        "course_id"
+    ],
+    "course_progress_funnel": [
+        "partner_id",
+        "course_id",
+        "user_id",
+        "checkpoint_desc"
+    ],
+    "base_phoenix_specialization_cubes": [
+        "base_phoenix_specialization_id",
+        "gender",
+        "age_group",
+        "continent_cd",
+        "country_cd",
+        "student_status",
+        "education_level",
+        "employment_status"
+    ],
+    "rde_staff_graded_assignments_evaluation_responses": [
+        "coursera_user_id",
+        "learning_outcome_name",
+        "learning_outcome_response_type",
+        "learning_outcome_type",
+        "outcome_score",
+        "learning_outcome_max_score",
+        "assessment_id",
+        "evaluated_by",
+        "evaluated_at",
+        "submission_id"
+    ],
+    "phoenix_specialization_course_agg": [
+        "phoenix_specialization_id",
+        "course_id"
+    ],
+    "course_insights_assignments_stats": [
+        "course_id",
+        "course_branch_id",
+        "course_item_id",
+        "assignment_id"
+    ],
+    "rde_feedback_item_rating": [
+        "course_id",
+        "course_item_id",
+        "feedback_unit_id",
+        "feedback_unit_type",
+        "user_id"
+    ],
+    "assignment_attempts": [
+        "user_id",
+        "course_branch_id",
+        "course_item_id",
+        "assignment_id",
+        "attempt_id",
+        "attempt_id"
+    ],
+    "monthly_active_learners_count": [
+        "course_id",
+        "course_branch_id",
+        "cal_dt"
+    ],
+    "course_page_views_agg": [
+        "cal_dt",
+        "course_id"
+    ],
+    "item_feedback": [
+        "course_id",
+        "course_branch_id",
+        "course_item_id"
+    ],
+    "specialization_enrollments_daily_derived_metrics": [
+        "base_phoenix_specialization_id",
+        "phoenix_specialization_id",
+        "user_id",
+        "enrollment_date"
+    ],
+    "phoenix_specialization_enrollments_agg": [
+        "dy_dt",
+        "phoenix_specialization_id"
+    ],
+    "course_cubes": [
+        "course_id",
+        "gender",
+        "age_group",
+        "continent_cd",
+        "country_cd",
+        "student_status",
+        "education_level",
+        "employment_status"
+    ],
+    "user_organization_university_role_mapping": [
+        "user_id"
+    ],
+    "monthly_active_specialization_learner": [
+        "phoenix_specialization_id",
+        "cal_dt"
+    ],
+    "rde_users_courses_course_certificates": [
+        "user_id",
+        "course_id"
+    ],
+    "educator_users": [
+        "user_id",
+        "course_id"
+    ],
+    "educator_course_branch_item_metrics": [
+        "course_id",
+        "course_branch_id",
+        "course_item_id"
+    ],
+    "base_phoenix_specialization_daily_cubes": [
+        "base_phoenix_specialization_id",
+        "gender",
+        "age_group",
+        "continent_cd",
+        "country_cd",
+        "student_status",
+        "education_level",
+        "employment_status"
+    ],
+    "course_calender_feedback_agg": [
+        "cal_dt",
+        "course_id",
+        "course_branch_id"
+    ],
+    "phoenix_specialization_enrollments_derived_metrics": [
+        "user_id",
+        "phoenix_specialization_id"
+    ],
+    "educator_grading_sessions": [
+        "event_guid"
+    ],
+    "quiz_assessment_answer_responses": [
+        "assessment_response_id"
+    ],
+    "course_insights_quizzes_aggregates_for_topline": [
+        "course_id",
+        "course_branch_id"
+    ],
+    "course_module_checkpoint": [
+        "course_id",
+        "checkpoint_desc"
+    ],
+    "course_calender_enrollments_completes_agg": [
+        "cal_dt",
+        "course_id",
+        "course_branch_id"
+    ],
+    "course_enrollments_derived_metrics": [
+        "user_id",
+        "course_id"
+    ],
+    "course_feedback": [
+        "course_id"
+    ],
+    "partner_daily_active_learner": [
+        "partner_slug",
+        "cal_dt",
+        "user_id"
+    ],
+    "course_branch_module_checkpoint": [
+        "course_id",
+        "course_branch_id",
+        "checkpoint_desc"
+    ],
+    "specialization_page_views_agg": [
+        "cal_dt",
+        "phoenix_specialization_id"
+    ],
+    "cb_embedded_to_source_item_mapping": [
+        "e_course_branch_id",
+        "e_course_item_id"
+    ],
+    "course_branch_progress_funnel": [
+        "partner_id",
+        "course_id",
+        "user_id",
+        "course_branch_id",
+        "checkpoint_desc"
+    ],
+    "course_insights_quizzes_stats": [
+        "course_id",
+        "course_branch_id",
+        "course_item_id",
+        "quiz_assessment_id"
+    ],
+    "course_insights_assignments_aggregates_for_topline": [
+        "course_id",
+        "course_branch_id"
+    ],
+    "course_specialization_user_funnel": [
+        "partner_slug",
+        "course_id",
+        "user_id",
+        "course_item_id",
+        "interaction_id"
+    ],
+    "partner_reporting_assignment_submissions": [
+        "course_branch_id",
+        "course_item_id",
+        "assignment_id",
+        "assignment_version",
+        "user_id",
+        "attempt_id"
+    ],
+    "educator_authoring_sessions": [
+        "event_guid"
+    ],
+    "course_branch_progress_funnel_eligible_learner": [
+        "user_id",
+        "course_id",
+        "course_branch_id"
+    ],
+    "educator_course_metrics": [
+        "course_id"
+    ],
+    "assignment_question_evaluations": [
+        "assignment_id",
+        "assignment_version",
+        "assignment_question_id",
+        "response_answer",
+        "user_id",
+        "attempt_id",
+        "question_id"
+    ],
+    "rde_staff_graded_assignment_final_grades": [
+        "versioned_learner_item_evaluation_id"
+    ],
+    "courses_derived_metrics": [
+        "course_id"
+    ],
+    "pendo_poll_responses": [
+        "guide_id",
+        "poll_id",
+        "visitor_id",
+        "account_id",
+        "poll_response",
+        "poll_response_at"
+    ],
+    "partner_course_branch_module_lesson_item": [
+        "partner_id",
+        "course_id",
+        "course_branch_id",
+        "course_item_id"
+    ],
+    "unified_course_enrollments_daily_spark": [
+        "cal_dt",
+        "partner_id"
+    ],
+    "quiz_question_evaluation": [
+        "quiz_id",
+        "quiz_version",
+        "question_id",
+        "user_id",
+        "attempt_id",
+        "assessment_response_id"
+    ],
+    "partner_monthly_active_learner": [
+        "partner_slug",
+        "cal_dt",
+        "user_id"
+    ],
+    "rde_feedback_course_rating": [
+        "course_id",
+        "user_id",
+        "feedback_system"
+    ],
+    "partner_reporting_quiz_submissions": [
+        "course_branch_id",
+        "course_item_id",
+        "quiz_id",
+        "user_id",
+        "attempt_id"
+    ],
+    "course_branch_lessons": [
+        "course_branch_id",
+        "course_lesson_id"
+    ],
+    "groups": [
+        "group_id"
+    ],
+    "unified_courses_partners": [
+        "unified_course_id",
+        "partner_id",
+        "platform"
+    ],
+    "sequence_branches_primary_courses": [
+        "sequence_branch_id",
+        "course_id"
+    ],
+    "course_branch_modules": [
+        "course_branch_id",
+        "course_module_id"
+    ],
+    "scoped_translation_config_specializations": [
+        "scope_key"
+    ],
+    "course_branch_syllabus": [
+        "course_id",
+        "course_branch_id",
+        "course_module_id",
+        "course_lesson_id",
+        "course_item_id"
+    ],
+    "base_phoenix_specializations": [
+        "base_phoenix_specialization_id"
+    ],
+    "phoenix_specializations_dim": [
+        "phoenix_specialization_id"
+    ],
+    "unified_specializations_courses": [
+        "unified_specialization_id",
+        "unified_course_id",
+        "platform"
+    ],
+    "ecb_course_evaluators": [
+        "ecb_evaluator_base_id"
+    ],
+    "staff_graded_assignment_submission_evaluation_schema_part_multi_line_details": [
+        "staff_graded_assignment_id",
+        "staff_graded_assignment_version",
+        "staff_graded_assignment_submission_evaluation_schema_part_index"
+    ],
+    "courses": [
+        "course_id"
+    ],
+    "course_branch_item_contents": [
+        "course_branch_id",
+        "course_item_id",
+        "course_content_id",
+        "course_content_type_id"
+    ],
+    "course_branch_lesson_stats": [
+        "course_lesson_id",
+        "course_branch_id"
+    ],
+    "partner": [
+        "partner_id"
+    ],
+    "phoenix_specialization_course_stats": [
+        "phoenix_specialization_id"
+    ],
+    "courses_partners": [
+        "course_id",
+        "partner_id"
+    ],
+    "programming_assignment_submission_schema_part_grid_schemas": [
+        "programming_assignment_id",
+        "programming_assignment_submission_schema_part_id"
+    ],
+    "course_branch_item_grading_weight_info": [
+        "course_branch_id",
+        "course_item_id"
+    ],
+    "course_branch_assessment_versions": [
+        "course_branch_id",
+        "course_item_id",
+        "assessment_id"
+    ],
+    "coursera_labs_branch_items": [
+        "course_branch_id",
+        "course_item_id",
+        "course_content_id"
+    ],
+    "phoenix_specializations": [
+        "phoenix_specialization_id"
+    ],
+    "course_branches": [
+        "course_branch_id",
+        "course_id"
+    ],
+    "session_item_deadlines": [
+        "course_session_id",
+        "course_branch_id",
+        "course_item_id"
+    ],
+    "course_branch_module_stats": [
+        "course_module_id",
+        "course_branch_id"
+    ],
+    "staff_graded_assignment_submission_evaluation_schema_part_options_details_options": [
+        "staff_graded_assignment_id",
+        "staff_graded_assignment_version",
+        "staff_graded_assignment_submission_evaluation_schema_part_index",
+        "staff_graded_assignment_submission_evaluation_schema_part_options_details_option_index"
+    ],
+    "course_branch_items": [
+        "course_branch_id",
+        "course_item_id"
+    ],
+    "impressions": [
+        "event_guid"
+    ],
+    "clicks": [
+        "event_guid"
+    ],
+    "autoenroll_degree_course_memberships": [
+        "id",
+        "degree_program_id",
+        "external_course_id",
+        "term_id"
+    ],
+    "non_pii_core_degree_eoi_responses": [
+        "eoi_response_id"
+    ],
+    "degree_program_memberships": [
+        "id",
+        "degree_program_id",
+        "user_id"
+    ],
+    "degree_term_memberships": [
+        "id",
+        "degree_program_id",
+        "user_id",
+        "academic_internal_degree_term_id"
+    ],
+    "autoenroll_degree_course_memberships_integrated_current": [
+        "id",
+        "external_course_id",
+        "term_id"
+    ],
+    "degree_programs": [
+        "degree_program_id"
+    ],
+    "autoenrollment_degree_terms": [
+        "partner_id",
+        "degree_id",
+        "partner_degree_term_id"
+    ],
+    "degree_course_session_mappings": [
+        "degree_program_id",
+        "internal_degree_term_id",
+        "course_id",
+        "session_id",
+        "university_course_id"
+    ],
+    "degree_enrollment_checklist_completed_items": [
+        "hashed_email",
+        "degree_program_slug",
+        "completed_items"
+    ],
+    "degree_course_sessions": [
+        "id",
+        "degree_program_id",
+        "internal_degree_term_id",
+        "course_id",
+        "session_id",
+        "university_course_id"
+    ],
+    "salesforce_pathway_products": [
+        "external_id__c"
+    ],
+    "salesforce_pathway_course_enrollments": [
+        "external_id__c"
+    ],
+    "degree_admission_deadlines_and_targets": [
+        "degree_program_id",
+        "application_admission_term",
+        "subterm_deadline_dt"
+    ],
+    "degree_course_session_enrollments": [
+        "id",
+        "degree_program_id",
+        "user_id",
+        "session_id"
+    ],
+    "salesforce_degree_programs": [
+        "degree_program_id__c"
+    ],
+    "degree_academic_terms": [
+        "degree_program_id",
+        "internal_degree_term_id"
+    ],
+    "degree_courses": [
+        "degree_program_id",
+        "course_id"
+    ],
+    "degree_program_partners": [
+        "degree_program_id",
+        "partner_id"
+    ],
+    "products": [
+        "product_type",
+        "product_item_id"
+    ],
+    "subscription_payments": [
+        "user_id",
+        "subscription_id",
+        "payment_order"
+    ],
+    "payments_coursera_plus_lite_course_transactions": [
+        "course_id",
+        "action",
+        "enrollment_transaction_id",
+        "created_date"
+    ],
+    "prices": [
+        "price_end_dt",
+        "country_cd",
+        "product_type",
+        "product_item_id"
+    ],
+    "phoenix_financial_aid": [
+        "phoenix_financial_aid_id"
+    ],
+    "payment_subscription_charge": [
+        "id",
+        "payment_processor_name"
+    ],
+    "product_prices": [
+        "ownable_product_fulfillment_configuration_id",
+        "product_price_configuration_id",
+        "price_configuration_id",
+        "epic_parameter_name",
+        "country_cd",
+        "currency_id"
+    ],
+    "transactions_backfill": [
+        "transaction_id"
+    ],
+    "underlying_products": [
+        "underlying_product_type",
+        "underlying_product_item_id"
+    ],
+    "transactions": [
+        "transaction_system_source",
+        "transaction_id"
+    ],
+    "completed_carts": [
+        "cart_id",
+        "transaction_id"
+    ],
+    "transactions_attribution": [
+        "transaction_system_source",
+        "transaction_id"
+    ],
+    "payment_subscription_creation": [
+        "id",
+        "payment_processor_name"
+    ],
+    "autograded_assignment_question_evaluations": [
+        "submission_id",
+        "question_id"
+    ],
+    "phoenix_specialization_enrollments": [
+        "user_id",
+        "phoenix_specialization_id"
+    ],
+    "learning_sessions": [
+        "unique_pk"
+    ],
+    "survey_questions": [
+        "survey_id",
+        "survey_question_id"
+    ],
+    "course_quiz_grades": [
+        "course_id",
+        "course_item_id",
+        "user_id",
+        "course_quiz_progress_ts"
+    ],
+    "ecb_evaluation_requests": [
+        "user_id",
+        "ecb_evaluation_id",
+        "ecb_evaluation_requested_ts"
+    ],
+    "unified_course_enrollments": [
+        "user_id",
+        "unified_course_id",
+        "platform"
+    ],
+    "plagiarism_cases": [
+        "cheating_case_id"
+    ],
+    "enrollments_about_b2c_transactions": [
+        "user_id",
+        "course_id"
+    ],
+    "course_enrollment_windows": [
+        "user_id",
+        "course_id"
+    ],
+    "course_branch_grades_int": [
+        "course_branch_id",
+        "user_id",
+        "course_branch_grade_ts",
+        "data_source"
+    ],
+    "user_course_branch_items": [
+        "user_id",
+        "course_id",
+        "course_branch_id",
+        "course_item_id"
+    ],
+    "enrollments_about_activity": [
+        "user_id",
+        "course_id"
+    ],
+    "user_course_item_feedback": [
+        "user_id",
+        "course_id",
+        "course_item_id",
+        "feedback_ts",
+        "feedback_text"
+    ],
+    "users": [
+        "user_id"
+    ],
+    "discussion_question_followings": [
+        "user_id",
+        "discussion_question_id"
+    ],
+    "course_branch_item_progress_int": [
+        "course_branch_id",
+        "course_item_id",
+        "user_id",
+        "course_progress_state_type_id",
+        "course_progress_ts",
+        "is_user_on_branch",
+        "data_source"
+    ],
+    "user_course_branches": [
+        "user_id",
+        "course_branch_id"
+    ],
+    "course_session_memberships": [
+        "session_id",
+        "user_id",
+        "session_membership_created_ts"
+    ],
+    "course_item_grades_int": [
+        "course_id",
+        "course_item_id",
+        "user_id",
+        "data_source"
+    ],
+    "phoenix_specialization_enrollments_about_memberships": [
+        "user_id",
+        "phoenix_specialization_id"
+    ],
+    "user_course_grades_passing": [
+        "user_id",
+        "course_id"
+    ],
+    "surveys": [
+        "survey_id"
+    ],
+    "discussion_questions": [
+        "discussion_question_id"
+    ],
+    "phoenix_specialization_enrollments_about_free_trials": [
+        "user_id",
+        "phoenix_specialization_id",
+        "subscription_id"
+    ],
+    "phoenix_specialization_enrollments_about_b2c_transactions": [
+        "user_id",
+        "phoenix_specialization_id"
+    ],
+    "course_item_learning_hours_daily": [
+        "unique_pk"
+    ],
+    "survey_options": [
+        "survey_id",
+        "survey_question_id",
+        "survey_option_id"
+    ],
+    "forum_spam_posts": [
+        "post_id"
+    ],
+    "discussion_question_flags": [
+        "user_id",
+        "discussion_question_id",
+        "discussion_question_flag_ts"
+    ],
+    "course_branch_item_grades": [
+        "course_branch_id",
+        "course_item_id",
+        "user_id"
+    ],
+    "course_branch_progress": [
+        "course_branch_id",
+        "course_item_id",
+        "user_id",
+        "course_progress_state_type_id",
+        "course_progress_ts",
+        "event_dt",
+        "is_user_on_branch"
+    ],
+    "atom_progress_int": [
+        "user_id",
+        "item_interaction_id",
+        "record_version",
+        "data_source"
+    ],
+    "enrollments_about_free_trials": [
+        "user_id",
+        "course_id",
+        "subscription_id"
+    ],
+    "discussion_answers": [
+        "discussion_answer_id"
+    ],
+    "discussion_answer_votes": [
+        "user_id",
+        "discussion_answer_id",
+        "discussion_answer_vote_ts"
+    ],
+    "enrollments_about_memberships": [
+        "user_id",
+        "course_id"
+    ],
+    "user_labs_workspaces": [
+        "id_record"
+    ],
+    "quiz_attempts": [
+        "user_id",
+        "course_branch_id",
+        "course_item_id",
+        "quiz_action_id"
+    ],
+    "course_cart_transactions": [
+        "user_id",
+        "course_id"
+    ],
+    "user_course_sessions": [
+        "user_id",
+        "session_id"
+    ],
+    "sigtrack_profiles": [
+        "sigtrack_profile_id",
+        "user_id"
+    ],
+    "redshift_quiz_attempts": [
+        "user_id",
+        "course_id",
+        "course_item_id",
+        "assessment_action_id"
+    ],
+    "discussion_answer_flags": [
+        "user_id",
+        "discussion_answer_id",
+        "discussion_answer_flag_ts"
+    ],
+    "enterprise_user_course_learning_hours": [
+        "user_id",
+        "course_id"
+    ],
+    "user_course_items": [
+        "user_id",
+        "course_id",
+        "course_item_id"
+    ],
+    "discussion_question_votes": [
+        "user_id",
+        "discussion_question_id",
+        "discussion_question_vote_ts"
+    ],
+    "mobile_phoenix_course_enrollments": [
+        "user_id",
+        "course_id"
+    ],
+    "course_branch_item_grades_int": [
+        "course_id",
+        "course_branch_id",
+        "course_item_id",
+        "user_id",
+        "item_interaction_id",
+        "data_source"
+    ],
+    "autograded_assignment_question_evaluations_agg": [
+        "user_id",
+        "assignment_id",
+        "assignment_version",
+        "question_id"
+    ],
+    "course_item_grades": [
+        "course_id",
+        "course_item_id",
+        "user_id"
+    ],
+    "course_enrollments_details": [
+        "user_id",
+        "course_id"
+    ],
+    "enrollments_about_grades_passing": [
+        "user_id",
+        "course_id"
+    ],
+    "user_course_branch_modules": [
+        "user_id",
+        "course_id",
+        "course_branch_id",
+        "course_module_id"
+    ],
+    "ampl_marketing_user_properties_delta": [
+        "user_id"
+    ],
+    "bing_ads_keyword_performance_report": [
+        "account_id",
+        "ad_group_id",
+        "ad_id",
+        "keyword",
+        "keyword_id",
+        "device_os"
+    ],
+    "consolidated_channel_attributed_events": [
+        "page_view_id"
+    ],
+    "reddit_ads_ad_spend": [
+        "unique_id",
+        "ad_id",
+        "date",
+        "country"
+    ],
+    "bing_ads_ad_spend": [
+        "unique_id",
+        "ad_id",
+        "device_type",
+        "network",
+        "delivered_match_type",
+        "bid_match_type",
+        "time_period"
+    ],
+    "google_ads_ad_group_spend": [
+        "ad_group_id",
+        "country_code",
+        "spend_dt"
+    ],
+    "mobile_events_for_attribution": [
+        "uuid"
+    ],
+    "user_access_stats": [
+        "user_id"
+    ],
+    "google_ads_ad_spend": [
+        "ad_id",
+        "spend_dt",
+        "account_currency_code",
+        "ad_network_type"
+    ],
+    "google_ads_keyword_performance_report": [
+        "campaign_id",
+        "ad_group_id",
+        "keyword_id",
+        "keyword",
+        "performance_date"
+    ],
+    "articles": [
+        "entry_id"
+    ],
+    "bing_ads_geographic_spend": [
+        "unique_id"
+    ],
+    "paid_media_channel_spend_consolidated": [
+        "campaign_id",
+        "campaign_name",
+        "currency_code",
+        "spend_date",
+        "country_code",
+        "spend"
+    ],
+    "social_media_stories": [
+        "story_id",
+        "received_dt",
+        "platform"
+    ],
+    "social_media_page_view_demographics": [
+        "received_dt",
+        "platform",
+        "breakdown_type",
+        "breakdown_value"
+    ],
+    "bing_ads_account_spend": [
+        "unique_id",
+        "account_id",
+        "device_type",
+        "network",
+        "delivered_match_type"
+    ],
+    "sfdc_marketing_contacts": [
+        "user_id"
+    ],
+    "social_media_profile": [
+        "metrics_date",
+        "platform"
+    ],
+    "affiliate_performance": [
+        "action_id"
+    ],
+    "user_email_stats": [
+        "user_id"
+    ],
+    "social_media_follower_demographics": [
+        "received_dt",
+        "platform",
+        "breakdown_type",
+        "breakdown_value"
+    ],
+    "facebook_ads_ad_spend": [
+        "unique_id",
+        "ad_id",
+        "spend_date",
+        "country_code",
+        "spend"
+    ],
+    "social_media_newsletters": [
+        "newsletter_id",
+        "received_dt",
+        "dimension_type",
+        "dimension_value",
+        "platform"
+    ],
+    "social_media_posts": [
+        "post_id",
+        "post_type",
+        "received_dt",
+        "platform"
+    ],
+    "google_ads_campaign_spend": [
+        "campaign_id",
+        "country_code",
+        "spend_dt",
+        "ad_network_type"
+    ],
+    "paid_media_keyword_performance": [
+        "paid_media_channel",
+        "account_id",
+        "performance_date",
+        "campaign_id",
+        "ad_group_id",
+        "keyword_id",
+        "keyword"
+    ],
+    "user_stats": [
+        "user_id"
+    ],
+    "user_item_start_and_completion": [
+        "user_id",
+        "interaction_id",
+        "item_progress_state",
+        "revsharing_partner_id"
+    ],
+    "skill_content_tags_branches": [
+        "model_id",
+        "skill_id",
+        "entity_id"
+    ],
+    "skills": [
+        "skill_id"
+    ],
+    "roles": [
+        "role_id"
+    ],
+    "cookie_user_visits_v2_and_v3": [
+        "cuv_id"
+    ],
+    "cookie_user_visits": [
+        "cuv_id"
+    ],
+    "page_views_v2": [
+        "page_view_id"
+    ],
+    "page_views_v3": [
+        "uuid"
+    ],
+    "static_page_views_v2": [
+        "page_view_id"
+    ],
+    "int_b2c_mom_retention_denominator": [
+        "snapshot_date",
+        "user_id",
+        "transaction_id",
+        "underlying_product_type_in_finsys",
+        "product_type"
+    ],
+    "int_b2c_mom_retention_numerator": [
+        "snapshot_date",
+        "transaction_id"
+    ],
+    "finsys_distribution_cost_by_product_staging": [
+        "product_id",
+        "partner_id",
+        "ad_type",
+        "selling_product_id"
+    ],
+    "int_clari_forecast_narr_summary": [
+        "fieldId",
+        "timeFrameId",
+        "timePeriodId",
+        "userId",
+        "as_of_date"
+    ],
+    "int_clari_forecast_expansion_c4g": [
+        "vertical",
+        "fieldId",
+        "timeFrameId",
+        "timePeriodId",
+        "userId",
+        "as_of_date"
+    ],
+    "int_clari_forecast_expansion_c4c": [
+        "vertical",
+        "fieldId",
+        "timeFrameId",
+        "timePeriodId",
+        "userId",
+        "as_of_date"
+    ],
+    "int_clari_forecast_expansion_c4b": [
+        "vertical",
+        "fieldId",
+        "timeFrameId",
+        "timePeriodId",
+        "userId",
+        "as_of_date"
+    ],
+    "int_clari_forecast_new_business_c4g": [
+        "vertical",
+        "fieldId",
+        "timeFrameId",
+        "timePeriodId",
+        "userId",
+        "as_of_date"
+    ],
+    "int_clari_forecast_new_business_c4c": [
+        "vertical",
+        "fieldId",
+        "timeFrameId",
+        "timePeriodId",
+        "userId",
+        "as_of_date"
+    ],
+    "int_clari_forecast_new_business_c4b": [
+        "vertical",
+        "fieldId",
+        "timeFrameId",
+        "timePeriodId",
+        "userId",
+        "as_of_date"
+    ],
+    "int_clari_forecast_bookings_summary": [
+        "fieldId",
+        "timeFrameId",
+        "timePeriodId",
+        "userId",
+        "as_of_date"
+    ],
+    "int_clari_forecast_renewal_c4g": [
+        "vertical",
+        "fieldId",
+        "timeFrameId",
+        "timePeriodId",
+        "userId",
+        "as_of_date"
+    ],
+    "int_clari_forecast_renewal_c4b": [
+        "vertical",
+        "fieldId",
+        "timeFrameId",
+        "timePeriodId",
+        "userId",
+        "as_of_date"
+    ],
+    "int_clari_forecast_renewal_c4c": [
+        "vertical",
+        "fieldId",
+        "timeFrameId",
+        "timePeriodId",
+        "userId",
+        "as_of_date"
+    ],
+    "short_form_content_course_ga_allowlist": [
+        "course_id"
+    ],
+    "phoenix_specialization_enrollment_windows": [
+        "user_id",
+        "phoenix_specialization_id"
+    ],
+    "stg_wes_country_names": [
+        "enterprise_customer_id"
+    ],
+    "stg_pathway_taggings": [
+        "source_id",
+        "target_id"
+    ],
+    "plagiarism_comments": [
+        "user_id",
+        "course_id",
+        "course_item_id"
+    ],
+    "stg_enterprise_wes_first_payment_session": [
+        "enterprise_contract_id",
+        "cart_id"
+    ],
+    "stg_enterprise_wes_page_view_sessions": [
+        "user_id"
+    ],
+    "stg_enterprise_wes_user_sessions": [
+        "user_id"
+    ],
+    "stg_enterprise_user_item_attempts": [
+        "user_id",
+        "course_id",
+        "course_item_id",
+        "attempt_timestamp"
+    ],
+    "stg_course_item_calendar": [
+        "o_course_id",
+        "o_course_item_id",
+        "dy_dt"
+    ],
+    "stg_course_insights_assignments_first_attempts": [
+        "user_id",
+        "course_id",
+        "course_branch_id",
+        "course_item_id",
+        "assignment_id"
+    ],
+    "stg_course_insights_quizzes_first_attempts_stats": [
+        "course_id",
+        "course_branch_id",
+        "course_item_id",
+        "quiz_assessment_id"
+    ],
+    "stg_assignments_attempts_to_pass": [
+        "user_id",
+        "course_branch_id",
+        "course_item_id",
+        "assignment_id",
+        "attempt_id"
+    ],
+    "phoenix_specialization_activity_range": [
+        "phoenix_specialization_id",
+        "dy_dt"
+    ],
+    "assignment_total_first_last_attempts_agg": [
+        "assignment_id",
+        "assignment_version"
+    ],
+    "course_active_daily_learner": [
+        "course_id",
+        "course_branch_id",
+        "cal_dt",
+        "user_id"
+    ],
+    "assignment_question_first_last_attempts_agg": [
+        "assignment_id",
+        "assignment_version"
+    ],
+    "stg_flagged_first_passed_assignment_attempts": [
+        "user_id",
+        "course_id",
+        "course_branch_id",
+        "course_item_id",
+        "assignment_id"
+    ],
+    "stg_course_insights_quizzes_first_attempts": [
+        "user_id",
+        "course_id",
+        "course_branch_id",
+        "course_item_id",
+        "quiz_assessment_id"
+    ],
+    "stg_flagged_first_passed_quiz_attempts": [
+        "user_id",
+        "course_id",
+        "course_branch_id",
+        "course_item_id",
+        "quiz_assessment_id"
+    ],
+    "stg_course_insights_assignments_attempts_taken_to_pass_stats": [
+        "course_id",
+        "course_branch_id",
+        "course_item_id",
+        "assignment_id"
+    ],
+    "stg_educator_authoring_events": [
+        "event_guid"
+    ],
+    "stg_course_insights_quizzes_attempts_taken_to_pass_stats": [
+        "course_id",
+        "course_branch_id",
+        "course_item_id",
+        "quiz_assessment_id"
+    ],
+    "phoenix_specialization_active_daily_learner": [
+        "cal_dt",
+        "user_id"
+    ],
+    "stg_course_insights_assignments_first_attempts_stats": [
+        "course_id",
+        "course_branch_id",
+        "course_item_id",
+        "assignment_id"
+    ],
+    "stg_course_cubes": [
+        "course_id",
+        "user_id"
+    ],
+    "stg_course_insights_quizzes_user_attempts_taken_to_pass": [
+        "user_id",
+        "course_id",
+        "course_branch_id",
+        "course_item_id",
+        "quiz_assessment_id"
+    ],
+    "assignment_question_answer_first_last_attempt_agg": [
+        "assignment_id",
+        "assignment_version"
+    ],
+    "stg_quizzes_attempts_to_pass": [
+        "user_id",
+        "course_id",
+        "course_branch_id",
+        "course_item_id",
+        "quiz_action_id"
+    ],
+    "stg_partner_reach_dashboard": [
+        "partner_id",
+        "enrollment_date",
+        "user_id",
+        "product_type"
+    ],
+    "stg_course_insights_assignments_user_attempts_taken_to_pass": [
+        "user_id",
+        "course_id",
+        "course_branch_id",
+        "course_item_id",
+        "assignment_id"
+    ],
+    "stg_atom_content_types": [
+        "atom_content_type"
+    ],
+    "stg_course_universities_vw": [
+        "course_id",
+        "university_id"
+    ],
+    "stg_course_branch_published_module_ids_vw": [
+        "course_branch_id",
+        "module_id"
+    ],
+    "stg_partner": [
+        "partner_id"
+    ],
+    "stg_atoms_vw": [
+        "atom_id",
+        "atom_version_id"
+    ],
+    "stg_event_entity_mapping": [
+        "raw_entity_id",
+        "std_entity_id"
+    ],
+    "stg_degree_program_memberships_vw": [
+        "degree_program_id",
+        "user_id"
+    ],
+    "stg_non_degree_course_sessions": [
+        "id",
+        "degree_program_id",
+        "internal_degree_term_id",
+        "course_id",
+        "session_id",
+        "university_course_id"
+    ],
+    "stg_non_degree_term_memberships": [
+        "id",
+        "degree_program_id",
+        "user_id",
+        "academic_internal_degree_term_id"
+    ],
+    "stg_degree_programs_vw": [
+        "degree_program_id"
+    ],
+    "stg_non_degree_course_session_enrollments": [
+        "id",
+        "degree_program_id",
+        "user_id",
+        "session_id"
+    ],
+    "stg_degree_only_course_sessions": [
+        "id",
+        "degree_program_id",
+        "internal_degree_term_id",
+        "course_id",
+        "session_id",
+        "university_course_id"
+    ],
+    "stg_degree_eoi_page_views": [
+        "page_view_id"
+    ],
+    "stg_degree_only_term_memberships_prep": [
+        "id",
+        "degree_program_id",
+        "user_id",
+        "academic_internal_degree_term_id"
+    ],
+    "stg_degree_only_term_memberships": [
+        "id",
+        "degree_program_id",
+        "user_id",
+        "academic_internal_degree_term_id"
+    ],
+    "stg_degree_admission_deadlines_and_targets_vw": [
+        "degree_program_id",
+        "application_admission_term",
+        "subterm_deadline_dt"
+    ],
+    "stg_degree_only_course_session_enrollments": [
+        "id",
+        "degree_program_id",
+        "user_id",
+        "session_id"
+    ],
+    "stg_degree_only_academic_terms_vw": [
+        "degree_program_id",
+        "internal_degree_term_id"
+    ],
+    "stg_degree_program_partners_vw": [
+        "degree_program_id",
+        "partner_id"
+    ],
+    "stg_non_degree_academic_terms_vw": [
+        "degree_program_id",
+        "internal_degree_term_id"
+    ],
+    "static_lh_course_grades": [
+        "course_id",
+        "user_id"
+    ],
+    "stg_course_branch_modules_with_topk_gag": [
+        "course_branch_id",
+        "course_module_id"
+    ],
+    "static_lh_course_branch_progress": [
+        "course_branch_id",
+        "course_item_id",
+        "user_id",
+        "course_progress_state_type_id",
+        "course_progress_ts",
+        "event_dt",
+        "is_user_on_branch"
+    ],
+    "enrollments_about_branches": [
+        "user_id",
+        "course_id"
+    ],
+    "stg_enrollments_about_ratings": [
+        "user_id",
+        "course_id"
+    ],
+    "feedback_item_comments_vw": [
+        "course_id",
+        "course_item_id",
+        "feedback_unit_type",
+        "feedback_unit_id",
+        "feedback_system",
+        "user_id",
+        "feedback_category",
+        "feedback_last_updated_ts"
+    ],
+    "feedback_item_ratings_vw": [
+        "course_id",
+        "course_item_id",
+        "feedback_unit_type",
+        "feedback_unit_id",
+        "feedback_system",
+        "user_id",
+        "feedback_last_updated_ts"
+    ],
+    "stg_users_about_gender_vw": [
+        "user_id"
+    ],
+    "courral_course_memberships": [
+        "user_id",
+        "course_id",
+        "course_membership_ts"
+    ],
+    "static_lh_course_branch_grades": [
+        "course_branch_id",
+        "user_id",
+        "course_branch_grade_ts"
+    ],
+    "stg_user_course_branch_modules_regular": [
+        "course_branch_id",
+        "course_module_id",
+        "user_id"
+    ],
+    "stg_learner_activity_heartbeat_events": [
+        "uuid"
+    ],
+    "static_lh_course_item_grades": [
+        "course_id",
+        "course_item_id",
+        "user_id"
+    ],
+    "stg_phoenix_specialization_enrollments_about_clite": [
+        "user_id",
+        "phoenix_specialization_id"
+    ],
+    "stg_phoenix_specialization_enrollments_about_cplus": [
+        "user_id",
+        "phoenix_specialization_id"
+    ],
+    "stg_user_registration_stats": [
+        "user_id"
+    ],
+    "stg_course_enrollments_about_ownership": [
+        "user_id",
+        "course_id"
+    ],
+    "stg_user_course_branch_modules_topk": [
+        "course_branch_id",
+        "course_module_id",
+        "user_id"
+    ],
+    "phoenix_specializations_memberships": [
+        "user_id",
+        "phoenix_specialization_membership_last_modified_ts",
+        "phoenix_specialization_id"
+    ],
+    "stg_enrollments_about_cplus": [
+        "user_id",
+        "course_id",
+        "subscription_id"
+    ],
+    "static_lh_course_branch_item_grades": [
+        "course_branch_id",
+        "course_item_id",
+        "user_id"
+    ],
+    "stg_enrollments_about_clite": [
+        "user_id",
+        "course_id",
+        "subscription_id"
+    ],
+    "stg_google_ads_campaign_performance_vw": [
+        "campaign_id",
+        "country_code",
+        "spend_dt",
+        "ad_network_type"
+    ],
+    "stg_mup_cplus_status": [
+        "user_id"
+    ],
+    "stg_mup_user_model_ouputs": [
+        "user_id"
+    ],
+    "stg_google_ads_ad_group_performance_vw": [
+        "ad_group_id",
+        "ad_group_status",
+        "country_code",
+        "spend_dt"
+    ],
+    "stg_mup_user_email_filters": [
+        "user_id"
+    ],
+    "stg_mup_user_event_listagg": [
+        "user_id"
+    ],
+    "stg_mup_all_users": [
+        "user_id"
+    ],
+    "stg_mup_degree_enrollees": [
+        "user_id"
+    ],
+    "stg_mup_user_notification_preferences": [
+        "user_id"
+    ],
+    "stg_mup_incremental": [
+        "user_id"
+    ],
+    "stg_user_first_registration": [
+        "user_id"
+    ],
+    "stg_google_ads_ad_performance_vw": [
+        "ad_id",
+        "spend_dt",
+        "account_currency_code"
+    ],
+    "stg_mup_user_enterprise_status": [
+        "user_id"
+    ],
+    "stg_mup_user_inferred_language": [
+        "user_id"
+    ],
+    "stg_mup_enterprise_admins": [
+        "user_id"
+    ],
+    "b2c_funnel_monthly_user_states": [
+        "mnth_id",
+        "user_id"
+    ],
+    "stg_active_master_role_skills": [
+        "id"
+    ],
+    "skill_content_tags_tmp": [
+        "model_id",
+        "skill_id",
+        "entity_id"
+    ],
+    "stg_active_branch_skills": [
+        "branch_name",
+        "id",
+        "name"
+    ],
+    "stg_active_master_skills": [
+        "id",
+        "name"
+    ],
+    "skill_content_tags_branches_tmp": [
+        "model_id",
+        "skill_id",
+        "entity_id"
+    ],
+    "stg_active_branch_role_skills": [
+        "branch_name",
+        "id",
+        "name"
+    ],
+    "restricted_enterprise_report_complete_specialization_enrollments_vw": [
+        "user_id",
+        "program_id",
+        "third_party_organization_id",
+        "s12n_id"
+    ],
+    "restricted_enterprise_report_sfc_activity_vw": [
+        "user_id",
+        "clip_id",
+        "third_party_organization_id",
+        "is_enterprise_contract_active"
+    ],
+    "revenue_share_terms_latest_vw": [
+        "revshare_expense_table",
+        "qtr_id",
+        "partner_id",
+        "business_line",
+        "product_id"
+    ],
+    "cash_staging_log_vw": [
+        "ds",
+        "id",
+        "partner_id"
+    ],
+    "distribution_cost_by_product_log_vw": [
+        "qtr_id",
+        "product_id",
+        "partner_id",
+        "ad_type",
+        "selling_product_id"
+    ],
+    "nextgen_enterprise_direct_revshare_user_item_completions_vw": [
+        "subscription_or_contract_id",
+        "subscription_or_contract_term_start_ts",
+        "user_id",
+        "interaction_id",
+        "revsharing_partner_id"
+    ],
+    "revenue_recognition_master_vw": [
+        "source_type",
+        "id",
+        "partner_id",
+        "rev_rec_month_id",
+        "ds"
+    ],
+    "enterprise_direct_contracts_splits_log_vw": [
+        "qtr_id",
+        "enterprise_contract_id"
+    ],
+    "cash_master_vw": [
+        "source_type",
+        "id",
+        "partner_id"
+    ],
+    "estimated_courseraplus_revenue_recognition_aggregated_version_v2_vw": [
+        "partner_id",
+        "transaction_month_id",
+        "rev_rec_month_id",
+        "course_id",
+        "specialization_id"
+    ],
+    "enterprise_direct_contracts_netsale_log_vw": [
+        "md5_hash_pk"
+    ],
+    "monthly_distribution_cost_by_product_vw": [
+        "mnth_id",
+        "product_id",
+        "partner_id",
+        "ad_type",
+        "selling_product_id"
+    ],
+    "nextgen_enterprise_direct_contracts_netsales_vw": [
+        "md5_hash_pk"
+    ],
+    "revenue_recognition_staging_log_vw": [
+        "id",
+        "partner_id",
+        "rev_rec_month_id",
+        "ds"
+    ],
+    "nextgen_enterprise_direct_rev_rec_contract_adj_vw": [
+        "enterprise_contract_id",
+        "revrec_month",
+        "customer_internal_id"
+    ],
+    "courseraplus_and_wes_monthly_revenue_recognition_log_vw": [
+        "mnth_id",
+        "category",
+        "inferred_payment_processor_id"
+    ],
+    "revshare_user_item_completions_course_level_agg_vw": [
+        "course_progress_dt",
+        "subscription_or_contract_id",
+        "user_id",
+        "course_id",
+        "revsharing_partner_id"
+    ],
+    "estimated_combined_revenue_recognition_vw": [
+        "partner_id",
+        "transaction_id",
+        "attributed_content_item_id",
+        "rev_rec_month_id"
+    ],
+    "courseraplus_and_wes_netsale_log_vw": [
+        "subscription_or_contract_id",
+        "category",
+        "inferred_payment_processor_id",
+        "partner_id",
+        "user_id",
+        "course_id",
+        "interaction_id",
+        "subscription_or_contract_term_start_ts",
+        "subscription_or_contract_term_id"
+    ],
+    "estimated_b2c_cash_rev_in_trailing_n_days_vw": [
+        "transaction_dt",
+        "country_group_finance",
+        "underlying_product_type_in_finsys"
+    ],
+    "enterprise_direct_contracts_log_vw": [
+        "custom_parent_enterprise_contract_id",
+        "enterprise_contract_id",
+        "parent_revenue_element"
+    ],
+    "google_cert_completion_master_survey": [
+        "survey_response_id"
+    ],
+    "google_certificate_participant_completion_survey_v3_2022": [
+        "survey_response_id",
+        "survey_response_id"
+    ],
+    "google_aie_completion_survey": [
+        "survey_response_id",
+        "survey_response_id"
+    ],
+    "google_participant_entry_survey_v3_2022": [
+        "survey_response_id"
+    ],
+    "learner_story_survey_shorter": [
+        "survey_response_id"
+    ],
+    "google_certificate_pulse_survey_v2_2022": [
+        "survey_response_id"
+    ],
+    "stg_enterprise_enrolled_learners": [
+        "program_id",
+        "user_id",
+        "course_id"
+    ],
+    "google_certificate_participant_completion_survey_v3_2022_unhashed": [
+        "survey_response_id"
+    ],
+    "google_pe_completion_survey_unhashed": [
+        "survey_response_id"
+    ],
+    "google_aie_completion_survey_unhashed": [
+        "survey_response_id"
+    ],
+    "google_participant_entry_survey_v3_2022_unhashed": [
+        "user_id"
+    ],
+    "enterprise_user_target_skill_profile_states_vw": [
+        "user_id",
+        "target_skill_profile_id"
+    ],
+    "program_enterprise_contract_orders_vw": [
+        "id"
+    ],
+    "courral_course_branch_item_learning_objectives_vw": [
+        "course_branch_id",
+        "item_id",
+        "learning_objectives_id"
+    ],
+    "programming_assignments_vw": [
+        "programming_assignment_id"
+    ],
+    "programming_submission_part_grid_grading_statuses_vw": [
+        "programming_assignment_id",
+        "programming_assignment_submission_schema_part_id",
+        "programming_submission_id"
+    ],
+    "feedback_course_ratings_vw": [
+        "course_id",
+        "feedback_system",
+        "user_id",
+        "feedback_last_updated_ts"
+    ],
+    "programming_assignment_submission_schema_part_possible_responses_vw": [
+        "programming_assignment_id",
+        "programming_assignment_submission_schema_part_id",
+        "programming_assignment_submission_schema_part_possible_response_order"
+    ],
+    "courral_uofl_resit_coursework_gag_mapping_vw": [
+        "session_id",
+        "coursework_number",
+        "gag_id"
+    ],
+    "courral_assets_vw": [
+        "asset_id"
+    ],
+    "programming_submission_parts_vw": [
+        "programming_assignment_id",
+        "programming_assignment_submission_schema_part_id",
+        "programming_submission_id"
+    ],
+    "dynamodb_scoped_translation_config_history_vw": [
+        "scopekey",
+        "sequencenumber"
+    ],
+    "epic_course_experiments_vw": [
+        "variant_id"
+    ],
+    "feedback_course_comments_vw": [
+        "course_id",
+        "feedback_system",
+        "user_id",
+        "feedback_category",
+        "feedback_last_updated_ts"
+    ],
+    "programming_submission_part_text_submissions_vw": [
+        "programming_assignment_id",
+        "programming_assignment_submission_schema_part_id",
+        "programming_submission_id"
+    ],
+    "clip_generated_content_vw": [
+        "atom_id",
+        "atom_id_version"
+    ],
+    "courral_asset_tags_vw": [
+        "asset_id",
+        "tag_name",
+        "tag_value"
+    ],
+    "courral_course_schedule_experience_configuration_vw": [
+        "branch_id"
+    ],
+    "programming_submission_part_grid_submissions_vw": [
+        "programming_assignment_id",
+        "programming_assignment_submission_schema_part_id",
+        "programming_submission_id"
+    ],
+    "courral_learn_objective_main_vw": [
+        "learn_objective_id"
+    ],
+    "programming_submission_part_evaluations_vw": [
+        "programming_assignment_id",
+        "programming_assignment_submission_schema_part_id",
+        "programming_submission_id"
+    ],
+    "courral_forum_helpers_vw": [
+        "user_id",
+        "course_id",
+        "version"
+    ],
+    "programming_submissions_vw": [
+        "programming_submission_id"
+    ],
+    "dynamodb_subtitle_translation_preference_vw": [
+        "course_id"
+    ],
+    "courral_ecb_evaluations_vw": [
+        "ecb_evaluation_id"
+    ],
+    "amplitude_lookup_table_recommender_configurations_vw": [
+        "hash"
+    ],
+    "rds_career_academy_reference_curriculum_vw": [
+        "id"
+    ],
+    "courral_quiz_assessment_text_exact_match_questions_vw": [
+        "assessment_question_id"
+    ],
+    "courral_quiz_assessment_single_numeric_questions_vw": [
+        "assessment_question_id"
+    ],
+    "courral_quiz_assessment_checkbox_questions_vw": [
+        "assessment_question_id"
+    ],
+    "courral_staff_graded_assignments_config_vw": [
+        "staff_graded_assignment_id"
+    ],
+    "courral_quiz_assessment_regex_questions_vw": [
+        "assessment_question_id"
+    ],
+    "courral_quiz_assessment_reflect_questions_vw": [
+        "assessment_question_id"
+    ],
+    "courral_quiz_assessment_questions_vw": [
+        "assessment_question_id"
+    ],
+    "degree_program_categories_vw": [
+        "degree_program_id",
+        "degree_category_name"
+    ],
+    "courral_quiz_assessment_mcq_questions_vw": [
+        "assessment_question_id"
+    ],
+    "courral_staff_graded_assignment_submission_evaluation_schema_parts_vw": [
+        "staff_graded_assignment_id",
+        "staff_graded_assignment_version",
+        "staff_graded_assignment_submission_evaluation_schema_part_index"
+    ],
+    "courral_question_blocks_all_vw": [
+        "versioned_question_block_part_id"
+    ],
+    "courral_quiz_assessment_checkbox_reflect_questions_vw": [
+        "assessment_question_id"
+    ],
+    "courral_quiz_assessment_math_expression_questions_vw": [
+        "assessment_question_id"
+    ],
+    "courral_quiz_assessment_questions_formative_vw": [
+        "doc_key"
+    ],
+    "courral_quiz_assessment_mcq_reflect_questions_vw": [
+        "assessment_question_id"
+    ],
+    "courral_ecb_evaluator_author_vw": [
+        "ecb_evaluator_draft_id"
+    ],
+    "recommender_configurations_vw": [
+        "hash"
+    ],
+    "courral_ecb_evaluators_vw": [
+        "ecb_evaluator_id"
+    ],
+    "gsheet_autoenrollment_degree_programs_vw": [
+        "partner_id",
+        "program_name",
+        "degree_id",
+        "is_degree_program"
+    ],
+    "gsheet_autoenrollment_degree_courses_vw": [
+        "degree_id",
+        "degree_name",
+        "university_course_id",
+        "coursera_course_id",
+        "term_id",
+        "session_id"
+    ],
+    "courral_quiz_assessments_vw": [
+        "assessment_id"
+    ],
+    "courral_programming_assignment_submission_schema_parts": [
+        "programming_assignment_id",
+        "programming_assignment_submission_schema_part_id"
+    ],
+    "courral_coach_contents_vw": [
+        "atom_id",
+        "atom_version_id"
+    ],
+    "courral_quiz_assessment_regex_patterns_vw": [
+        "assessment_pattern_id"
+    ],
+    "courral_quiz_assessment_question_options_vw": [
+        "assessment_question_id",
+        "option_id"
+    ],
+    "courral_staff_graded_assignment_submission_response_parts_vw": [
+        "staff_graded_assignment_submission_id"
+    ],
+    "courral_staff_graded_assignment_submission_parts": [
+        "staff_graded_assignment_id",
+        "staff_graded_assignment_version",
+        "submission_part_id"
+    ],
+    "courral_staff_graded_assignment_submission_evaluation_response_parts_vw": [
+        "staff_graded_assignment_id",
+        "submission_evaluation_id",
+        "response_part_type"
+    ],
+    "aurora_proctor_configs_vw": [
+        "proctor_configuration_id"
+    ],
+    "kinesis_forums_vw": [
+        "forum_id"
+    ],
+    "course_grades_vw": [
+        "course_id",
+        "user_id"
+    ],
+    "kinesis_forum_post_votes_vw": [
+        "post_id"
+    ],
+    "course_branch_grades_vw": [
+        "course_branch_id",
+        "user_id",
+        "course_branch_grade_ts"
+    ],
+    "kinesis_forum_posts_vw": [
+        "post_id"
+    ],
+    "kinesis_forum_post_subscriptions_vw": [
+        "post_id"
+    ],
+    "kinesis_forum_subscriptions_vw": [
+        "forum_id"
+    ],
+    "courral_an_survey_options_vw": [
+        "surveys_raw_id",
+        "questions_index",
+        "survey_options_index"
+    ],
+    "courral_banner_ad_campaigns_vw": [
+        "banner_ad_campaign_id"
+    ],
+    "pii_enterprise_report_complete_specialization_enrollments_vw": [
+        "user_id",
+        "program_id",
+        "third_party_organization_id",
+        "s12n_id"
+    ],
+    "salesforce_enterprise_wes_contact_txn_info_vw": [
+        "EDW_Contact_Id__c",
+        "Email"
+    ],
+    "salesforce_enterprise_wes_transactions_main_vw": [
+        "EDW_Unique_Key__c"
+    ],
+    "learner_story_survey_shorter_unhashed_vw": [
+        "survey_response_id",
+        "custom_variable_var1"
+    ],
+    "instructors_vw": [
+        "instructor_id",
+        "university_id"
+    ],
+    "course_instructors_vw": [
+        "instructor_id",
+        "course_id"
+    ],
+    "degree_sfdc_interests_with_deletion_status_vw": [
+        "interest_id"
+    ],
+    "five9_degree_call_transcript_analysis_vw": [
+        "content_version_id"
+    ],
+    "degree_surveymonkey_student_profiles_vw": [
+        "survey_response_id",
+        "identifier"
+    ],
+    "reporting_enterprise_report_program_memberships": [
+        "program_id",
+        "user_id"
+    ],
+    "enterprise_usage_report_core_program_memberships": [
+        "program_id",
+        "user_id"
+    ],
+    "enterprise_contract_program_memberships": [
+        "user_id",
+        "enterprise_program_id",
+        "enterprise_roster_id"
+    ],
+    "salesforce_enterprise_sales_funnel": [
+        "campaign_member_id"
+    ],
+    "pii_enterprise_report_sfc_activity": [
+        "user_id",
+        "clip_id",
+        "third_party_organization_id",
+        "is_enterprise_contract_active"
+    ],
+    "enterprise_contract_program_invitations": [
+        "invitation_id",
+        "enterprise_program_id",
+        "enterprise_contract_id"
+    ],
+    "learner_story_survey_shorter_unhashed": [
+        "survey_response_id"
+    ],
+    "instructors": [
+        "instructor_id",
+        "university_id"
+    ],
+    "course_instructors": [
+        "instructor_id",
+        "course_id"
+    ],
+    "degree_eoi_ddp_v1": [
+        "eoi_response_id"
+    ],
+    "five9_degree_call_transcript_analysis": [
+        "content_version_id"
+    ],
+    "degree_course_enrollments": [
+        "student_id",
+        "degree_program_id",
+        "university_course_id",
+        "academic_internal_term_id"
+    ],
+    "core_degree_eoi_responses": [
+        "eoi_response_id"
+    ],
+    "degree_program_enrollments": [
+        "student_id",
+        "degree_program_id"
+    ],
+    "degree_sfdc_applications": [
+        "application_surrogate_key"
+    ],
+    "degree_surveymonkey_student_profiles": [
+        "survey_response_id"
+    ],
+    "degree_slate_applications": [
+        "application_surrogate_key",
+        "application_id"
+    ],
+    "degree_sfdc_interests": [
+        "interest_id"
+    ],
+    "degree_eoi_zoom_webinar": [
+        "eoi_response_id"
+    ],
+    "degree_eoi_salesforce_marketing": [
+        "eoi_response_id"
+    ],
+    "degree_eoi_ddp": [
+        "eoi_response_id"
+    ],
+    "braze_marketing_user_properties_delta": [
+        "user_id"
+    ],
+    "marketing_user_properties": [
+        "user_id"
+    ],
+    "notification_preferences": [
+        "id",
+        "contact_channel_category_composite_id",
+        "scope_id"
+    ],
+    "email_user_mapping": [
+        "user_id",
+        "user_email"
+    ],
+    "non_coursera_user_gdpr_deletion_status": [
+        "email_address"
+    ],
+    "enterprise_specialization_ownerships_vw": [
+        "enterprise_specialization_ownership_id"
+    ],
+    "enterprise_course_ownerships_vw": [
+        "ownership_start_ts",
+        "user_id",
+        "course_id",
+        "enterprise_program_id"
+    ],
+    "enterprise_contracts_programs_vw": [
+        "enterprise_contract_id",
+        "enterprise_program_id"
+    ],
+    "survey_responses_vw": [
+        "survey_response_id"
+    ],
+    "enterprise_programs_vw": [
+        "enterprise_program_id"
+    ],
+    "sfc_sessions_vw": [
+        "user_id",
+        "course_id",
+        "atom_id",
+        "item_id",
+        "course_branch_id",
+        "session_number",
+        "session_start_ms"
+    ],
+    "survey_response_answers_vw": [
+        "survey_response_id"
+    ],
+    "salesforce_enterprise_wes_leads_billing_info_vw": [
+        "EDW_Lead_Id__c"
+    ],
+    "enterprise_mysql_permission_enterprise_admin_roles_vw": [
+        "user_id",
+        "role_template_id"
+    ],
+    "enterprise_learners_tsp_saved_vw": [
+        "enterprise_organization_id",
+        "user_id",
+        "tsp_id"
+    ],
+    "salesforce_enterprise_implementations_vw": [
+        "case_id",
+        "customer_pulse_id"
+    ],
+    "enterprise_target_skill_profiles_vw": [
+        "enterprise_organization_id",
+        "tsp_id"
+    ],
+    "cheating_incident_vw": [
+        "submission_key",
+        "cheating_incident_id"
+    ],
+    "enterprise_organizations_real_vw": [
+        "enterprise_organization_id",
+        "enterprise_organization_slug"
+    ],
+    "survey_response_options_vw": [
+        "survey_response_id"
+    ],
+    "enterprise_admin_homepage_insights_activity_prep_w_contract": [
+        "unique_pk"
+    ],
+    "enterprise_utilized_enrollments_vw": [
+        "user_id",
+        "course_id"
+    ],
+    "curriculum_track_courses_all_vw": [
+        "curriculum_id",
+        "track_id",
+        "course_id",
+        "program_id"
+    ],
+    "enterprise_monthly_Active_user_learner_vw": [
+        "enterprise_organization_id",
+        "user_id",
+        "month",
+        "type",
+        "contract_tags"
+    ],
+    "enterprise_wes_transactions_vw": [
+        "enterprise_customer_id",
+        "enterprise_contract_id",
+        "term_order",
+        "transaction_order"
+    ],
+    "salesforce_enterprise_wes_contact_billing_info_vw": [
+        "EDW_Contact_Id__c"
+    ],
+    "enterprise_anonymized_users_vw": [
+        "user_id",
+        "enterprise_organization_id"
+    ],
+    "enterprise_admin_homepage_insights_skills_prep_t2_w_contract": [
+        "unique_pk"
+    ],
+    "enterprise_user_course_progress_in_latest_branch_vw": [
+        "user_id",
+        "course_id"
+    ],
+    "enterprise_target_skill_profile_skill_proficiencies_vw": [
+        "enterprise_organization_id",
+        "tsp_id",
+        "skill_id"
+    ],
+    "enterprise_course_ownerships_expanded_vw": [
+        "enterprise_course_ownership_id"
+    ],
+    "enterprise_learner_sfc_activity_vw": [
+        "user_id",
+        "course_item_id",
+        "sfc_progress_ts"
+    ],
+    "enterprise_learner_levelsets_t2_vw": [
+        "enterprise_organization_id",
+        "enterprise_program_id",
+        "user_id",
+        "skill_id"
+    ],
+    "enterprise_rosters_vw": [
+        "enterprise_roster_id"
+    ],
+    "enterprise_programs_tsps_vw": [
+        "enterprise_program_id",
+        "tsp_id"
+    ],
+    "enterprise_application_contracts_vw": [
+        "enterprise_contract_id"
+    ],
+    "educator_users_vw": [
+        "user_id",
+        "course_id"
+    ],
+    "specialization_enrollments_daily_derived_metrics_vw": [
+        "base_phoenix_specialization_id",
+        "phoenix_specialization_id",
+        "user_id",
+        "enrollment_date"
+    ],
+    "assignment_attempts_vw": [
+        "user_id",
+        "course_branch_id",
+        "course_item_id",
+        "assignment_id",
+        "attempt_id"
+    ],
+    "phoenix_specialization_enrollments_derived_metrics_vw": [
+        "user_id",
+        "phoenix_specialization_id"
+    ],
+    "base_phoenix_specialization_cubes_vw": [
+        "base_phoenix_specialization_id",
+        "gender",
+        "age_group",
+        "continent_cd",
+        "country_cd",
+        "student_status",
+        "education_level",
+        "employment_status"
+    ],
+    "course_insights_quizzes_aggregates_for_topline_vw": [
+        "course_id",
+        "course_branch_id"
+    ],
+    "course_cubes_vw": [
+        "course_id",
+        "gender",
+        "age_group",
+        "continent_cd",
+        "country_cd",
+        "student_status",
+        "education_level",
+        "employment_status"
+    ],
+    "courses_derived_metrics_vw": [
+        "course_id"
+    ],
+    "phoenix_specialization_enrollments_agg_vw": [
+        "dy_dt",
+        "phoenix_specialization_id"
+    ],
+    "course_insights_assignments_aggregates_for_topline_vw": [
+        "course_id",
+        "course_branch_id"
+    ],
+    "partner_course_branch_module_lesson_item_vw": [
+        "partner_id",
+        "course_id",
+        "course_branch_id",
+        "course_item_id"
+    ],
+    "educator_grading_sessions_vw": [
+        "event_guid"
+    ],
+    "educator_course_metrics_vw": [
+        "course_id"
+    ],
+    "base_phoenix_specialization_daily_cubes_vw": [
+        "base_phoenix_specialization_id",
+        "gender",
+        "age_group",
+        "continent_cd",
+        "country_cd",
+        "student_status",
+        "education_level",
+        "employment_status"
+    ],
+    "pendo_poll_responses_vw": [
+        "guide_id",
+        "poll_id",
+        "visitor_id",
+        "account_id",
+        "poll_response",
+        "poll_response_at"
+    ],
+    "educator_authoring_sessions_vw": [
+        "event_guid"
+    ],
+    "educator_course_branch_item_metrics_vw": [
+        "course_id",
+        "course_branch_id",
+        "course_item_id"
+    ],
+    "course_enrollments_derived_metrics_vw": [
+        "user_id",
+        "course_id"
+    ],
+    "phoenix_specialization_course_agg_vw": [
+        "phoenix_specialization_id",
+        "course_id"
+    ],
+    "specialization_page_views_agg_vw": [
+        "cal_dt",
+        "phoenix_specialization_id"
+    ],
+    "rde_staff_graded_assignments_evaluation_responses_vw": [
+        "coursera_user_id",
+        "learning_outcome_name",
+        "learning_outcome_response_type",
+        "learning_outcome_type",
+        "outcome_score",
+        "learning_outcome_max_score",
+        "assessment_id",
+        "evaluated_by",
+        "evaluated_at",
+        "submission_id"
+    ],
+    "unified_courses_vw": [
+        "unified_course_id",
+        "platform"
+    ],
+    "unified_specializations_courses_vw": [
+        "unified_specialization_id",
+        "unified_course_id",
+        "platform"
+    ],
+    "partner_vw": [
+        "partner_id"
+    ],
+    "ecb_course_evaluators_vw": [
+        "ecb_evaluator_base_id"
+    ],
+    "base_phoenix_specializations_vw": [
+        "base_phoenix_specialization_id"
+    ],
+    "coursera_labs_branch_items_vw": [
+        "course_branch_id",
+        "course_item_id",
+        "course_content_id"
+    ],
+    "course_branch_module_stats_vw": [
+        "course_module_id",
+        "course_branch_id"
+    ],
+    "course_branch_lessons_vw": [
+        "course_branch_id",
+        "course_lesson_id"
+    ],
+    "course_branch_syllabus_vw": [
+        "course_id",
+        "course_branch_id",
+        "course_module_id",
+        "course_lesson_id",
+        "course_item_id"
+    ],
+    "base_phoenix_specializations_partners_vw": [
+        "base_phoenix_specialization_id",
+        "partner_id"
+    ],
+    "programming_assignment_submission_schema_part_grid_schemas_vw": [
+        "programming_assignment_id",
+        "programming_assignment_submission_schema_part_id"
+    ],
+    "course_branch_modules_vw": [
+        "course_branch_id",
+        "course_module_id"
+    ],
+    "quiz_assessment_options_vw": [
+        "assessment_question_id",
+        "assessment_option_id"
+    ],
+    "scoped_translation_config_specializations_vw": [
+        "scope_key"
+    ],
+    "phoenix_specializations_partners_vw": [
+        "phoenix_specialization_id",
+        "partner_id"
+    ],
+    "unified_specializations_vw": [
+        "unified_specialization_id",
+        "platform"
+    ],
+    "quiz_assessment_questions_vw": [
+        "assessment_id",
+        "assessment_question_id",
+        "assessment_question_internal_id"
+    ],
+    "staff_graded_assignment_submission_evaluation_schema_part_options_details_options_vw": [
+        "staff_graded_assignment_id",
+        "staff_graded_assignment_version",
+        "staff_graded_assignment_submission_evaluation_schema_part_index",
+        "staff_graded_assignment_submission_evaluation_schema_part_options_details_option_index"
+    ],
+    "course_branch_item_contents_vw": [
+        "course_branch_id",
+        "course_item_id",
+        "course_content_id",
+        "course_content_type_id"
+    ],
+    "phoenix_specializations_dim_vw": [
+        "phoenix_specialization_id"
+    ],
+    "groups_vw": [
+        "group_id"
+    ],
+    "session_item_deadlines_vw": [
+        "course_session_id",
+        "course_branch_id",
+        "course_item_id"
+    ],
+    "staff_graded_assignment_submission_evaluation_schema_part_multi_line_details_vw": [
+        "staff_graded_assignment_id",
+        "staff_graded_assignment_version",
+        "staff_graded_assignment_submission_evaluation_schema_part_index"
+    ],
+    "course_branches_vw": [
+        "course_branch_id",
+        "course_id"
+    ],
+    "phoenix_specialization_course_stats_vw": [
+        "phoenix_specialization_id"
+    ],
+    "course_branch_lesson_stats_vw": [
+        "course_lesson_id",
+        "course_branch_id"
+    ],
+    "course_branch_assessment_versions_vw": [
+        "course_branch_id",
+        "course_item_id",
+        "assessment_id"
+    ],
+    "course_branch_items_vw": [
+        "course_branch_id",
+        "course_item_id"
+    ],
+    "courses_partners_vw": [
+        "course_id",
+        "partner_id"
+    ],
+    "unified_courses_partners_vw": [
+        "unified_course_id",
+        "partner_id",
+        "platform"
+    ],
+    "sequence_branches_primary_courses_vw": [
+        "sequence_branch_id",
+        "course_id"
+    ],
+    "course_branch_item_grading_weight_info_vw": [
+        "course_branch_id",
+        "course_item_id"
+    ],
+    "phoenix_specializations_vw": [
+        "phoenix_specialization_id"
+    ],
+    "courses_vw": [
+        "course_id"
+    ],
+    "quiz_assessment_math_expression_patterns_vw": [
+        "assessment_question_id",
+        "assessment_pattern_id"
+    ],
+    "degree_term_memberships_vw": [
+        "id",
+        "degree_program_id",
+        "user_id",
+        "academic_internal_degree_term_id"
+    ],
+    "autoenroll_degree_course_memberships_integrated_current_vw": [
+        "id",
+        "external_course_id",
+        "term_id"
+    ],
+    "degree_enrollment_checklist_completed_items_vw": [
+        "hashed_email",
+        "degree_program_slug",
+        "completed_items"
+    ],
+    "autoenrollment_degree_terms_vw": [
+        "partner_id",
+        "degree_id",
+        "partner_degree_term_id"
+    ],
+    "degree_program_memberships_vw": [
+        "id",
+        "degree_program_id",
+        "user_id"
+    ],
+    "degree_courses_vw": [
+        "degree_program_id",
+        "course_id"
+    ],
+    "degree_academic_terms_vw": [
+        "degree_program_id",
+        "internal_degree_term_id"
+    ],
+    "autoenroll_degree_course_memberships_vw": [
+        "id"
+    ],
+    "degree_programs_vw": [
+        "degree_program_id"
+    ],
+    "degree_program_partners_vw": [
+        "degree_program_id",
+        "partner_id"
+    ],
+    "degree_course_session_enrollments_vw": [
+        "id"
+    ],
+    "degree_course_sessions_vw": [
+        "id",
+        "degree_program_id",
+        "internal_degree_term_id",
+        "course_id",
+        "session_id",
+        "university_course_id"
+    ],
+    "underlying_products_vw": [
+        "underlying_product_type",
+        "underlying_product_item_id"
+    ],
+    "payment_subscription_charge_vw": [
+        "id",
+        "payment_processor_name"
+    ],
+    "products_vw": [
+        "product_type",
+        "product_item_id"
+    ],
+    "completed_carts_vw": [
+        "cart_id",
+        "transaction_id"
+    ],
+    "payments_coursera_plus_lite_course_transactions_vw": [
+        "course_id",
+        "action",
+        "enrollment_transaction_id"
+    ],
+    "transactions_vw": [
+        "transaction_system_source",
+        "transaction_id"
+    ],
+    "payment_subscription_creation_vw": [
+        "id",
+        "payment_processor_name"
+    ],
+    "prices_vw": [
+        "price_end_dt",
+        "country_cd",
+        "product_type",
+        "product_item_id"
+    ],
+    "phoenix_financial_aid_vw": [
+        "phoenix_financial_aid_id"
+    ],
+    "subscription_payments_vw": [
+        "user_id",
+        "subscription_id",
+        "payment_order"
+    ],
+    "course_session_memberships_vw": [
+        "session_id",
+        "user_id",
+        "session_membership_created_ts"
+    ],
+    "user_course_grades_passing_vw": [
+        "user_id",
+        "course_id"
+    ],
+    "course_learning_hours_daily_vw": [
+        "user_id",
+        "course_id",
+        "start_dt"
+    ],
+    "mobile_phoenix_course_enrollments_vw": [
+        "user_id",
+        "course_id"
+    ],
+    "phoenix_specialization_enrollments_vw": [
+        "user_id",
+        "phoenix_specialization_id"
+    ],
+    "discussion_question_followings_vw": [
+        "user_id",
+        "discussion_question_id"
+    ],
+    "surveys_vw": [
+        "survey_id"
+    ],
+    "course_item_learning_hours_vw": [
+        "user_id",
+        "course_id",
+        "course_item_id",
+        "course_branch_id"
+    ],
+    "phoenix_specialization_enrollments_about_memberships_vw": [
+        "user_id",
+        "phoenix_specialization_id"
+    ],
+    "autograded_assignment_question_evaluations_agg_vw": [
+        "user_id",
+        "assignment_id",
+        "assignment_version",
+        "question_id"
+    ],
+    "course_branch_item_grades_vw": [
+        "course_branch_id",
+        "course_item_id",
+        "user_id"
+    ],
+    "discussion_question_votes_vw": [
+        "user_id",
+        "discussion_question_id",
+        "discussion_question_vote_ts"
+    ],
+    "user_course_sessions_vw": [
+        "user_id",
+        "session_id"
+    ],
+    "course_branch_item_grades_new_vw": [
+        "course_id",
+        "course_branch_id",
+        "course_item_id",
+        "user_id",
+        "item_interaction_id",
+        "data_source"
+    ],
+    "discussion_questions_vw": [
+        "discussion_question_id"
+    ],
+    "quiz_attempts_vw": [
+        "user_id",
+        "course_branch_id",
+        "course_item_id",
+        "quiz_action_id"
+    ],
+    "discussion_question_flags_vw": [
+        "user_id",
+        "discussion_question_id",
+        "discussion_question_flag_ts"
+    ],
+    "enrollments_about_free_trials_vw": [
+        "user_id",
+        "course_id",
+        "subscription_id"
+    ],
+    "learning_sessions_vw": [
+        "unique_pk"
+    ],
+    "course_learning_hours_vw": [
+        "user_id",
+        "course_id"
+    ],
+    "discussion_answers_vw": [
+        "discussion_answer_id"
+    ],
+    "enrollments_about_b2c_transactions_vw": [
+        "user_id",
+        "course_id"
+    ],
+    "course_item_learning_hours_daily_vw": [
+        "user_id",
+        "course_id",
+        "course_item_id",
+        "course_branch_id",
+        "start_dt"
+    ],
+    "course_enrollments_details_vw": [
+        "user_id",
+        "course_id"
+    ],
+    "user_course_branch_items_vw": [
+        "user_id",
+        "course_id",
+        "course_branch_id",
+        "course_item_id"
+    ],
+    "sigtrack_profiles_vw": [
+        "sigtrack_profile_id",
+        "user_id"
+    ],
+    "phoenix_specialization_enrollments_about_b2c_transactions_vw": [
+        "user_id",
+        "phoenix_specialization_id"
+    ],
+    "course_quiz_grades_vw": [
+        "course_id",
+        "course_item_id",
+        "user_id",
+        "course_quiz_progress_ts"
+    ],
+    "survey_options_vw": [
+        "survey_id",
+        "survey_question_id",
+        "survey_option_id"
+    ],
+    "phoenix_specialization_enrollments_about_free_trials_vw": [
+        "user_id",
+        "phoenix_specialization_id",
+        "subscription_id"
+    ],
+    "discussion_answer_flags_vw": [
+        "user_id",
+        "discussion_answer_id",
+        "discussion_answer_flag_ts"
+    ],
+    "course_cart_transactions_vw": [
+        "user_id",
+        "course_id"
+    ],
+    "ecb_evaluation_requests_vw": [
+        "user_id",
+        "ecb_evaluation_id",
+        "ecb_evaluation_requested_ts"
+    ],
+    "user_course_item_feedback_vw": [
+        "user_id",
+        "course_id",
+        "course_item_id",
+        "feedback_ts",
+        "feedback_text"
+    ],
+    "redshift_quiz_attempts_vw": [
+        "user_id",
+        "course_id",
+        "course_item_id",
+        "assessment_action_id"
+    ],
+    "course_branch_item_progress_new_vw": [
+        "course_branch_id",
+        "course_item_id",
+        "user_id",
+        "course_progress_state_type_id",
+        "course_progress_ts",
+        "data_source"
+    ],
+    "user_course_branches_vw": [
+        "user_id",
+        "course_branch_id"
+    ],
+    "enrollments_about_grades_passing_vw": [
+        "user_id",
+        "course_id"
+    ],
+    "forum_spam_posts_vw": [
+        "post_id"
+    ],
+    "enrollments_about_activity_vw": [
+        "user_id",
+        "course_id"
+    ],
+    "user_course_branch_modules_vw": [
+        "user_id",
+        "course_id",
+        "course_branch_id",
+        "course_module_id"
+    ],
+    "user_labs_workspaces_vw": [
+        "workspace_id"
+    ],
+    "survey_questions_vw": [
+        "survey_id",
+        "survey_question_id"
+    ],
+    "enrollments_about_memberships_vw": [
+        "user_id",
+        "course_id"
+    ],
+    "unified_course_enrollments_eds_vw": [
+        "user_id",
+        "unified_course_id",
+        "platform"
+    ],
+    "course_grades_new_vw": [
+        "course_id",
+        "user_id",
+        "course_grade_ts",
+        "data_source"
+    ],
+    "plagiarism_cases_vw": [
+        "cheating_case_id"
+    ],
+    "course_session_learning_hours_vw": [
+        "user_id",
+        "course_id",
+        "course_session_id"
+    ],
+    "users_vw": [
+        "user_id"
+    ],
+    "discussion_answer_votes_vw": [
+        "user_id",
+        "discussion_answer_id",
+        "discussion_answer_vote_ts"
+    ],
+    "user_stats_vw": [
+        "user_id"
+    ],
+    "facebook_ads_ad_spend_vw": [
+        "unique_id",
+        "ad_id",
+        "spend",
+        "spend_date",
+        "country_code"
+    ],
+    "user_item_start_and_completion_vw": [
+        "user_id",
+        "interaction_id",
+        "item_progress_state",
+        "revsharing_partner_id"
+    ],
+    "skills_vw": [
+        "skill_id"
+    ],
+    "skill_content_tags_branches_vw": [
+        "model_id",
+        "skill_id",
+        "entity_id"
+    ],
+    "skills_transformation_learner_skills_prod_t2_vw": [
+        "user_id",
+        "skill_id",
+        "elo_grade_ts"
+    ],
+    "roles_vw": [
+        "role_id"
+    ],
+    "page_views_vw": [
+        "page_view_id"
+    ],
+    "cookie_user_visits_vw": [
+        "cuv_id"
+    ],
+    "page_views_v2_vw": [
+        "page_view_id"
+    ],
+    "enterprise_learner_skills_time_series": [
+        "enterprise_organization_id",
+        "enterprise_contract_id",
+        "enterprise_program_id",
+        "mnth_start_dt",
+        "skill_id",
+        "user_id",
+        "parent_skill_id_filter"
+    ],
+    "enterprise_report_learning_path": [
+        "user_name",
+        "course_name",
+        "course_enrollment_date"
+    ],
+    "enterprise_learner_feedback_dashboard": [
+        "user_id"
+    ],
+    "enterprise_report_skills": [
+        "user_id",
+        "enterprise_organization_id",
+        "skill_id",
+        "time_period"
+    ],
+    "enterprise_learning_path_dashboard": [
+        "badge_template_id",
+        "user_id",
+        "course_id",
+        "enterprise_course_ownership_id",
+        "enterprise_program_id"
+    ],
+    "enterprise_learner_skills_time_series_t2": [
+        "enterprise_organization_id",
+        "enterprise_contract_id",
+        "enterprise_program_id",
+        "course_primary_domain_id",
+        "course_primary_domain",
+        "mnth_start_dt",
+        "skill_id",
+        "user_id",
+        "parent_skill_id_filter"
+    ],
+    "degree_student_course_session_performance": [
+        "id",
+        "degree_program_id",
+        "session_id",
+        "university_student_id"
+    ],
+    "degree_student_course_session_performance_log": [
+        "id",
+        "degree_program_id",
+        "session_id",
+        "university_student_id",
+        "load_dt"
+    ],
+    "enterprise_organization_program_contract_ts_features": [
+        "dt",
+        "enterprise_organization_id",
+        "enterprise_contract_id",
+        "enterprise_program_id"
+    ],
+    "enterprise_mal_contracts_joined_user_level": [
+        "user_id",
+        "enterprise_organization_id",
+        "enterprise_program_id",
+        "enterprise_contract_id",
+        "membership_dt"
+    ],
+    "enterprise_organization_contract_ts_features_level": [
+        "dt",
+        "enterprise_organization_id",
+        "enterprise_contract_id"
+    ],
+    "enterprise_mal_lms_lxp_monthly_metrics": [
+        "enterprise_organization_id"
+    ],
+    "enterprise_mal": [
+        "membership_dt",
+        "user_id",
+        "enterprise_organization_id",
+        "enterprise_program_id",
+        "enterprise_contract_id"
+    ],
+    "enterprise_organization_program_contract_ts_features_level": [
+        "dt",
+        "enterprise_program_id",
+        "enterprise_contract_id",
+        "enterprise_organization_id"
+    ],
+    "sfc_with_quality_tag": [
+        "object_id"
+    ],
+    "enterprise_course_item_report": [
+        "user_id",
+        "program_id",
+        "third_party_organization_id",
+        "course_id"
+    ],
+    "enterprise_program_level_plagiarism_report": [
+        "third_party_organization_id",
+        "program_id",
+        "user_id"
+    ],
+    "enterprise_attempts_gradebook": [
+        "program_id",
+        "user_id",
+        "course_id",
+        "item_id",
+        "attempt_number"
+    ],
+    "shared_analytics_gwg_reporting_quarterly_completions": [
+        "user_group",
+        "geo_group",
+        "enrollment_type",
+        "english_product_slug",
+        "product_type",
+        "product_language_detailed",
+        "completion_quarter"
+    ],
+    "shared_analytics_gwg_forecast_plan": [
+        "business_line",
+        "is_gateway",
+        "month",
+        "underlying_product_slug",
+        "reconciled_channel",
+        "country_group"
+    ],
+    "shared_analytics_gwg_enrollment_course_progression": [
+        "anonymized_user_id",
+        "product_slug"
+    ],
+    "shared_analytics_gwg_enrollment_attribution_28d": [
+        "anonymized_user_id"
+    ],
+    "shared_analytics_gwg_ltv_sections": [
+        "country",
+        "english_product_slug",
+        "business_line_detailed",
+        "channel_group",
+        "quarter"
+    ],
+    "shared_analytics_gwg_b2b_contracts": [
+        "enterprise_contract_id"
+    ],
+    "shared_analytics_gwg_b2b_programs": [
+        "program_slug"
+    ],
+    "shared_analytics_gwg_course_to_spec_slug": [
+        "product_slug",
+        "course_slug"
+    ],
+    "shared_analytics_gwg_item_progression": [
+        "anonymized_user_id",
+        "course_branch_id",
+        "course_slug",
+        "item_id"
+    ],
+    "shared_analytics_gwg_b2b_orgs": [
+        "org_slug"
+    ],
+    "shared_analytics_gwg_forecast_history": [
+        "business_line",
+        "is_gateway",
+        "month",
+        "underlying_product_slug",
+        "forecast_month",
+        "reconciled_channel",
+        "country_group"
+    ],
+    "shared_analytics_gwg_reporting_quarterly_enrollments": [
+        "user_group",
+        "geo_group",
+        "enrollment_type",
+        "english_product_slug",
+        "product_type",
+        "product_language_detailed",
+        "enrollment_quarter"
+    ],
+    "shared_analytics_gwg_outcomes_survey": [
+        "english_product_slug",
+        "anonymized_user_id"
+    ],
+    "shared_analytics_gwg_slug_mapping": [
+        "google_xdp_slug",
+        "professional_certificate_source_slug"
+    ],
+    "shared_analytics_gwg_engaged_enrollment": [
+        "anonymized_user_id",
+        "product_slug"
+    ],
+    "shared_analytics_gwg_marketing_funnel": [
+        "session_id"
+    ],
+    "shared_analytics_gwg_experiments": [
+        "experiment_name",
+        "epic_variant_name",
+        "session_id"
+    ],
+    "shared_analytics_gwg_outcomes": [
+        "user_group",
+        "geo_group",
+        "enrollment_type",
+        "english_product_slug",
+        "product_type",
+        "product_language_detailed",
+        "survey_type",
+        "time_period_name",
+        "time_interval"
+    ],
+    "shared_analytics_gwg_cert_names": [
+        "product_slug"
+    ],
+    "braze_marketing_user_properties": [
+        "external_id"
+    ],
+    "item_quality": [
+        "course_branch_id",
+        "course_item_id"
+    ],
+    "ddp_views": [
+        "cuv_id"
+    ],
+    "learner_interventions_sunk_cost": [
+        "user_id",
+        "course_id"
+    ],
+    "degree_eoi_attribution": [
+        "eoi_response_id",
+        "eoi_response_platform"
+    ],
+    "paid_engaged_learners": [
+        "user_id",
+        "product_id",
+        "dt"
+    ],
+    "subscriptions__entry_point": [
+        "subscription_id"
+    ],
+    "dhub_visits": [
+        "cuv_id"
+    ],
+    "learner_interventions_day_1_commitment": [
+        "user_id",
+        "course_id"
+    ],
+    "user_course_completion_rate_boost": [
+        "user_id",
+        "course_id"
+    ],
+    "users__payments_stats": [
+        "user_id"
+    ],
+    "grading_course_features": [
+        "course_id"
+    ],
+    "user_course_day1_commiment": [
+        "event_key"
+    ],
+    "page_views_visits_metadata": [
+        "page_view_id"
+    ],
+    "products_detail": [
+        "product_type",
+        "product_item_id"
+    ],
+    "subscriptions_engagement_stats": [
+        "user_id",
+        "subscription_id"
+    ],
+    "subscriptions__payment_stats": [
+        "subscription_id"
+    ],
+    "user_course_time_spent": [
+        "user_id",
+        "course_id"
+    ],
+    "user_course_effort_flags": [
+        "user_id",
+        "course_id"
+    ],
+    "learner_engagement_stats": [
+        "user_id",
+        "product_id",
+        "dt"
+    ],
+    "session_cookie_users": [
+        "session_cookie_id"
+    ],
+    "learner_interventions_achievable_challenges": [
+        "user_id",
+        "course_id"
+    ],
+    "grading_item_features": [
+        "assignment_id",
+        "peer_assignment_id",
+        "course_branch_id"
+    ],
+    "page_views_degree_metrics": [
+        "page_view_id"
+    ],
+    "temp_learning_sessions_120d": [
+        "user_id",
+        "course_id"
+    ],
+    "user_course_schedule_affiliations": [
+        "user_id",
+        "course_id",
+        "session_id"
+    ],
+    "coach_access": [
+        "subscription_id"
+    ],
+    "course_branch_items_insights": [
+        "course_branch_id",
+        "course_item_id"
+    ],
+    "at_risk_learner_email_cohort": [
+        "user_id",
+        "course_id"
+    ],
+    "page_views_partner_metadata": [
+        "page_view_id"
+    ],
+    "assessment_features": [
+        "course_id",
+        "course_branch_id"
+    ],
+    "course_quality": [
+        "course_id"
+    ],
+    "course_quality_daily": [
+        "dt",
+        "course_id"
+    ],
+    "user_degree_funnel_stats": [
+        "user_id"
+    ],
+    "subscriptions_course_engagement_stats_daily": [
+        "dt",
+        "course_id"
+    ],
+    "subscriptions__attribution_stats": [
+        "subscription_id"
+    ],
+    "subscriptions_course_engagement_stats": [
+        "user_id",
+        "product_id",
+        "course_id"
+    ],
+    "checkouts": [
+        "cart_id"
+    ],
+    "degree_enrollment_attribution": [
+        "user_id",
+        "degree_program_slug"
+    ],
+    "on_demand_sessions_item_deadlines": [
+        "course_branch_id",
+        "session_id",
+        "course_module_id",
+        "course_item_id"
+    ],
+    "paid_engaged_learners_all": [
+        "user_id",
+        "product_id",
+        "dt"
+    ],
+    "pwal_learner_states": [
+        "primary_key",
+        "week_start_dt"
+    ],
+    "enterprise_paid_engaged_learners": [
+        "user_id",
+        "product_id",
+        "dt"
+    ],
+    "degree_application_attribution": [
+        "application_id",
+        "degree_program_id",
+        "application_admission_term"
+    ],
+    "gwg_course_progression": [
+        "anonymized_user_id",
+        "product_slug"
+    ],
+    "ddp_visits": [
+        "cuv_id"
+    ],
+    "enterprise_program_invitations_daily": [
+        "user_id",
+        "enterprise_program_id",
+        "enterprise_contract_id",
+        "nonstandard_hashed_email_id",
+        "membership_dt"
+    ],
+    "coach_trends": [
+        "week_start_dt",
+        "user_id",
+        "subscription_id"
+    ],
+    "user_course_module_latest_user_branch": [
+        "course_id",
+        "course_module_id",
+        "user_id"
+    ],
+    "core_user_course_branch_weeks": [
+        "user_id",
+        "course_branch_id",
+        "week_num"
+    ],
+    "gwg_cert_names": [
+        "product_slug"
+    ],
+    "session_cookie_payments": [
+        "transaction_system_source",
+        "transaction_id"
+    ],
+    "subscriptions": [
+        "subscription_id"
+    ],
+    "course_branch_module_week_numbers": [
+        "course_branch_id",
+        "course_module_id"
+    ],
+    "page_views_attribution_metadata": [
+        "page_view_id"
+    ],
+    "learner_engagement_stats_comp": [
+        "dt",
+        "user_id"
+    ],
+    "course_branches_insights": [
+        "course_branch_id"
+    ],
+    "lihp_visits": [
+        "page_view_id"
+    ],
+    "page_views_location_metadata": [
+        "page_view_id"
+    ],
+    "session_cookie_carts": [
+        "cart_id"
+    ],
+    "gwg_course_to_spec_slug": [
+        "product_slug",
+        "course_slug"
+    ],
+    "attempted_transactions": [
+        "transaction_attempt_id"
+    ],
+    "reporting_enterprise_report_learner_profiles": [
+        "raw_id"
+    ],
+    "restricted_enterprise_report_complete_course_enrollments": [
+        "user_id",
+        "program_id",
+        "third_party_organization_id",
+        "course_id"
+    ],
+    "restricted_enterprise_report_complete_specialization_enrollments": [
+        "user_id",
+        "program_id",
+        "third_party_organization_id",
+        "s12n_id"
+    ],
+    "restricted_enterprise_report_sfc_activity": [
+        "user_id",
+        "clip_id",
+        "third_party_organization_id",
+        "is_enterprise_contract_active"
+    ],
+    "enterprise_learner_profiles_w_user_id": [
+        "id"
+    ],
+    "estimated_b2c_cash_rev_fcst_yoy": [
+        "country_group_finance",
+        "underlying_product_type_in_finsys"
+    ],
+    "estimated_b2c_cash_rev_fcst_report": [
+        "ds",
+        "country_group_finance",
+        "underlying_product_type_in_finsys"
+    ],
+    "estimated_b2c_cash_rev_actual_fcst": [
+        "ds",
+        "transaction_dt",
+        "country_group_finance",
+        "underlying_product_type_in_finsys",
+        "rev_rec_month_id"
+    ],
+    "courseraplus_and_wes_netsale_log": [
+        "subscription_or_contract_id",
+        "category",
+        "inferred_payment_processor_id",
+        "partner_id",
+        "user_id",
+        "course_id",
+        "interaction_id",
+        "subscription_or_contract_term_start_ts",
+        "subscription_or_contract_term_id"
+    ],
+    "googleplay_revenue_recognition_staging_log": [
+        "id",
+        "partner_id",
+        "rev_rec_month_id",
+        "ds",
+        "data_load_ts"
+    ],
+    "distribution_cost_by_product_log": [
+        "qtr_id",
+        "product_id",
+        "partner_id",
+        "ad_type",
+        "selling_product_id"
+    ],
+    "non_iap_revenue_recognition_master": [
+        "id",
+        "partner_id",
+        "rev_rec_month_id",
+        "ds"
+    ],
+    "estimated_b2c_revenue_recognition": [
+        "partner_id",
+        "transaction_id",
+        "rev_rec_month_id"
+    ],
+    "nextgen_enterprise_direct_rev_rec_contract_adj_log": [
+        "enterprise_contract_id",
+        "revrec_month",
+        "customer_internal_id",
+        "load_ts"
+    ],
+    "enterprise_direct_contracts_estimate_content_fee": [
+        "custom_parent_enterprise_contract_id",
+        "enterprise_contract_id",
+        "contract_launch_date",
+        "sales_order",
+        "parent_revenue_element"
+    ],
+    "googleplay_reporting_revenue_share_expense_recognition_staging": [
+        "ds",
+        "data_load_ts",
+        "accounting_month_id",
+        "rev_rec_month_id",
+        "business_line",
+        "partner_id",
+        "rev_rec_product_id",
+        "revshare_expense_rec_product_id",
+        "underlying_product_type_in_finsys",
+        "created_month",
+        "disbursed_month",
+        "payment_processor_id",
+        "transaction_type",
+        "billing_country",
+        "us_state",
+        "courses_partner_allocation_pct",
+        "content_fee_pct",
+        "applicable_rev_share_pct"
+    ],
+    "partner_net_sales_iap_log": [
+        "payment_processor_id"
+    ],
+    "courseraplus_and_wes_revshare_user_item_completions": [
+        "subscription_or_contract_id",
+        "subscription_or_contract_term_id",
+        "subscription_or_contract_term_start_ts",
+        "user_id",
+        "course_id",
+        "interaction_id",
+        "revsharing_partner_id"
+    ],
+    "googleplay_cash_staging_log": [
+        "ds",
+        "id",
+        "partner_id",
+        "data_load_ts"
+    ],
+    "estimated_b2c_cash_rev_in_trailing_n_days": [
+        "transaction_dt",
+        "country_group_finance",
+        "underlying_product_type_in_finsys"
+    ],
+    "iap_revenue_recognition_staging": [
+        "id",
+        "partner_id",
+        "rev_rec_month_id"
+    ],
+    "iap_cash_staging_log": [
+        "ds",
+        "id",
+        "partner_id"
+    ],
+    "enterprise_direct_contracts_splits_estimate_content_fee": [
+        "custom_parent_enterprise_contract_id",
+        "enterprise_contract_id",
+        "sales_order",
+        "enterprise_contract_start_dt",
+        "enterprise_contract_end_dt",
+        "contract_term_start_dt"
+    ],
+    "iap_revenue_recognition_master": [
+        "id",
+        "partner_id",
+        "rev_rec_month_id",
+        "ds"
+    ],
+    "non_iap_revenue_recognition_staging_log": [
+        "id",
+        "partner_id",
+        "rev_rec_month_id",
+        "ds"
+    ],
+    "b2c_mom_retention_enhanced": [
+        "snapshot_date",
+        "country_group_finance",
+        "underlying_product_type_in_finsys",
+        "product_type"
+    ],
+    "non_iap_revenue_recognition_staging": [
+        "id",
+        "partner_id",
+        "rev_rec_month_id"
+    ],
+    "googleplay_revenue_share_expense_recognition_staging_log": [
+        "id",
+        "partner_id",
+        "revshare_expense_rec_product_id",
+        "rev_rec_month_id",
+        "ds"
+    ],
+    "iap_cash_master": [
+        "id",
+        "partner_id"
+    ],
+    "iap_cash_staging": [
+        "id",
+        "partner_id"
+    ],
+    "non_iap_cash_staging": [
+        "id",
+        "partner_id"
+    ],
+    "non_iap_cash_staging_log": [
+        "ds",
+        "id",
+        "partner_id",
+        "data_load_ts"
+    ],
+    "monthly_distribution_cost_by_product": [
+        "mnth_id",
+        "product_id",
+        "partner_id",
+        "ad_type",
+        "selling_product_id"
+    ],
+    "enterprise_direct_revshare_user_item_completions": [
+        "subscription_or_contract_id",
+        "subscription_or_contract_term_id",
+        "subscription_or_contract_term_start_ts",
+        "parent_revenue_element",
+        "sales_order",
+        "user_id",
+        "course_id",
+        "interaction_id",
+        "revsharing_partner_id"
+    ],
+    "enterprise_direct_contracts_netsale_log": [
+        "md5_hash_pk"
+    ],
+    "estimated_courseraplus_revenue_recognition_aggregated_version_v2": [
+        "partner_id",
+        "transaction_month_id",
+        "rev_rec_month_id",
+        "course_id",
+        "specialization_id"
+    ],
+    "enterprise_direct_revshare_user_item_completions_estimate_content_fee": [
+        "md5_hash_pk"
+    ],
+    "revshare_user_item_completions_course_level_agg": [
+        "course_progress_dt",
+        "subscription_or_contract_id",
+        "user_id",
+        "course_id",
+        "revsharing_partner_id"
+    ],
+    "estimated_b2c_rev_rec_error_records": [
+        "partner_id",
+        "transaction_id",
+        "rev_rec_month_id",
+        "dl_last_update_process_id"
+    ],
+    "enterprise_direct_contracts_netsale_agg_estimate_content_fee_log": [
+        "data_load_ts"
+    ],
+    "revenue_share_terms_log": [
+        "qtr_id",
+        "partner_id",
+        "business_line",
+        "product_id"
+    ],
+    "enterprise_direct_contracts_log": [
+        "custom_parent_enterprise_contract_id",
+        "enterprise_contract_id",
+        "parent_revenue_element"
+    ],
+    "estimated_combined_revenue_recognition": [
+        "partner_id",
+        "transaction_id",
+        "attributed_content_item_id",
+        "rev_rec_month_id"
+    ],
+    "enterprise_direct_contracts_netsale_paid_log": [
+        "qtr_id",
+        "custom_parent_enterprise_contract_id",
+        "sales_order",
+        "parent_revenue_element",
+        "subscription_or_contract_start_ts",
+        "subscription_or_contract_end_ts",
+        "subscription_or_contract_term_start_ts",
+        "subscription_or_contract_term_end_ts",
+        "enterprise_contract_id"
+    ],
+    "enterprise_direct_contracts_splits_log": [
+        "qtr_id",
+        "enterprise_contract_id"
+    ],
+    "googleplay_cash_master": [
+        "id",
+        "partner_id"
+    ],
+    "courseraplus_and_wes_monthly_revenue_recognition_log": [
+        "mnth_id",
+        "category",
+        "inferred_payment_processor_id"
+    ],
+    "nextgen_enterprise_direct_rev_rec_contract_adj": [
+        "enterprise_contract_id",
+        "revrec_month",
+        "customer_internal_id"
+    ],
+    "monthly_distribution_cost_by_product_log": [
+        "mnth_id",
+        "product_id",
+        "partner_id",
+        "ad_type",
+        "selling_product_id",
+        "data_load_ts"
+    ],
+    "courseraplus_and_wes_revshare_user_item_completions_agg": [
+        "qtr_id",
+        "mnth_id",
+        "category",
+        "inferred_payment_processor_id",
+        "course_id",
+        "partner_id"
+    ],
+    "nextgen_enterprise_direct_contracts_netsales": [
+        "md5_hash_pk"
+    ],
+    "nextgen_enterprise_direct_revshare_user_item_completions": [
+        "subscription_or_contract_id",
+        "subscription_or_contract_term_start_ts",
+        "user_id",
+        "interaction_id",
+        "revsharing_partner_id"
+    ],
+    "partner_net_sales": [
+        "partner_id",
+        "cart_id",
+        "user_id"
+    ],
+    "googleplay_revenue_recognition_master": [
+        "id",
+        "partner_id",
+        "rev_rec_month_id"
+    ],
+    "non_iap_cash_master": [
+        "id",
+        "partner_id"
+    ],
+    "nextgen_enterprise_direct_contracts_netsales_log": [
+        "subscription_or_contract_id",
+        "partner_id",
+        "user_id",
+        "interaction_id",
+        "subscription_or_contract_term_start_ts",
+        "customer_internal_id",
+        "data_load_ts"
+    ],
+    "nextgen_enterprise_direct_revshare_user_item_completions_log": [
+        "subscription_or_contract_id",
+        "subscription_or_contract_term_start_ts",
+        "user_id",
+        "interaction_id",
+        "revsharing_partner_id",
+        "data_load_ts"
+    ],
+    "clari_forecast_narr_summary_historical": [
+        "fieldId",
+        "timeFrameId",
+        "timePeriodId",
+        "userId",
+        "as_of_date"
+    ],
+    "clari_forecast_bookings_summary_historical": [
+        "fieldId",
+        "timeFrameId",
+        "timePeriodId",
+        "userId",
+        "as_of_date"
+    ],
+    "googleplay_revenue_recognition_staging": [
+        "id",
+        "partner_id",
+        "rev_rec_month_id"
+    ],
+    "googleplay_cash_staging": [
+        "id",
+        "partner_id"
+    ],
+    "iap_revenue_recognition_staging_log": [
+        "id",
+        "partner_id",
+        "rev_rec_month_id",
+        "ds"
+    ],
+    "course_branch_week_insights": [
+        "course_branch_id",
+        "week_num"
+    ],
+    "shared_analytics_gwg_transactions": [
+        "transaction_dt",
+        "anonymized_user_id",
+        "core_program",
+        "underlying_product_slug",
+        "business_line_detail",
+        "country_group",
+        "country_name"
+    ],
+    "enterprise_user_course_grades_passing": [
+        "user_id",
+        "course_id"
+    ],
+    "courral_quiz_assessment_scope_types_vw": [
+        "assessment_scope_type_id"
+    ]
+}
