@@ -170,7 +170,4 @@ def compareDFs(df1: DataFrame, df2: DataFrame, pk_cols: List[str] = None, column
     df1_truncated.join(df2_truncated, on=pk_cols, how="inner").transform(ts)
 
 
-# compare PK when its comparable, get PK for gold base tables with sampling
-# compare hash of table with sampling
-# compare PK without sampling
-# compare hash of table without sampling
+

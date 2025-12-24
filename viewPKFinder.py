@@ -16,6 +16,7 @@ def load_view_keys():
     for path in paths:
         with open(path, "r") as f2:
             yobj = yaml.safe_load(f2)
+            schema = path.split("/")[-3].split(".")[0]
             table = path.split("/")[-1].split(".")[0]
             if table == "sources" :
                 continue
@@ -58,7 +59,7 @@ def load_view_keys():
                 continue
 
             found_count += 1
-            key_data[table] = primary_keys
+            key_data[schema+"."+table] = primary_keys
 
     print(f"Found: {found_count}")
     print(f"Not Found: {len(not_found_tables)}")

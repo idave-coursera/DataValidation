@@ -1,17 +1,5 @@
 [
     {
-        "edw_table": "coursera_warehouse.edw_bi.prices",
-        "eds_equivalent_table": "prod.gold_base.product_prices",
-        "status": "Done",
-        "is_table_replaced": "not_updated",
-        "issue_key": "EDSMIG-1041",
-        "eds_schema": "gold_base",
-        "eds_base_table": "prod.gold_base_base.product_prices",
-        "table": null,
-        "key_cols": null,
-        "batch_id": 0
-    },
-    {
         "edw_table": "coursera_warehouse.edw_core.base_phoenix_specialization_cubes",
         "eds_equivalent_table": "prod.gold_base.base_phoenix_specialization_cubes",
         "status": "Done",
@@ -20,31 +8,17 @@
         "eds_schema": "gold_base",
         "eds_base_table": "prod.gold_base_base.base_phoenix_specialization_cubes",
         "table": null,
-        "key_cols": null,
-        "batch_id": 0
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_core.degree_course_session_enrollments",
-        "eds_equivalent_table": "prod.gold_base.degree_course_session_enrollments",
-        "status": "Done",
-        "is_table_replaced": "not_updated",
-        "issue_key": "EDSMIG-1584",
-        "eds_schema": "gold_base",
-        "eds_base_table": "prod.gold_base_base.degree_course_session_enrollments",
-        "table": null,
-        "key_cols": null,
-        "batch_id": 0
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_core.degree_term_memberships",
-        "eds_equivalent_table": "prod.gold_base.degree_term_memberships",
-        "status": "Done",
-        "is_table_replaced": "not_updated",
-        "issue_key": "EDSMIG-1592",
-        "eds_schema": "gold_base",
-        "eds_base_table": "prod.gold_base_base.degree_term_memberships",
-        "table": null,
-        "key_cols": null,
+        "view_table": "gold_base.base_phoenix_specialization_cubes",
+        "primary_keys": [
+            "base_phoenix_specialization_id",
+            "gender",
+            "age_group",
+            "continent_cd",
+            "country_cd",
+            "student_status",
+            "education_level",
+            "employment_status"
+        ],
         "batch_id": 0
     },
     {
@@ -56,7 +30,27 @@
         "eds_schema": "gold_base",
         "eds_base_table": "prod.gold_base_base.phoenix_specialization_enrollments_derived_metrics",
         "table": null,
-        "key_cols": null,
+        "view_table": "gold_base.phoenix_specialization_enrollments_derived_metrics",
+        "primary_keys": [
+            "user_id",
+            "phoenix_specialization_id"
+        ],
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_core.phoenix_specialization_enrollments_derived_metrics",
+        "eds_equivalent_table": "prod.gold_base.phoenix_specialization_enrollments_derived_metrics",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-1623",
+        "eds_schema": "gold_base",
+        "eds_base_table": "prod.gold_base_base.phoenix_specialization_enrollments_derived_metrics",
+        "table": null,
+        "view_table": "gold_base.phoenix_specialization_enrollments",
+        "primary_keys": [
+            "user_id",
+            "phoenix_specialization_id"
+        ],
         "batch_id": 0
     },
     {
@@ -68,7 +62,10 @@
         "eds_schema": "gold_base",
         "eds_base_table": "prod.gold_base_base.clicks",
         "table": null,
-        "key_cols": null,
+        "view_table": "gold_base.clicks",
+        "primary_keys": [
+            "event_guid"
+        ],
         "batch_id": 0
     },
     {
@@ -80,7 +77,66 @@
         "eds_schema": "gold_base",
         "eds_base_table": "prod.gold_base_base.impressions",
         "table": null,
-        "key_cols": null,
+        "view_table": "gold_base.impressions",
+        "primary_keys": [
+            "event_guid"
+        ],
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_bi.prices",
+        "eds_equivalent_table": "prod.gold_base.product_prices",
+        "status": "Done",
+        "is_table_replaced": "not_updated",
+        "issue_key": "EDSMIG-1041",
+        "eds_schema": "gold_base",
+        "eds_base_table": "prod.gold_base_base.product_prices",
+        "table": null,
+        "view_table": "gold_base.product_prices",
+        "primary_keys": [
+            "ownable_product_fulfillment_configuration_id",
+            "product_price_configuration_id",
+            "price_configuration_id",
+            "epic_parameter_name",
+            "country_cd",
+            "currency_id"
+        ],
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_core.degree_course_session_enrollments",
+        "eds_equivalent_table": "prod.gold_base.degree_course_session_enrollments",
+        "status": "Done",
+        "is_table_replaced": "not_updated",
+        "issue_key": "EDSMIG-1584",
+        "eds_schema": "gold_base",
+        "eds_base_table": "prod.gold_base_base.degree_course_session_enrollments",
+        "table": null,
+        "view_table": "gold_base.degree_course_session_enrollments",
+        "primary_keys": [
+            "id",
+            "degree_program_id",
+            "user_id",
+            "session_id"
+        ],
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_core.degree_term_memberships",
+        "eds_equivalent_table": "prod.gold_base.degree_term_memberships",
+        "status": "Done",
+        "is_table_replaced": "not_updated",
+        "issue_key": "EDSMIG-1592",
+        "eds_schema": "gold_base",
+        "eds_base_table": "prod.gold_base_base.degree_term_memberships",
+        "table": null,
+        "view_table": "gold_base.degree_term_memberships",
+        "primary_keys": [
+            "id",
+            "degree_program_id",
+            "user_id",
+            "academic_internal_degree_term_id"
+        ],
         "batch_id": 0
     },
     {
@@ -92,7 +148,11 @@
         "eds_schema": "gold_base",
         "eds_base_table": "prod.gold_base_base.course_enrollment_windows",
         "table": null,
-        "key_cols": null,
+        "view_table": "gold_base.course_enrollment_windows",
+        "primary_keys": [
+            "user_id",
+            "course_id"
+        ],
         "batch_id": 0
     },
     {
@@ -104,7 +164,12 @@
         "eds_schema": "gold_base",
         "eds_base_table": "prod.gold_base_base.enterprise_learner_sfc_activity_daily",
         "table": null,
-        "key_cols": null,
+        "view_table": "gold_base.enterprise_learner_sfc_activity",
+        "primary_keys": [
+            "user_id",
+            "course_item_id",
+            "sfc_progress_ts"
+        ],
         "batch_id": 0
     },
     {
@@ -116,7 +181,8 @@
         "eds_schema": "gold_base",
         "eds_base_table": "prod.gold_base_base.short_form_content_course_ga_allowlist",
         "table": null,
-        "key_cols": null,
+        "view_table": null,
+        "primary_keys": null,
         "batch_id": 0
     }
 ]

@@ -8,7 +8,10 @@
         "eds_schema": "reporting",
         "eds_base_table": "prod.reporting.enterprise_admin_homepage_reports_w_contract",
         "table": null,
-        "key_cols": null,
+        "view_table": "reporting.enterprise_admin_homepage_reports_w_contract",
+        "primary_keys": [
+            "enterprise_organization_id"
+        ],
         "batch_id": 0
     }
 ]

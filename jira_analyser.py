@@ -6,6 +6,7 @@ import pyspark.sql.functions as f
 import yaml
 from pyspark.sql import Window
 from config import BASE_PATH
+from validationUtils import ts
 
 
 def load_jira_data(spark, jira_csv_path):
@@ -102,23 +103,44 @@ def load_ingestion_keys(spark):
                 ans.append((table.get("target_table", "NO TABLE"), kc))
     return spark.createDataFrame(ans, ["table", "key_cols"])
 
+def load_view_keys(spark):
+    input_file = "resources/view_keys.json"
+    if not os.path.exists(input_file):
+        print(f"File not found: {input_file}")
+        return None
+        
+    with open(input_file, 'r') as f:
+        data = json.load(f)
+        
+    # Convert dict to list of tuples for DataFrame creation
+    # data is like: {"schema.table": ["col1", "col2"], ...}
+    rows = []
+    for table_name, keys in data.items():
+        rows.append((table_name, keys))
+        
+    if not rows:
+        print("No keys found in view_keys.json")
+        return spark.createDataFrame([], schema="table string, view_key_cols array<string>")
 
-def join_with_ingestion_keys(spark, df_tickets_df):
+    return spark.createDataFrame(rows, ["view_table", "view_key_cols"])
+
+
+def join_with_keys(spark, df_tickets_df):
     ingestion_keys_df = load_ingestion_keys(spark)
-    sort_keys = [
-        when(col("key_cols").isNotNull(), 0).otherwise(1),
-        when(col("is_table_replaced") == "No", 0).otherwise(1)
-    ]
-    merged_df = (df_tickets_df
-              .join(ingestion_keys_df, col("eds_equivalent_table").endswith(concat(lit("."), col("table"), lit("_vw"))), "left")).orderBy(*sort_keys)
+    view_keys_df = load_view_keys(spark)
+    merged_df = ((df_tickets_df
+              .join(ingestion_keys_df, col("eds_equivalent_table").endswith(concat(lit("."), col("table"), lit("_vw"))), "left"))
+              .join(view_keys_df , col("eds_equivalent_table").contains(col("view_table")), "left")
+                 .withColumn("primary_keys" , f.coalesce(col("key_cols"),col("view_key_cols"))).drop("key_cols","view_key_cols"))
+
     return merged_df
 
 def analyse_pk_data(merged_df):
     total_joined = merged_df.count()
 
-    # Tables that have PKs (where key_cols is not null)
-    # Since we did a left join, if there was no match in ingestion keys, key_cols will be null
-    with_pk_count = merged_df.filter(col("key_cols").isNotNull()).count()
+    # Tables that have PKs (where primary_keys is not null)
+    # Since we did a left join, if there was no match in ingestion keys, primary_keys will be null
+    with_pk_count = merged_df.filter(col("primary_keys").isNotNull()).count()
     without_pk_count = total_joined - with_pk_count
 
     print("-" * 50)
@@ -136,9 +158,13 @@ def write_output(final_result_df):
     batched_result_df = final_result_df.withColumn("batch_id",(f.row_number().over(w) / 100).cast("int"))
     schema_batches_df = batched_result_df.select("eds_schema", "batch_id").distinct()
     schema_batch_list = [(x["eds_schema"], x["batch_id"] )for x in schema_batches_df.collect() if "/" not in x["eds_schema"]]
+    sort_keys = [
+        when(col("primary_keys").isNotNull(), 0).otherwise(1),
+        when(col("is_table_replaced") == "No", 0).otherwise(1)
+    ]
     for schema, batch_id in schema_batch_list:
         with open(f'./output/{schema}_{batch_id}_bulk_validation_results.json', 'w') as fp:
-            json.dump(batched_result_df.filter((col("eds_schema") == schema) & (col("batch_id") == batch_id)).rdd.map(lambda row: row.asDict()).collect(), fp,indent=4)
+            json.dump(batched_result_df.filter((col("eds_schema") == schema) & (col("batch_id") == batch_id)).orderBy(*sort_keys).rdd.map(lambda row: row.asDict()).collect(), fp,indent=4)
 
 
 if __name__ == "__main__":
@@ -152,7 +178,7 @@ if __name__ == "__main__":
         
         tickets_with_cw_name_df = add_coursera_warehouse_prefix(done_tickets_with_updated_eds_df)
         tickets_with_standardized_eds_df = standardize_eds_names(tickets_with_cw_name_df)
-        validated_tickets_with_keys_df = join_with_ingestion_keys(spark, tickets_with_standardized_eds_df)
+        validated_tickets_with_keys_df = join_with_keys(spark, tickets_with_standardized_eds_df)
         
         analyse_pk_data(validated_tickets_with_keys_df)
         write_output(validated_tickets_with_keys_df)

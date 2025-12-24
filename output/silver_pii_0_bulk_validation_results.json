@@ -1,17 +1,5 @@
 [
     {
-        "edw_table": "coursera_warehouse.edw_pii.raw_events",
-        "eds_equivalent_table": "prod.silver_pii.cleaned_events_all_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-4346",
-        "eds_schema": "silver_pii",
-        "eds_base_table": "prod.silver_base_pii.cleaned_events_all",
-        "table": null,
-        "key_cols": null,
-        "batch_id": 0
-    },
-    {
         "edw_table": "coursera_warehouse.edw_prod.group_memberships",
         "eds_equivalent_table": "prod.silver_pii.courral_group_memberships_vw",
         "status": "Done",
@@ -20,7 +8,8 @@
         "eds_schema": "silver_pii",
         "eds_base_table": "prod.silver_base_pii.courral_group_memberships",
         "table": "courral_group_memberships",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "doc_key"
         ],
         "batch_id": 0
@@ -34,7 +23,8 @@
         "eds_schema": "silver_pii",
         "eds_base_table": "prod.silver_base_pii.courral_course_stories",
         "table": "courral_course_stories",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "doc_key"
         ],
         "batch_id": 0
@@ -48,7 +38,8 @@
         "eds_schema": "silver_pii",
         "eds_base_table": "prod.silver_base_pii.payment_wallets",
         "table": "payment_wallets",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "payment_wallet_id"
         ],
         "batch_id": 0
@@ -62,10 +53,24 @@
         "eds_schema": "silver_pii",
         "eds_base_table": "prod.silver_base_pii.courral_user_profile_interested_careers",
         "table": "courral_user_profile_interested_careers",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "doc_key",
             "interested_career_index"
         ],
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_pii.raw_events",
+        "eds_equivalent_table": "prod.silver_pii.cleaned_events_all_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-4346",
+        "eds_schema": "silver_pii",
+        "eds_base_table": "prod.silver_base_pii.cleaned_events_all",
+        "table": null,
+        "view_table": null,
+        "primary_keys": null,
         "batch_id": 0
     }
 ]

@@ -8,7 +8,8 @@
         "eds_schema": "bi_pii",
         "eds_base_table": "prod.bi_pii.braze_email_sends",
         "table": null,
-        "key_cols": null,
+        "view_table": null,
+        "primary_keys": null,
         "batch_id": 0
     },
     {
@@ -20,7 +21,8 @@
         "eds_schema": "bi_pii",
         "eds_base_table": "prod.bi_pii.email_sends",
         "table": null,
-        "key_cols": null,
+        "view_table": null,
+        "primary_keys": null,
         "batch_id": 0
     }
 ]

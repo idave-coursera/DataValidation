@@ -8,7 +8,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.dynamodb_sfc_video_activity_tracking",
         "table": "dynamodb_sfc_video_activity_tracking",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "user_id",
             "course_id",
             "atom_id",
@@ -26,7 +27,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_staff_graded_assignment_evaluation_parts",
         "table": "courral_staff_graded_assignment_evaluation_parts",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "staff_graded_assignment_id",
             "staff_graded_assignment_version",
             "evaluation_part_index"
@@ -42,7 +44,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_staff_graded_assignment_part_ordering_v3",
         "table": "courral_staff_graded_assignment_part_ordering_v3",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "doc_key",
             "version",
             "definition_id"
@@ -58,7 +61,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_staff_graded_assignment_submission_parts",
         "table": "courral_staff_graded_assignment_submission_parts",
-        "key_cols": [
+        "view_table": "silver.courral_staff_graded_assignment_submission_parts",
+        "primary_keys": [
             "version",
             "doc_key",
             "explode_on_index"
@@ -74,7 +78,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_staff_graded_contents",
         "table": "courral_staff_graded_contents",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "version",
             "doc_key"
         ],
@@ -89,7 +94,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.payments_subscription_trials",
         "table": "payments_subscription_trials",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "subscription_trial_id"
         ],
         "batch_id": 2
@@ -103,7 +109,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.subtitle_job_manually_uploaded_languages",
         "table": "subtitle_job_manually_uploaded_languages",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "subtitle_job_id",
             "subtitle_language"
         ],
@@ -118,7 +125,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.subtitle_job_subtitle_asset_ids",
         "table": "subtitle_job_subtitle_asset_ids",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "subtitle_job_id",
             "subtitle_language"
         ],
@@ -133,7 +141,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.subtitle_job_transcription_vendor",
         "table": "subtitle_job_transcription_vendor",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "subtitle_job_id"
         ],
         "batch_id": 2
@@ -147,7 +156,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_video_subtitle_metadata",
         "table": "courral_video_subtitle_metadata",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "doc_key"
         ],
         "batch_id": 2
@@ -161,7 +171,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_third_party_organizations",
         "table": "courral_third_party_organizations",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "doc_key"
         ],
         "batch_id": 2
@@ -175,7 +186,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_ungraded_lab_contents",
         "table": "courral_ungraded_lab_contents",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "doc_key",
             "version"
         ],
@@ -190,7 +202,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.maestro_universities",
         "table": "maestro_universities",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "id"
         ],
         "batch_id": 2
@@ -204,7 +217,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_partner_group_memberships_main",
         "table": "courral_partner_group_memberships_main",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "group_id",
             "university_id",
             "university_group_membership_role"
@@ -220,7 +234,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_partner_memberships_main",
         "table": "courral_partner_memberships_main",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "user_id",
             "university_id",
             "university_membership_role",
@@ -237,7 +252,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_user_onboarding_domains",
         "table": "courral_user_onboarding_domains",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "doc_key",
             "preferred_domain_id",
             "preferred_subdomain_id"
@@ -253,7 +269,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_user_onboarding_interests",
         "table": "courral_user_onboarding_interests",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "doc_key"
         ],
         "batch_id": 2
@@ -267,7 +284,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_user_preferred_domains",
         "table": "courral_user_preferred_domains",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "user_id"
         ],
         "batch_id": 2
@@ -281,7 +299,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.permissions_user_roles_history",
         "table": "permissions_user_roles_history",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "id"
         ],
         "batch_id": 2
@@ -295,7 +314,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_video_asset_ids",
         "table": "courral_video_asset_ids",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "doc_key"
         ],
         "batch_id": 2
@@ -309,7 +329,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_votes",
         "table": "courral_votes",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "doc_key",
             "vote_ts"
         ],
@@ -324,7 +345,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_widget_contents",
         "table": "courral_widget_contents",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "version",
             "doc_key"
         ],
@@ -339,7 +361,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.widget_session_providers_all",
         "table": "widget_session_providers_all",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "widget_session_provider_id"
         ],
         "batch_id": 2
@@ -353,7 +376,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_widgets_all",
         "table": "courral_widgets_all",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "widget_id"
         ],
         "batch_id": 2
@@ -367,7 +391,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_workflow_execution_outputs",
         "table": "courral_workflow_execution_outputs",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "doc_key",
             "version",
             "transact_seq"
@@ -383,33 +408,10 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_workflow_executions",
         "table": "courral_workflow_executions",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "doc_key"
         ],
-        "batch_id": 2
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_finsys.finsys_international_vat_rates_item_completions",
-        "eds_equivalent_table": "prod.silver.finsys_international_vat_rates_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-8064",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.finsys_international_vat_rates",
-        "table": null,
-        "key_cols": null,
-        "batch_id": 2
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_finsys.finsys_us_state_tax_rates_item_completions",
-        "eds_equivalent_table": "prod.silver.finsys_us_state_tax_rates_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-8073",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.finsys_us_state_tax_rates",
-        "table": null,
-        "key_cols": null,
         "batch_id": 2
     },
     {
@@ -421,7 +423,8 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_coach_contents",
         "table": "courral_coach_contents",
-        "key_cols": [
+        "view_table": "silver.courral_coach_contents_vw",
+        "primary_keys": [
             "version",
             "doc_key"
         ],
@@ -436,9 +439,36 @@
         "eds_schema": "silver",
         "eds_base_table": "prod.silver_base.courral_degree_course_mappings",
         "table": "courral_degree_course_mappings",
-        "key_cols": [
+        "view_table": null,
+        "primary_keys": [
             "doc_key"
         ],
+        "batch_id": 2
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_finsys.finsys_international_vat_rates_item_completions",
+        "eds_equivalent_table": "prod.silver.finsys_international_vat_rates_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-8064",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.finsys_international_vat_rates",
+        "table": null,
+        "view_table": null,
+        "primary_keys": null,
+        "batch_id": 2
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_finsys.finsys_us_state_tax_rates_item_completions",
+        "eds_equivalent_table": "prod.silver.finsys_us_state_tax_rates_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-8073",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.finsys_us_state_tax_rates",
+        "table": null,
+        "view_table": null,
+        "primary_keys": null,
         "batch_id": 2
     }
 ]

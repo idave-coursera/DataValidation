@@ -8,7 +8,14 @@
         "eds_schema": "gold_base_restricted",
         "eds_base_table": "prod.gold_base_base_restricted.estimated_b2c_cash_rev_actual_fcst",
         "table": null,
-        "key_cols": null,
+        "view_table": "gold_base_restricted.estimated_b2c_cash_rev_actual_fcst",
+        "primary_keys": [
+            "ds",
+            "transaction_dt",
+            "country_group_finance",
+            "underlying_product_type_in_finsys",
+            "rev_rec_month_id"
+        ],
         "batch_id": 0
     },
     {
@@ -20,7 +27,12 @@
         "eds_schema": "gold_base_restricted",
         "eds_base_table": "prod.gold_base_base_restricted.estimated_b2c_cash_rev_fcst_report",
         "table": null,
-        "key_cols": null,
+        "view_table": "gold_base_restricted.estimated_b2c_cash_rev_fcst_report",
+        "primary_keys": [
+            "ds",
+            "country_group_finance",
+            "underlying_product_type_in_finsys"
+        ],
         "batch_id": 0
     },
     {
@@ -32,7 +44,11 @@
         "eds_schema": "gold_base_restricted",
         "eds_base_table": "prod.gold_base_base_restricted.estimated_b2c_cash_rev_fcst_yoy",
         "table": null,
-        "key_cols": null,
+        "view_table": "gold_base_restricted.estimated_b2c_cash_rev_fcst_yoy",
+        "primary_keys": [
+            "country_group_finance",
+            "underlying_product_type_in_finsys"
+        ],
         "batch_id": 0
     },
     {
@@ -44,7 +60,12 @@
         "eds_schema": "gold_base_restricted",
         "eds_base_table": "prod.gold_base_base_restricted.estimated_b2c_cash_rev_in_trailing_n_days",
         "table": null,
-        "key_cols": null,
+        "view_table": "gold_base_restricted.estimated_b2c_cash_rev_in_trailing_n_days",
+        "primary_keys": [
+            "transaction_dt",
+            "country_group_finance",
+            "underlying_product_type_in_finsys"
+        ],
         "batch_id": 0
     },
     {
@@ -56,7 +77,13 @@
         "eds_schema": "gold_base_restricted",
         "eds_base_table": "prod.gold_base_base_restricted.estimated_b2c_rev_rec_error_records",
         "table": null,
-        "key_cols": null,
+        "view_table": "gold_base_restricted.estimated_b2c_rev_rec_error_records",
+        "primary_keys": [
+            "partner_id",
+            "transaction_id",
+            "rev_rec_month_id",
+            "dl_last_update_process_id"
+        ],
         "batch_id": 0
     },
     {
@@ -68,7 +95,11 @@
         "eds_schema": "gold_base_restricted",
         "eds_base_table": "prod.gold_base_base_restricted.googleplay_cash_staging",
         "table": null,
-        "key_cols": null,
+        "view_table": "gold_base_restricted.googleplay_cash_staging",
+        "primary_keys": [
+            "id",
+            "partner_id"
+        ],
         "batch_id": 0
     },
     {
@@ -80,67 +111,12 @@
         "eds_schema": "gold_base_restricted",
         "eds_base_table": "prod.gold_base_base_restricted.googleplay_revenue_recognition_staging",
         "table": null,
-        "key_cols": null,
-        "batch_id": 0
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_finsys.googleplay_revenue_share_expense_recognition_staging",
-        "eds_equivalent_table": "prod.gold_base_restricted. googleplay_revenue_share_expense_recognition_staging_log",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-3182",
-        "eds_schema": "gold_base_restricted",
-        "eds_base_table": "prod.gold_base_base_restricted. googleplay_revenue_share_expense_recognition_staging_log",
-        "table": null,
-        "key_cols": null,
-        "batch_id": 0
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_finsys.partner_disbursements",
-        "eds_equivalent_table": "prod.gold_base_restricted.partner_disbursements",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-3198",
-        "eds_schema": "gold_base_restricted",
-        "eds_base_table": "prod.gold_base_base_restricted.partner_disbursements",
-        "table": null,
-        "key_cols": null,
-        "batch_id": 0
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_finsys.partner_disbursements_log",
-        "eds_equivalent_table": "prod.gold_base_restricted.partner_disbursements_log",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-3199",
-        "eds_schema": "gold_base_restricted",
-        "eds_base_table": "prod.gold_base_base_restricted.partner_disbursements_log",
-        "table": null,
-        "key_cols": null,
-        "batch_id": 0
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_finsys.partner_disbursements_topline",
-        "eds_equivalent_table": "prod.gold_base_restricted.partner_disbursements_topline",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-3201",
-        "eds_schema": "gold_base_restricted",
-        "eds_base_table": "prod.gold_base_base_restricted.partner_disbursements_topline",
-        "table": null,
-        "key_cols": null,
-        "batch_id": 0
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_finsys.partner_disbursements_topline_log",
-        "eds_equivalent_table": "prod.gold_base_restricted.partner_disbursements_topline_log",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-3202",
-        "eds_schema": "gold_base_restricted",
-        "eds_base_table": "prod.gold_base_base_restricted.partner_disbursements_topline_log",
-        "table": null,
-        "key_cols": null,
+        "view_table": "gold_base_restricted.googleplay_revenue_recognition_staging",
+        "primary_keys": [
+            "id",
+            "partner_id",
+            "rev_rec_month_id"
+        ],
         "batch_id": 0
     },
     {
@@ -152,7 +128,12 @@
         "eds_schema": "gold_base_restricted",
         "eds_base_table": "prod.gold_base_base_restricted.partner_net_sales",
         "table": null,
-        "key_cols": null,
+        "view_table": "gold_base_restricted.partner_net_sales",
+        "primary_keys": [
+            "partner_id",
+            "cart_id",
+            "user_id"
+        ],
         "batch_id": 0
     },
     {
@@ -164,7 +145,12 @@
         "eds_schema": "gold_base_restricted",
         "eds_base_table": "prod.gold_base_base_restricted.partner_net_sales_iap",
         "table": null,
-        "key_cols": null,
+        "view_table": "gold_base_restricted.partner_net_sales",
+        "primary_keys": [
+            "partner_id",
+            "cart_id",
+            "user_id"
+        ],
         "batch_id": 0
     },
     {
@@ -176,7 +162,27 @@
         "eds_schema": "gold_base_restricted",
         "eds_base_table": "prod.gold_base_base_restricted.partner_net_sales_iap_log",
         "table": null,
-        "key_cols": null,
+        "view_table": "gold_base_restricted.partner_net_sales_iap_log",
+        "primary_keys": [
+            "payment_processor_id"
+        ],
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_finsys.partner_net_sales_iap_log",
+        "eds_equivalent_table": "prod.gold_base_restricted.partner_net_sales_iap_log",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-3206",
+        "eds_schema": "gold_base_restricted",
+        "eds_base_table": "prod.gold_base_base_restricted.partner_net_sales_iap_log",
+        "table": null,
+        "view_table": "gold_base_restricted.partner_net_sales",
+        "primary_keys": [
+            "partner_id",
+            "cart_id",
+            "user_id"
+        ],
         "batch_id": 0
     },
     {
@@ -188,115 +194,12 @@
         "eds_schema": "gold_base_restricted",
         "eds_base_table": "prod.gold_base_base_restricted.partner_net_sales_log",
         "table": null,
-        "key_cols": null,
-        "batch_id": 0
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_finsys.partner_rfp_qtr_balance_for_zero_netsale_products",
-        "eds_equivalent_table": "prod.gold_base_restricted.partner_rfp_qtr_balance_for_zero_netsale_products",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-3208",
-        "eds_schema": "gold_base_restricted",
-        "eds_base_table": "prod.gold_base_base_restricted.partner_rfp_qtr_balance_for_zero_netsale_products",
-        "table": null,
-        "key_cols": null,
-        "batch_id": 0
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_finsys.partner_rfp_qtr_balance_for_zero_netsale_products_log",
-        "eds_equivalent_table": "prod.gold_base_restricted.partner_rfp_qtr_balance_for_zero_netsale_products_log",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-3209",
-        "eds_schema": "gold_base_restricted",
-        "eds_base_table": "prod.gold_base_base_restricted.partner_rfp_qtr_balance_for_zero_netsale_products_log",
-        "table": null,
-        "key_cols": null,
-        "batch_id": 0
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_finsys.qtr_rfp_beginning_balances",
-        "eds_equivalent_table": "prod.gold_base_restricted.qtr_rfp_beginning_balances",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-3210",
-        "eds_schema": "gold_base_restricted",
-        "eds_base_table": "prod.gold_base_base_restricted.qtr_rfp_beginning_balances",
-        "table": null,
-        "key_cols": null,
-        "batch_id": 0
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_finsys.qtr_rfp_beginning_balances_log",
-        "eds_equivalent_table": "prod.gold_base_restricted.qtr_rfp_beginning_balances_log",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-3211",
-        "eds_schema": "gold_base_restricted",
-        "eds_base_table": "prod.gold_base_base_restricted.qtr_rfp_beginning_balances_log",
-        "table": null,
-        "key_cols": null,
-        "batch_id": 0
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_finsys.quarterly_rfp_balances",
-        "eds_equivalent_table": "prod.gold_base_restricted.quarterly_rfp_balances",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-3212",
-        "eds_schema": "gold_base_restricted",
-        "eds_base_table": "prod.gold_base_base_restricted.quarterly_rfp_balances",
-        "table": null,
-        "key_cols": null,
-        "batch_id": 0
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_finsys.quarterly_rfp_balances_log",
-        "eds_equivalent_table": "prod.gold_base_restricted.quarterly_rfp_balances_log",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-3213",
-        "eds_schema": "gold_base_restricted",
-        "eds_base_table": "prod.gold_base_base_restricted.quarterly_rfp_balances_log",
-        "table": null,
-        "key_cols": null,
-        "batch_id": 0
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_finsys.reconciliation_partner_disbursements",
-        "eds_equivalent_table": "prod.gold_base_restricted.reconciliation_partner_disbursements",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-3215",
-        "eds_schema": "gold_base_restricted",
-        "eds_base_table": "prod.gold_base_base_restricted.reconciliation_partner_disbursements",
-        "table": null,
-        "key_cols": null,
-        "batch_id": 0
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_finsys.reconciliation_partner_disbursements_log",
-        "eds_equivalent_table": "prod.gold_base_restricted.reconciliation_partner_disbursements_log",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-3216",
-        "eds_schema": "gold_base_restricted",
-        "eds_base_table": "prod.gold_base_base_restricted.reconciliation_partner_disbursements_log",
-        "table": null,
-        "key_cols": null,
-        "batch_id": 0
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_finsys.reporting_partner_disbursements",
-        "eds_equivalent_table": "prod.gold_base_restricted.reporting_partner_disbursements",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-3217",
-        "eds_schema": "gold_base_restricted",
-        "eds_base_table": "prod.gold_base_base_restricted.reporting_partner_disbursements",
-        "table": null,
-        "key_cols": null,
+        "view_table": "gold_base_restricted.partner_net_sales",
+        "primary_keys": [
+            "partner_id",
+            "cart_id",
+            "user_id"
+        ],
         "batch_id": 0
     },
     {
@@ -308,7 +211,195 @@
         "eds_schema": "gold_base_restricted",
         "eds_base_table": "prod.gold_base_base_restricted.revenue_share_terms_log",
         "table": null,
-        "key_cols": null,
+        "view_table": "gold_base_restricted.revenue_share_terms_log",
+        "primary_keys": [
+            "qtr_id",
+            "partner_id",
+            "business_line",
+            "product_id"
+        ],
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_finsys.googleplay_revenue_share_expense_recognition_staging",
+        "eds_equivalent_table": "prod.gold_base_restricted. googleplay_revenue_share_expense_recognition_staging_log",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-3182",
+        "eds_schema": "gold_base_restricted",
+        "eds_base_table": "prod.gold_base_base_restricted. googleplay_revenue_share_expense_recognition_staging_log",
+        "table": null,
+        "view_table": null,
+        "primary_keys": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_finsys.partner_disbursements",
+        "eds_equivalent_table": "prod.gold_base_restricted.partner_disbursements",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-3198",
+        "eds_schema": "gold_base_restricted",
+        "eds_base_table": "prod.gold_base_base_restricted.partner_disbursements",
+        "table": null,
+        "view_table": null,
+        "primary_keys": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_finsys.partner_disbursements_log",
+        "eds_equivalent_table": "prod.gold_base_restricted.partner_disbursements_log",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-3199",
+        "eds_schema": "gold_base_restricted",
+        "eds_base_table": "prod.gold_base_base_restricted.partner_disbursements_log",
+        "table": null,
+        "view_table": null,
+        "primary_keys": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_finsys.partner_disbursements_topline",
+        "eds_equivalent_table": "prod.gold_base_restricted.partner_disbursements_topline",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-3201",
+        "eds_schema": "gold_base_restricted",
+        "eds_base_table": "prod.gold_base_base_restricted.partner_disbursements_topline",
+        "table": null,
+        "view_table": null,
+        "primary_keys": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_finsys.partner_disbursements_topline_log",
+        "eds_equivalent_table": "prod.gold_base_restricted.partner_disbursements_topline_log",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-3202",
+        "eds_schema": "gold_base_restricted",
+        "eds_base_table": "prod.gold_base_base_restricted.partner_disbursements_topline_log",
+        "table": null,
+        "view_table": null,
+        "primary_keys": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_finsys.partner_rfp_qtr_balance_for_zero_netsale_products",
+        "eds_equivalent_table": "prod.gold_base_restricted.partner_rfp_qtr_balance_for_zero_netsale_products",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-3208",
+        "eds_schema": "gold_base_restricted",
+        "eds_base_table": "prod.gold_base_base_restricted.partner_rfp_qtr_balance_for_zero_netsale_products",
+        "table": null,
+        "view_table": null,
+        "primary_keys": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_finsys.partner_rfp_qtr_balance_for_zero_netsale_products_log",
+        "eds_equivalent_table": "prod.gold_base_restricted.partner_rfp_qtr_balance_for_zero_netsale_products_log",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-3209",
+        "eds_schema": "gold_base_restricted",
+        "eds_base_table": "prod.gold_base_base_restricted.partner_rfp_qtr_balance_for_zero_netsale_products_log",
+        "table": null,
+        "view_table": null,
+        "primary_keys": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_finsys.qtr_rfp_beginning_balances",
+        "eds_equivalent_table": "prod.gold_base_restricted.qtr_rfp_beginning_balances",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-3210",
+        "eds_schema": "gold_base_restricted",
+        "eds_base_table": "prod.gold_base_base_restricted.qtr_rfp_beginning_balances",
+        "table": null,
+        "view_table": null,
+        "primary_keys": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_finsys.qtr_rfp_beginning_balances_log",
+        "eds_equivalent_table": "prod.gold_base_restricted.qtr_rfp_beginning_balances_log",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-3211",
+        "eds_schema": "gold_base_restricted",
+        "eds_base_table": "prod.gold_base_base_restricted.qtr_rfp_beginning_balances_log",
+        "table": null,
+        "view_table": null,
+        "primary_keys": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_finsys.quarterly_rfp_balances",
+        "eds_equivalent_table": "prod.gold_base_restricted.quarterly_rfp_balances",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-3212",
+        "eds_schema": "gold_base_restricted",
+        "eds_base_table": "prod.gold_base_base_restricted.quarterly_rfp_balances",
+        "table": null,
+        "view_table": null,
+        "primary_keys": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_finsys.quarterly_rfp_balances_log",
+        "eds_equivalent_table": "prod.gold_base_restricted.quarterly_rfp_balances_log",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-3213",
+        "eds_schema": "gold_base_restricted",
+        "eds_base_table": "prod.gold_base_base_restricted.quarterly_rfp_balances_log",
+        "table": null,
+        "view_table": null,
+        "primary_keys": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_finsys.reconciliation_partner_disbursements",
+        "eds_equivalent_table": "prod.gold_base_restricted.reconciliation_partner_disbursements",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-3215",
+        "eds_schema": "gold_base_restricted",
+        "eds_base_table": "prod.gold_base_base_restricted.reconciliation_partner_disbursements",
+        "table": null,
+        "view_table": null,
+        "primary_keys": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_finsys.reconciliation_partner_disbursements_log",
+        "eds_equivalent_table": "prod.gold_base_restricted.reconciliation_partner_disbursements_log",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-3216",
+        "eds_schema": "gold_base_restricted",
+        "eds_base_table": "prod.gold_base_base_restricted.reconciliation_partner_disbursements_log",
+        "table": null,
+        "view_table": null,
+        "primary_keys": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_finsys.reporting_partner_disbursements",
+        "eds_equivalent_table": "prod.gold_base_restricted.reporting_partner_disbursements",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-3217",
+        "eds_schema": "gold_base_restricted",
+        "eds_base_table": "prod.gold_base_base_restricted.reporting_partner_disbursements",
+        "table": null,
+        "view_table": null,
+        "primary_keys": null,
         "batch_id": 0
     }
 ]
