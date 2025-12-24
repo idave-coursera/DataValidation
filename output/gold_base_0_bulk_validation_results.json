@@ -1,0 +1,122 @@
+[
+    {
+        "edw_table": "coursera_warehouse.edw_bi.prices",
+        "eds_equivalent_table": "prod.gold_base.product_prices",
+        "status": "Done",
+        "is_table_replaced": "not_updated",
+        "issue_key": "EDSMIG-1041",
+        "eds_schema": "gold_base",
+        "eds_base_table": "prod.gold_base_base.product_prices",
+        "table": null,
+        "key_cols": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_core.base_phoenix_specialization_cubes",
+        "eds_equivalent_table": "prod.gold_base.base_phoenix_specialization_cubes",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-1559",
+        "eds_schema": "gold_base",
+        "eds_base_table": "prod.gold_base_base.base_phoenix_specialization_cubes",
+        "table": null,
+        "key_cols": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_core.degree_course_session_enrollments",
+        "eds_equivalent_table": "prod.gold_base.degree_course_session_enrollments",
+        "status": "Done",
+        "is_table_replaced": "not_updated",
+        "issue_key": "EDSMIG-1584",
+        "eds_schema": "gold_base",
+        "eds_base_table": "prod.gold_base_base.degree_course_session_enrollments",
+        "table": null,
+        "key_cols": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_core.degree_term_memberships",
+        "eds_equivalent_table": "prod.gold_base.degree_term_memberships",
+        "status": "Done",
+        "is_table_replaced": "not_updated",
+        "issue_key": "EDSMIG-1592",
+        "eds_schema": "gold_base",
+        "eds_base_table": "prod.gold_base_base.degree_term_memberships",
+        "table": null,
+        "key_cols": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_core.phoenix_specialization_enrollments_derived_metrics",
+        "eds_equivalent_table": "prod.gold_base.phoenix_specialization_enrollments_derived_metrics",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-1623",
+        "eds_schema": "gold_base",
+        "eds_base_table": "prod.gold_base_base.phoenix_specialization_enrollments_derived_metrics",
+        "table": null,
+        "key_cols": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_core.l2_clicks",
+        "eds_equivalent_table": "prod.gold_base.clicks",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-1697",
+        "eds_schema": "gold_base",
+        "eds_base_table": "prod.gold_base_base.clicks",
+        "table": null,
+        "key_cols": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_core.l2_impressions",
+        "eds_equivalent_table": "prod.gold_base.impressions",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-1705",
+        "eds_schema": "gold_base",
+        "eds_base_table": "prod.gold_base_base.impressions",
+        "table": null,
+        "key_cols": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_core_prep.enrollment_windows",
+        "eds_equivalent_table": "prod.gold_base.course_enrollment_windows",
+        "status": "Done",
+        "is_table_replaced": "not_updated",
+        "issue_key": "EDSMIG-2020",
+        "eds_schema": "gold_base",
+        "eds_base_table": "prod.gold_base_base.course_enrollment_windows",
+        "table": null,
+        "key_cols": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_core_prep.enterprise_learner_sfc_activity_daily",
+        "eds_equivalent_table": "prod.gold_base.enterprise_learner_sfc_activity_daily",
+        "status": "Done",
+        "is_table_replaced": "not_updated",
+        "issue_key": "EDSMIG-2054",
+        "eds_schema": "gold_base",
+        "eds_base_table": "prod.gold_base_base.enterprise_learner_sfc_activity_daily",
+        "table": null,
+        "key_cols": null,
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.short_form_content_course_ga_allowlist",
+        "eds_equivalent_table": "prod.gold_base.short_form_content_course_ga_allowlist",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5924",
+        "eds_schema": "gold_base",
+        "eds_base_table": "prod.gold_base_base.short_form_content_course_ga_allowlist",
+        "table": null,
+        "key_cols": null,
+        "batch_id": 0
+    }
+]
