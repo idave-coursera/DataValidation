@@ -1,17 +1,18 @@
 [
     {
-        "edw_table": "coursera_warehouse.edw_bi.user_course_effort_flags",
-        "eds_equivalent_table": "prod.bi.user_course_effort_flags",
+        "edw_table": "coursera_warehouse.edw_bi.core_user_course_branch_weeks",
+        "eds_equivalent_table": "prod.bi.core_user_course_branch_weeks",
         "status": "Done",
         "is_table_replaced": "No",
-        "issue_key": "EDSMIG-1369",
+        "issue_key": "EDSMIG-84",
         "eds_schema": "bi",
-        "eds_base_table": "prod.bi.user_course_effort_flags",
+        "eds_base_table": "prod.bi.core_user_course_branch_weeks",
         "table": null,
-        "view_table": "bi.user_course_effort_flags",
+        "view_table": "bi.core_user_course_branch_weeks",
         "primary_keys": [
             "user_id",
-            "course_id"
+            "course_branch_id",
+            "week_num"
         ],
         "batch_id": 0
     },
@@ -63,23 +64,6 @@
         "batch_id": 0
     },
     {
-        "edw_table": "coursera_warehouse.edw_bi.core_user_course_branch_weeks",
-        "eds_equivalent_table": "prod.bi.core_user_course_branch_weeks",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-84",
-        "eds_schema": "bi",
-        "eds_base_table": "prod.bi.core_user_course_branch_weeks",
-        "table": null,
-        "view_table": "bi.core_user_course_branch_weeks",
-        "primary_keys": [
-            "user_id",
-            "course_branch_id",
-            "week_num"
-        ],
-        "batch_id": 0
-    },
-    {
         "edw_table": "coursera_warehouse.edw_bi.on_demand_sessions_item_deadlines",
         "eds_equivalent_table": "prod.bi.on_demand_sessions_item_deadlines",
         "status": "Done",
@@ -111,6 +95,22 @@
             "user_id",
             "product_id",
             "dt"
+        ],
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_bi.user_course_effort_flags",
+        "eds_equivalent_table": "prod.bi.user_course_effort_flags",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-1369",
+        "eds_schema": "bi",
+        "eds_base_table": "prod.bi.user_course_effort_flags",
+        "table": null,
+        "view_table": "bi.user_course_effort_flags",
+        "primary_keys": [
+            "user_id",
+            "course_id"
         ],
         "batch_id": 0
     }

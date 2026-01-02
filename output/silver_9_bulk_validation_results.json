@@ -1,0 +1,181 @@
+[
+    {
+        "edw_table": "coursera_warehouse.edw_prod.assessment_regex_questions",
+        "eds_equivalent_table": "prod.silver.courral_quiz_assessment_regex_questions_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5085",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.courral_quiz_assessment_regex_questions",
+        "table": null,
+        "view_table": "silver.courral_quiz_assessment_regex_questions_vw",
+        "primary_keys": [
+            "assessment_question_id"
+        ],
+        "batch_id": 9
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.assessment_single_numeric_questions",
+        "eds_equivalent_table": "prod.silver.courral_quiz_assessment_single_numeric_questions_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5090",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.courral_quiz_assessment_single_numeric_questions",
+        "table": null,
+        "view_table": "silver.courral_quiz_assessment_single_numeric_questions_vw",
+        "primary_keys": [
+            "assessment_question_id"
+        ],
+        "batch_id": 9
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.assessment_text_exact_match_questions",
+        "eds_equivalent_table": "prod.silver.courral_quiz_assessment_text_exact_match_questions_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5092",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.courral_quiz_assessment_text_exact_match_questions",
+        "table": null,
+        "view_table": "silver.courral_quiz_assessment_text_exact_match_questions_vw",
+        "primary_keys": [
+            "assessment_question_id"
+        ],
+        "batch_id": 9
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.feedback_course_ratings",
+        "eds_equivalent_table": "prod.silver.feedback_course_ratings_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5113",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.feedback_course_ratings",
+        "table": null,
+        "view_table": "silver.feedback_course_ratings_vw",
+        "primary_keys": [
+            "course_id",
+            "feedback_system",
+            "user_id",
+            "feedback_last_updated_ts"
+        ],
+        "batch_id": 9
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.clip_generated_content",
+        "eds_equivalent_table": "prod.silver.clip_generated_content_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5284",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.clip_generated_content",
+        "table": null,
+        "view_table": "silver.clip_generated_content_vw",
+        "primary_keys": [
+            "atom_id",
+            "atom_id_version"
+        ],
+        "batch_id": 9
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.programming_assignments",
+        "eds_equivalent_table": "prod.silver.programming_assignments_vw",
+        "status": "Done",
+        "is_table_replaced": "not_updated",
+        "issue_key": "EDSMIG-5823",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.programming_assignments",
+        "table": null,
+        "view_table": "silver.programming_assignments_vw",
+        "primary_keys": [
+            "programming_assignment_id"
+        ],
+        "batch_id": 9
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.programming_submission_part_evaluations",
+        "eds_equivalent_table": "prod.silver.programming_submission_part_evaluations_vw",
+        "status": "Done",
+        "is_table_replaced": "not_updated",
+        "issue_key": "EDSMIG-5824",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.programming_submission_part_evaluations",
+        "table": null,
+        "view_table": "silver.programming_submission_part_evaluations_vw",
+        "primary_keys": [
+            "programming_assignment_id",
+            "programming_assignment_submission_schema_part_id",
+            "programming_submission_id"
+        ],
+        "batch_id": 9
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.programming_submission_part_grid_grading_statuses",
+        "eds_equivalent_table": "prod.silver.programming_submission_part_grid_grading_statuses_vw",
+        "status": "Done",
+        "is_table_replaced": "not_updated",
+        "issue_key": "EDSMIG-5825",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.programming_submission_part_grid_grading_statuses",
+        "table": null,
+        "view_table": "silver.programming_submission_part_grid_grading_statuses_vw",
+        "primary_keys": [
+            "programming_assignment_id",
+            "programming_assignment_submission_schema_part_id",
+            "programming_submission_id"
+        ],
+        "batch_id": 9
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.programming_submission_part_grid_submissions",
+        "eds_equivalent_table": "prod.silver.programming_submission_part_grid_submissions_vw",
+        "status": "Done",
+        "is_table_replaced": "not_updated",
+        "issue_key": "EDSMIG-5826",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.programming_submission_part_grid_submissions",
+        "table": null,
+        "view_table": "silver.programming_submission_part_grid_submissions_vw",
+        "primary_keys": [
+            "programming_assignment_id",
+            "programming_assignment_submission_schema_part_id",
+            "programming_submission_id"
+        ],
+        "batch_id": 9
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.programming_submission_part_text_submissions",
+        "eds_equivalent_table": "prod.silver.programming_submission_part_text_submissions_vw",
+        "status": "Done",
+        "is_table_replaced": "not_updated",
+        "issue_key": "EDSMIG-5827",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.programming_submission_part_text_submissions",
+        "table": null,
+        "view_table": "silver.programming_submission_part_text_submissions_vw",
+        "primary_keys": [
+            "programming_assignment_id",
+            "programming_assignment_submission_schema_part_id",
+            "programming_submission_id"
+        ],
+        "batch_id": 9
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.programming_submission_parts",
+        "eds_equivalent_table": "prod.silver.programming_submission_parts_vw",
+        "status": "Done",
+        "is_table_replaced": "not_updated",
+        "issue_key": "EDSMIG-5828",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.programming_submission_parts",
+        "table": null,
+        "view_table": "silver.programming_submission_parts_vw",
+        "primary_keys": [
+            "programming_assignment_id",
+            "programming_assignment_submission_schema_part_id",
+            "programming_submission_id"
+        ],
+        "batch_id": 9
+    }
+]

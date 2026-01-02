@@ -6,7 +6,6 @@ import pyspark.sql.functions as f
 import yaml
 from pyspark.sql import Window
 from config import BASE_PATH
-from validationUtils import ts
 
 
 def load_jira_data(spark, jira_csv_path):
@@ -154,8 +153,9 @@ def analyse_pk_data(merged_df):
     return merged_df
 
 def write_output(final_result_df):
-    w = Window.partitionBy("eds_schema").orderBy("issue_key")
-    batched_result_df = final_result_df.withColumn("batch_id",(f.row_number().over(w) / 100).cast("int"))
+    w = Window.partitionBy("eds_schema").orderBy(when(col("primary_keys").isNotNull(), 0).otherwise(1))
+    batch_size = 20
+    batched_result_df = final_result_df.withColumn("batch_id", (f.row_number().over(w) / batch_size).cast("int"))
     schema_batches_df = batched_result_df.select("eds_schema", "batch_id").distinct()
     schema_batch_list = [(x["eds_schema"], x["batch_id"] )for x in schema_batches_df.collect() if "/" not in x["eds_schema"]]
     sort_keys = [
@@ -163,9 +163,9 @@ def write_output(final_result_df):
         when(col("is_table_replaced") == "No", 0).otherwise(1)
     ]
     for schema, batch_id in schema_batch_list:
-        final_df = batched_result_df.filter(
-            (col("eds_schema") == schema) & (col("batch_id") == batch_id) & (col("primary_keys").isNotNull())).orderBy(
-            *sort_keys)
+        final_df = (batched_result_df.orderBy(*sort_keys).
+        filter(
+            (col("eds_schema") == schema) & (col("batch_id") == batch_id) & (col("primary_keys").isNotNull())))
         if final_df.count() > 0:
             with open(f'./output/{schema}_{batch_id}_bulk_validation_results.json', 'w') as fp:
                 json.dump(final_df.rdd.map(lambda row: row.asDict()).collect(), fp,indent=4)

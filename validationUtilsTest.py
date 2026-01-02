@@ -2,7 +2,7 @@ import unittest
 from datetime import datetime, timedelta
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, IntegerType, StringType, ArrayType, MapType, TimestampType
-from validationUtils import *
+from validationUtils import ValidationUtils
 
 
 class ValidationUtilsTest(unittest.TestCase):
@@ -12,6 +12,9 @@ class ValidationUtilsTest(unittest.TestCase):
             .appName("ValidationUtilsTest") \
             .master("local[2]") \
             .getOrCreate()
+        
+        cls.validator = ValidationUtils(cls.spark, enable_logging=True)
+            
         # Common fields schema
         # common_1: Array of Strings
         # common_2: Struct { sub_a: int, sub_b: string }
@@ -75,7 +78,7 @@ class ValidationUtilsTest(unittest.TestCase):
         cls.spark.stop()
 
     def test_dataframes_creation(self):
-        shared_schema = df_shared_schema(self.df_edw, self.df_eds)
+        shared_schema = self.validator.df_shared_schema(self.df_edw, self.df_eds)
         expected_keys = {'pk_1', 'pk_2', 'common_1', 'common_2', 'common_3'}
         self.assertEqual(set(shared_schema.keys()), expected_keys, "Shared schema keys should match expected")
         # common_4 has different types (int vs string), so should not be in shared schema
@@ -83,11 +86,11 @@ class ValidationUtilsTest(unittest.TestCase):
 
     def test_df_hash(self) :
         # Hash EDW
-        df_edw_hashed = hash_df(self.df_edw, ["common_1", "common_2", "common_3"], ["pk_1"])
+        df_edw_hashed = self.validator.hash_df(self.df_edw, ["common_1", "common_2", "common_3"], ["pk_1"])
         edw_rows = {r['pk_1']: r['hash'] for r in df_edw_hashed.collect()}
 
         # Hash EDS
-        df_eds_hashed = hash_df(self.df_eds, ["common_1", "common_2", "common_3"], ["pk_1"])
+        df_eds_hashed = self.validator.hash_df(self.df_eds, ["common_1", "common_2", "common_3"], ["pk_1"])
         eds_rows = {r['pk_1']: r['hash'] for r in df_eds_hashed.collect()}
 
         # PK 3, 4, 5 should have identical hash
@@ -99,11 +102,10 @@ class ValidationUtilsTest(unittest.TestCase):
         self.assertNotEqual(edw_rows[2], eds_rows[2], "PK 2 should differ")
 
     def test_compare_df(self):
-        # compareDFs returns only matching rows (inner join + filter on hash_match)
-        match_ratio = compareDFs(self.df_edw, self.df_eds, ["pk_1", "pk_2"])
+        # compareDFs returns match ratio
+        match_ratio = self.validator.compareDFs(self.df_edw, self.df_eds, ["pk_1", "pk_2"])
 
-        self.assertEqual(match_ratio,3/5, "Should find 3 matching rows")
-
+        self.assertEqual(match_ratio, 3/5, "Should find 3 matching rows out of 5 source rows")
 
 
     if __name__ == '__main__':

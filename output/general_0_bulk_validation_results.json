@@ -1,5 +1,20 @@
 [
     {
+        "edw_table": "coursera_warehouse.edw_core.active_master_role_skills",
+        "eds_equivalent_table": "prod.general.stg_active_master_role_skills",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-1651",
+        "eds_schema": "general",
+        "eds_base_table": "prod.general.stg_active_master_role_skills",
+        "table": null,
+        "view_table": "general.stg_active_master_role_skills",
+        "primary_keys": [
+            "id"
+        ],
+        "batch_id": 0
+    },
+    {
         "edw_table": "coursera_warehouse.edw_core.active_branch_role_skills",
         "eds_equivalent_table": "prod.general.stg_active_branch_role_skills",
         "status": "Done",
@@ -13,21 +28,6 @@
             "branch_name",
             "id",
             "name"
-        ],
-        "batch_id": 0
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_core.active_master_role_skills",
-        "eds_equivalent_table": "prod.general.stg_active_master_role_skills",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-1651",
-        "eds_schema": "general",
-        "eds_base_table": "prod.general.stg_active_master_role_skills",
-        "table": null,
-        "view_table": "general.stg_active_master_role_skills",
-        "primary_keys": [
-            "id"
         ],
         "batch_id": 0
     },
@@ -48,22 +48,6 @@
         "batch_id": 0
     },
     {
-        "edw_table": "coursera_warehouse.edw_core_prep.b2c_funnel_monthly_user_states",
-        "eds_equivalent_table": "prod.general.b2c_funnel_monthly_user_states",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-1941",
-        "eds_schema": "general",
-        "eds_base_table": "prod.general.b2c_funnel_monthly_user_states",
-        "table": null,
-        "view_table": "general.b2c_funnel_monthly_user_states",
-        "primary_keys": [
-            "mnth_id",
-            "user_id"
-        ],
-        "batch_id": 0
-    },
-    {
         "edw_table": "coursera_warehouse.edw_core_prep.phoenix_specialization_enrollments_about_clite",
         "eds_equivalent_table": "prod.general.stg_phoenix_specialization_enrollments_about_clite",
         "status": "Done",
@@ -76,6 +60,22 @@
         "primary_keys": [
             "user_id",
             "phoenix_specialization_id"
+        ],
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_core_prep.b2c_funnel_monthly_user_states",
+        "eds_equivalent_table": "prod.general.b2c_funnel_monthly_user_states",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-1941",
+        "eds_schema": "general",
+        "eds_base_table": "prod.general.b2c_funnel_monthly_user_states",
+        "table": null,
+        "view_table": "general.b2c_funnel_monthly_user_states",
+        "primary_keys": [
+            "mnth_id",
+            "user_id"
         ],
         "batch_id": 0
     },
@@ -138,6 +138,44 @@
         "primary_keys": [
             "course_id",
             "university_id"
+        ],
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.feedback_item_comments",
+        "eds_equivalent_table": "prod.general.feedback_item_comments_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5552",
+        "eds_schema": "general",
+        "eds_base_table": "prod.general.feedback_item_comments",
+        "table": null,
+        "view_table": "general.feedback_item_comments_vw",
+        "primary_keys": [
+            "course_id",
+            "course_item_id",
+            "feedback_unit_type",
+            "feedback_unit_id",
+            "feedback_system",
+            "user_id",
+            "feedback_category",
+            "feedback_last_updated_ts"
+        ],
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.mega_authoring_course_branch_published_module_ids",
+        "eds_equivalent_table": "prod.general.stg_course_branch_published_module_ids_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5689",
+        "eds_schema": "general",
+        "eds_base_table": "prod.general.stg_course_branch_published_module_ids",
+        "table": null,
+        "view_table": "general.stg_course_branch_published_module_ids_vw",
+        "primary_keys": [
+            "course_branch_id",
+            "module_id"
         ],
         "batch_id": 0
     },

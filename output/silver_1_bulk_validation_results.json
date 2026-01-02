@@ -1,1119 +1,68 @@
 [
     {
-        "edw_table": "coursera_warehouse.edw_prod.degree_memberships",
-        "eds_equivalent_table": "prod.silver.courral_degree_memberships_vw",
+        "edw_table": "coursera_warehouse.edw_prod.short_form_content_video_activity_tracking",
+        "eds_equivalent_table": "prod.silver.dynamodb_sfc_video_activity_tracking_vw",
         "status": "Done",
         "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5437",
+        "issue_key": "EDSMIG-5925",
         "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_degree_memberships",
-        "table": "courral_degree_memberships",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.degree_onboarding_sessions",
-        "eds_equivalent_table": "prod.silver.courral_degree_onboarding_sessions_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5438",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_degree_onboarding_sessions",
-        "table": "courral_degree_onboarding_sessions",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.degree_program_academic_terms",
-        "eds_equivalent_table": "prod.silver.courral_degree_program_academic_terms_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5439",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_degree_program_academic_terms",
-        "table": "courral_degree_program_academic_terms",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.degree_programs",
-        "eds_equivalent_table": "prod.silver.courral_degree_programs_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5440",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_degree_programs",
-        "table": "courral_degree_programs",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.degree_student_associations",
-        "eds_equivalent_table": "prod.silver.courral_degree_student_associations_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5443",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_degree_student_associations",
-        "table": "courral_degree_student_associations",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.degree_term_course_instances",
-        "eds_equivalent_table": "prod.silver.courral_degree_term_course_instances_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5444",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_degree_term_course_instances",
-        "table": "courral_degree_term_course_instances",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.discussion_prompt_assignments",
-        "eds_equivalent_table": "prod.silver.courral_discussion_prompt_assignments_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5471",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_discussion_prompt_assignments",
-        "table": "courral_discussion_prompt_assignments",
-        "view_table": null,
-        "primary_keys": [
-            "discussion_prompt_assignment_id",
-            "version"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.discussion_prompt_contents",
-        "eds_equivalent_table": "prod.silver.courral_discussion_prompt_contents_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5472",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_discussion_prompt_contents",
-        "table": "courral_discussion_prompt_contents",
-        "view_table": null,
-        "primary_keys": [
-            "version",
-            "doc_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.ecb_engines",
-        "eds_equivalent_table": "prod.silver.courral_ecb_engines_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5479",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_ecb_engines",
-        "table": "courral_ecb_engines",
-        "view_table": null,
-        "primary_keys": [
-            "version",
-            "doc_key",
-            "ecb_engine_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.ecb_evaluations",
-        "eds_equivalent_table": "prod.silver.courral_ecb_evaluations_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5480",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_ecb_evaluations",
-        "table": "courral_ecb_evaluations",
-        "view_table": "silver.courral_ecb_evaluations_vw",
-        "primary_keys": [
-            "doc_key",
-            "ecb_evaluator_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.ecb_evaluator_author",
-        "eds_equivalent_table": "prod.silver.courral_ecb_evaluator_author_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5481",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_ecb_evaluator_author",
-        "table": "courral_ecb_evaluator_author",
-        "view_table": "silver.courral_ecb_evaluator_author_vw",
-        "primary_keys": [
-            "doc_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.ecb_evaluators",
-        "eds_equivalent_table": "prod.silver.courral_ecb_evaluators_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5482",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_ecb_evaluators",
-        "table": "courral_ecb_evaluators",
-        "view_table": "silver.courral_ecb_evaluators_vw",
-        "primary_keys": [
-            "doc_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.ecb_user_evaluations",
-        "eds_equivalent_table": "prod.silver.courral_ecb_user_evaluations_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5483",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_ecb_user_evaluations",
-        "table": "courral_ecb_user_evaluations",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "ecb_evaluation_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.enterprise2_program_membership_actions",
-        "eds_equivalent_table": "prod.silver.enterprise_program_membership_actions_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5496",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.enterprise_program_membership_actions",
-        "table": "enterprise_program_membership_actions",
-        "view_table": null,
-        "primary_keys": [
-            "enterprise_program_membership_action_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.enterprise_client_partner_mappings",
-        "eds_equivalent_table": "prod.silver.courral_enterprise_client_partner_mappings_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5501",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_enterprise_client_partner_mappings",
-        "table": "courral_enterprise_client_partner_mappings",
-        "view_table": null,
-        "primary_keys": [
-            "client_scope",
-            "client_id",
-            "partner_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.enterprise_content_assignments",
-        "eds_equivalent_table": "prod.silver.enterprise_content_assignments_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5503",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.enterprise_content_assignments",
-        "table": "enterprise_content_assignments",
-        "view_table": null,
-        "primary_keys": [
-            "program_id",
-            "user_key",
-            "content_type",
-            "content_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.enterprise_contract_payments",
-        "eds_equivalent_table": "prod.silver.payments_enterprise_contract_payments_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5505",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.payments_enterprise_contract_payments",
-        "table": "payments_enterprise_contract_payments",
-        "view_table": null,
-        "primary_keys": [
-            "enterprise_contract_payment_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.enterprise_contracts",
-        "eds_equivalent_table": "prod.silver.payments_enterprise_contracts_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5510",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.payments_enterprise_contracts",
-        "table": "payments_enterprise_contracts",
-        "view_table": null,
-        "primary_keys": [
-            "enterprise_contract_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.enterprise_curriculum_builder_accreditation_tags",
-        "eds_equivalent_table": "prod.silver.enterprise_curriculum_builder_accreditation_tags_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5511",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.enterprise_curriculum_builder_accreditation_tags",
-        "table": "enterprise_curriculum_builder_accreditation_tags",
-        "view_table": null,
-        "primary_keys": [
-            "organization_id",
-            "product_id",
-            "program_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.enterprise_settings",
-        "eds_equivalent_table": "prod.silver.enterprise_settings_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5522",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.enterprise_settings",
-        "table": "enterprise_settings",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.enterprise_user_rosters",
-        "eds_equivalent_table": "prod.silver.enterprise_user_rosters_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5526",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.enterprise_user_rosters",
-        "table": "enterprise_user_rosters",
-        "view_table": null,
-        "primary_keys": [
-            "id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.enterprise_user_rosters_v2",
-        "eds_equivalent_table": "prod.silver.enterprise_user_rosters_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5527",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.enterprise_user_rosters",
-        "table": "enterprise_user_rosters",
-        "view_table": null,
-        "primary_keys": [
-            "id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.enterprise_versioned_target_skill_profiles",
-        "eds_equivalent_table": "prod.silver.courral_enterprise_versioned_target_skill_profiles_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5534",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_enterprise_versioned_target_skill_profiles",
-        "table": "courral_enterprise_versioned_target_skill_profiles",
-        "view_table": null,
-        "primary_keys": [
-            "version",
-            "doc_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.grid_executors",
-        "eds_equivalent_table": "prod.silver.courral_grid_executor_main_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5575",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_grid_executor_main",
-        "table": "courral_grid_executor_main",
-        "view_table": null,
-        "primary_keys": [
-            "grid_executor_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.group_entitlement_redemptions",
-        "eds_equivalent_table": "prod.silver.courral_group_entitlement_redemptions_main_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5576",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_group_entitlement_redemptions_main",
-        "table": "courral_group_entitlement_redemptions_main",
-        "view_table": null,
-        "primary_keys": [
-            "group_entitlement_redemption_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.labs_images",
-        "eds_equivalent_table": "prod.silver.courral_labs_images_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5611",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_labs_images",
-        "table": "courral_labs_images",
-        "view_table": null,
-        "primary_keys": [
-            "id_record"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.learner_course_schedule_items",
-        "eds_equivalent_table": "prod.silver.courral_learner_course_schedule_items_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5620",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_learner_course_schedule_items",
-        "table": "courral_learner_course_schedule_items",
+        "eds_base_table": "prod.silver_base.dynamodb_sfc_video_activity_tracking",
+        "table": "dynamodb_sfc_video_activity_tracking",
         "view_table": null,
         "primary_keys": [
             "user_id",
             "course_id",
-            "item_id",
-            "version"
+            "atom_id",
+            "session_number",
+            "session_start_ms"
         ],
         "batch_id": 1
     },
     {
-        "edw_table": "coursera_warehouse.edw_prod.learner_course_schedule_modules",
-        "eds_equivalent_table": "prod.silver.courral_learner_course_schedule_modules_vw",
+        "edw_table": "coursera_warehouse.edw_prod.s12n_progress_history",
+        "eds_equivalent_table": "prod.silver.dynamodb_s12n_progress_history_vw",
         "status": "Done",
         "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5624",
+        "issue_key": "EDSMIG-5069",
         "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_learner_course_schedule_modules",
-        "table": "courral_learner_course_schedule_modules",
+        "eds_base_table": "prod.silver_base.dynamodb_s12n_progress_history",
+        "table": "dynamodb_s12n_progress_history",
         "view_table": null,
         "primary_keys": [
+            "specialization_id",
             "user_id",
-            "course_id",
-            "module_id",
             "version"
         ],
         "batch_id": 1
     },
     {
-        "edw_table": "coursera_warehouse.edw_prod.learner_course_schedules",
-        "eds_equivalent_table": "prod.silver.courral_learner_course_schedules_vw",
+        "edw_table": "coursera_warehouse.edw_prod.s12n_progress",
+        "eds_equivalent_table": "prod.silver.dynamodb_s12n_progress_vw",
         "status": "Done",
         "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5627",
+        "issue_key": "EDSMIG-5068",
         "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_learner_course_schedules",
-        "table": "courral_learner_course_schedules",
+        "eds_base_table": "prod.silver_base.dynamodb_s12n_progress",
+        "table": "dynamodb_s12n_progress",
         "view_table": null,
         "primary_keys": [
-            "user_id",
-            "course_id",
-            "version"
+            "specialization_id",
+            "user_id"
         ],
         "batch_id": 1
     },
     {
-        "edw_table": "coursera_warehouse.edw_prod.learner_goal_progress_info",
-        "eds_equivalent_table": "prod.silver.learner_goal_progress_info_vw",
+        "edw_table": "coursera_warehouse.edw_prod.s12n_progress_course_requirements",
+        "eds_equivalent_table": "prod.silver.dynamodb_s12n_progress_course_requirements_vw",
         "status": "Done",
         "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5630",
+        "issue_key": "EDSMIG-5144",
         "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.learner_goal_progress_info",
-        "table": "learner_goal_progress_info",
+        "eds_base_table": "prod.silver_base.dynamodb_s12n_progress_course_requirements",
+        "table": "dynamodb_s12n_progress_course_requirements",
         "view_table": null,
         "primary_keys": [
-            "raw_id",
-            "progress_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.learner_goals",
-        "eds_equivalent_table": "prod.silver.learner_goals_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5631",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.learner_goals",
-        "table": "learner_goals",
-        "view_table": null,
-        "primary_keys": [
-            "raw_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.learning_objectives",
-        "eds_equivalent_table": "prod.silver.courral_learn_objective_main_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5643",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_learn_objective_main",
-        "table": "courral_learn_objective_main",
-        "view_table": "silver.courral_learn_objective_main_vw",
-        "primary_keys": [
-            "doc_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.lecture_contents",
-        "eds_equivalent_table": "prod.silver.courral_lecture_contents_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5645",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_lecture_contents",
-        "table": "courral_lecture_contents",
-        "view_table": null,
-        "primary_keys": [
-            "version",
-            "doc_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.lti_tool_contents",
-        "eds_equivalent_table": "prod.silver.courral_lti_tool_contents_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5665",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_lti_tool_contents",
-        "table": "courral_lti_tool_contents",
-        "view_table": null,
-        "primary_keys": [
-            "version",
-            "doc_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.lti_tools",
-        "eds_equivalent_table": "prod.silver.courral_lti_tools_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5666",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_lti_tools",
-        "table": "courral_lti_tools",
-        "view_table": null,
-        "primary_keys": [
-            "version",
-            "doc_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.mega_authoring_course_branch_graded_assignment_groups",
-        "eds_equivalent_table": "prod.silver.courral_authoring_course_branch_graded_assignment_groups_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5674",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_authoring_course_branch_graded_assignment_groups",
-        "table": "courral_authoring_course_branch_graded_assignment_groups",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "graded_assignment_group_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.mega_authoring_course_branch_graded_assignment_groups_items",
-        "eds_equivalent_table": "prod.silver.courral_authoring_course_branch_graded_assignment_group_items_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5675",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_authoring_course_branch_graded_assignment_group_items",
-        "table": "courral_authoring_course_branch_graded_assignment_group_items",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "graded_assignment_group_id",
-            "graded_assignment_group_item_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.mega_authoring_course_branch_grading_late_penalties",
-        "eds_equivalent_table": "prod.silver.courral_authoring_course_branch_grading_late_penalties_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5676",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_authoring_course_branch_grading_late_penalties",
-        "table": "courral_authoring_course_branch_grading_late_penalties",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "item_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.mega_authoring_course_branch_grading_policies",
-        "eds_equivalent_table": "prod.silver.courral_authoring_course_branch_grading_policies_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5677",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_authoring_course_branch_grading_policies",
-        "table": "courral_authoring_course_branch_grading_policies",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "grading_policy"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.mega_authoring_course_branch_grading_weights",
-        "eds_equivalent_table": "prod.silver.courral_authoring_course_branch_grading_weights_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5678",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_authoring_course_branch_grading_weights",
-        "table": "courral_authoring_course_branch_grading_weights",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "item_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.mega_authoring_course_branch_honors_lessons",
-        "eds_equivalent_table": "prod.silver.courral_authoring_course_branch_honors_lessons_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5679",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_authoring_course_branch_honors_lessons",
-        "table": "courral_authoring_course_branch_honors_lessons",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "honors_lesson_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.mega_authoring_course_branch_id_map",
-        "eds_equivalent_table": "prod.silver.courral_authoring_course_branch_id_map_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5680",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_authoring_course_branch_id_map",
-        "table": "courral_authoring_course_branch_id_map",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "authoring_course_branch_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.mega_authoring_course_branch_items",
-        "eds_equivalent_table": "prod.silver.courral_authoring_course_branch_items_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5681",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_authoring_course_branch_items",
-        "table": "courral_authoring_course_branch_items",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "item_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.mega_authoring_course_branch_lesson_elements",
-        "eds_equivalent_table": "prod.silver.courral_authoring_course_branch_lesson_elements_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5682",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_authoring_course_branch_lesson_elements",
-        "table": "courral_authoring_course_branch_lesson_elements",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "lesson_element_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.mega_authoring_course_branch_lesson_order",
-        "eds_equivalent_table": "prod.silver.courral_authoring_course_branch_lesson_order_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5683",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_authoring_course_branch_lesson_order",
-        "table": "courral_authoring_course_branch_lesson_order",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "module_id",
-            "lesson_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.mega_authoring_course_branch_lessons",
-        "eds_equivalent_table": "prod.silver.courral_authoring_course_branch_lessons_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5684",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_authoring_course_branch_lessons",
-        "table": "courral_authoring_course_branch_lessons",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "lesson_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.mega_authoring_course_branch_mappings",
-        "eds_equivalent_table": "prod.silver.courral_authoring_course_branch_id_map_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5685",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_authoring_course_branch_id_map",
-        "table": "courral_authoring_course_branch_id_map",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "authoring_course_branch_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.mega_authoring_course_branch_module_order",
-        "eds_equivalent_table": "prod.silver.courral_authoring_course_branch_module_order_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5686",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_authoring_course_branch_module_order",
-        "table": "courral_authoring_course_branch_module_order",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "module_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.mega_authoring_course_branch_modules",
-        "eds_equivalent_table": "prod.silver.courral_authoring_course_branch_modules_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5687",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_authoring_course_branch_modules",
-        "table": "courral_authoring_course_branch_modules",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "module_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.mega_authoring_course_branch_required_elements",
-        "eds_equivalent_table": "prod.silver.courral_authoring_course_branch_required_elements_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5692",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_authoring_course_branch_required_elements",
-        "table": "courral_authoring_course_branch_required_elements",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "required_element_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.mega_authoring_course_branch_schedules",
-        "eds_equivalent_table": "prod.silver.courral_authoring_course_branch_schedules_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5693",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_authoring_course_branch_schedules",
-        "table": "courral_authoring_course_branch_schedules",
-        "view_table": null,
-        "primary_keys": [
-            "raw_id",
-            "module_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.mega_int_chtng_case",
-        "eds_equivalent_table": "prod.silver.courral_cheating_cases_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5698",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_cheating_cases",
-        "table": "courral_cheating_cases",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.mysql_permission_role_object_permission_objects",
-        "eds_equivalent_table": "prod.silver.rds_role_object_permission_objects_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5717",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.rds_role_object_permission_objects",
-        "table": "rds_role_object_permission_objects",
-        "view_table": null,
-        "primary_keys": [
-            "id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.mysql_permission_user_roles",
-        "eds_equivalent_table": "prod.silver.permissions_mysql_permission_user_roles_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5719",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.permissions_mysql_permission_user_roles",
-        "table": "permissions_mysql_permission_user_roles",
-        "view_table": null,
-        "primary_keys": [
-            "id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.notifications_preference",
-        "eds_equivalent_table": "prod.silver.courral_notifications_preference_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5729",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_notifications_preference",
-        "table": "courral_notifications_preference",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "preference_category"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.on_demand_sessions",
-        "eds_equivalent_table": "prod.silver.courral_course_sessions_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5735",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_course_sessions",
-        "table": "courral_course_sessions",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.phoenix_session_module_deadlines",
-        "eds_equivalent_table": "prod.silver.courral_course_session_module_deadlines_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5774",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_course_session_module_deadlines",
-        "table": "courral_course_session_module_deadlines",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "course_branch_id",
-            "course_module_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.phoenix_specialization_domains",
-        "eds_equivalent_table": "prod.silver.courral_phoenix_specializations_domains_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5775",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_phoenix_specializations_domains",
-        "table": "courral_phoenix_specializations_domains",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "phoenix_specialization_domain_order"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.phoenix_specialization_premium_experiences",
-        "eds_equivalent_table": "prod.silver.courral_phoenix_specializations_premium_experiences_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5779",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_phoenix_specializations_premium_experiences",
-        "table": "courral_phoenix_specializations_premium_experiences",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "phoenix_specialization_premium_experience_order"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.placeholder_contents",
-        "eds_equivalent_table": "prod.silver.courral_placeholder_contents_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5784",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_placeholder_contents",
-        "table": "courral_placeholder_contents",
-        "view_table": null,
-        "primary_keys": [
-            "version",
-            "doc_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.private_community_groups",
-        "eds_equivalent_table": "prod.silver.courral_private_community_groups_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5802",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_private_community_groups",
-        "table": "courral_private_community_groups",
-        "view_table": null,
-        "primary_keys": [
-            "group_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.professional_certificates",
-        "eds_equivalent_table": "prod.silver.courral_professional_certificates_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5815",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_professional_certificates",
-        "table": "courral_professional_certificates",
-        "view_table": null,
-        "primary_keys": [
-            "prof_cert_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.promotions",
-        "eds_equivalent_table": "prod.silver.payments_promotions_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5833",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.payments_promotions",
-        "table": "payments_promotions",
-        "view_table": null,
-        "primary_keys": [
-            "promotion_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.qualification_surveys",
-        "eds_equivalent_table": "prod.silver.courral_qualification_surveys_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5838",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_qualification_surveys",
-        "table": "courral_qualification_surveys",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.raw_peer_review_authoring_complete_markers",
-        "eds_equivalent_table": "prod.silver.courral_raw_peer_review_authoring_complete_markers_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5861",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_raw_peer_review_authoring_complete_markers",
-        "table": "courral_raw_peer_review_authoring_complete_markers",
-        "view_table": null,
-        "primary_keys": [
-            "author_id",
-            "assignment_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.readings",
-        "eds_equivalent_table": "prod.silver.courral_readings_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5869",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_readings",
-        "table": "courral_readings",
-        "view_table": null,
-        "primary_keys": [
-            "doc_key",
-            "version"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.recruit_mentors",
-        "eds_equivalent_table": "prod.silver.courral_recruit_mentor_main_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5870",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_recruit_mentor_main",
-        "table": "courral_recruit_mentor_main",
-        "view_table": null,
-        "primary_keys": [
-            "course_mentor_recruitment_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.recruiting_positions",
-        "eds_equivalent_table": "prod.silver.recruiting_positions_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5872",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.recruiting_positions",
-        "table": "recruiting_positions",
-        "view_table": null,
-        "primary_keys": [
-            "id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.recurring_payments",
-        "eds_equivalent_table": "prod.silver.payments_recurring_payments_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5873",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.payments_recurring_payments",
-        "table": "payments_recurring_payments",
-        "view_table": null,
-        "primary_keys": [
-            "recurring_payment_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.role_skill_mapping_branch",
-        "eds_equivalent_table": "prod.silver.dynamodb_role_skill_mapping_branch_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5887",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.dynamodb_role_skill_mapping_branch",
-        "table": "dynamodb_role_skill_mapping_branch",
-        "view_table": null,
-        "primary_keys": [
-            "name"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.role_skill_mapping_node",
-        "eds_equivalent_table": "prod.silver.dynamodb_role_skill_mapping_node_vw",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5888",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.dynamodb_role_skill_mapping_node",
-        "table": "dynamodb_role_skill_mapping_node",
-        "view_table": null,
-        "primary_keys": [
-            "branch_name",
-            "role_id"
+            "specialization_id"
         ],
         "batch_id": 1
     },
@@ -1151,14 +100,137 @@
         "batch_id": 1
     },
     {
-        "edw_table": "coursera_warehouse.edw_prod.scoped_content_rules",
-        "eds_equivalent_table": "prod.silver.courral_scoped_content_rules_vw",
+        "edw_table": "coursera_warehouse.edw_prod.core_skills_taxonomy_node2",
+        "eds_equivalent_table": "prod.silver.dynamodb_core_skills_taxonomy_node_vw",
         "status": "Done",
         "is_table_replaced": "No",
-        "issue_key": "EDSMIG-5900",
+        "issue_key": "EDSMIG-5301",
         "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.courral_scoped_content_rules",
-        "table": "courral_scoped_content_rules",
+        "eds_base_table": "prod.silver_base.dynamodb_core_skills_taxonomy_node",
+        "table": "dynamodb_core_skills_taxonomy_node",
+        "view_table": null,
+        "primary_keys": [
+            "branch_name",
+            "id"
+        ],
+        "batch_id": 1
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.role_skill_mapping_node",
+        "eds_equivalent_table": "prod.silver.dynamodb_role_skill_mapping_node_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5888",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.dynamodb_role_skill_mapping_node",
+        "table": "dynamodb_role_skill_mapping_node",
+        "view_table": null,
+        "primary_keys": [
+            "branch_name",
+            "role_id"
+        ],
+        "batch_id": 1
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.core_skills_taxonomy_branch",
+        "eds_equivalent_table": "prod.silver.dynamodb_core_skills_taxonomy_branch_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5300",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.dynamodb_core_skills_taxonomy_branch",
+        "table": "dynamodb_core_skills_taxonomy_branch",
+        "view_table": null,
+        "primary_keys": [
+            "name",
+            "created_at"
+        ],
+        "batch_id": 1
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.role_skill_mapping_branch",
+        "eds_equivalent_table": "prod.silver.dynamodb_role_skill_mapping_branch_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5887",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.dynamodb_role_skill_mapping_branch",
+        "table": "dynamodb_role_skill_mapping_branch",
+        "view_table": null,
+        "primary_keys": [
+            "name"
+        ],
+        "batch_id": 1
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.recruiting_positions",
+        "eds_equivalent_table": "prod.silver.recruiting_positions_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5872",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.recruiting_positions",
+        "table": "recruiting_positions",
+        "view_table": null,
+        "primary_keys": [
+            "id"
+        ],
+        "batch_id": 1
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.widget_session_providers",
+        "eds_equivalent_table": "prod.silver.widget_session_providers_all_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-6078",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.widget_session_providers_all",
+        "table": "widget_session_providers_all",
+        "view_table": null,
+        "primary_keys": [
+            "widget_session_provider_id"
+        ],
+        "batch_id": 1
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.widgets",
+        "eds_equivalent_table": "prod.silver.courral_widgets_all_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-6079",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.courral_widgets_all",
+        "table": "courral_widgets_all",
+        "view_table": null,
+        "primary_keys": [
+            "widget_id"
+        ],
+        "batch_id": 1
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.labs_images",
+        "eds_equivalent_table": "prod.silver.courral_labs_images_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5611",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.courral_labs_images",
+        "table": "courral_labs_images",
+        "view_table": null,
+        "primary_keys": [
+            "id_record"
+        ],
+        "batch_id": 1
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.peer_skips",
+        "eds_equivalent_table": "prod.silver.courral_peer_skips_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5133",
+        "eds_schema": "silver",
+        "eds_base_table": "prod.silver_base.courral_peer_skips",
+        "table": "courral_peer_skips",
         "view_table": null,
         "primary_keys": [
             "doc_key"
@@ -1166,102 +238,82 @@
         "batch_id": 1
     },
     {
-        "edw_table": "coursera_warehouse.edw_prod.programming_assignments",
-        "eds_equivalent_table": "prod.silver.programming_assignments_vw",
+        "edw_table": "coursera_warehouse.edw_prod.raw_peer_review_authoring_complete_markers",
+        "eds_equivalent_table": "prod.silver.courral_raw_peer_review_authoring_complete_markers_vw",
         "status": "Done",
-        "is_table_replaced": "not_updated",
-        "issue_key": "EDSMIG-5823",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5861",
         "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.programming_assignments",
-        "table": null,
-        "view_table": "silver.programming_assignments_vw",
+        "eds_base_table": "prod.silver_base.courral_raw_peer_review_authoring_complete_markers",
+        "table": "courral_raw_peer_review_authoring_complete_markers",
+        "view_table": null,
         "primary_keys": [
-            "programming_assignment_id"
+            "author_id",
+            "assignment_id"
         ],
         "batch_id": 1
     },
     {
-        "edw_table": "coursera_warehouse.edw_prod.programming_submission_part_evaluations",
-        "eds_equivalent_table": "prod.silver.programming_submission_part_evaluations_vw",
+        "edw_table": "coursera_warehouse.edw_prod.phoenix_specialization_premium_experiences",
+        "eds_equivalent_table": "prod.silver.courral_phoenix_specializations_premium_experiences_vw",
         "status": "Done",
-        "is_table_replaced": "not_updated",
-        "issue_key": "EDSMIG-5824",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5779",
         "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.programming_submission_part_evaluations",
-        "table": null,
-        "view_table": "silver.programming_submission_part_evaluations_vw",
+        "eds_base_table": "prod.silver_base.courral_phoenix_specializations_premium_experiences",
+        "table": "courral_phoenix_specializations_premium_experiences",
+        "view_table": null,
         "primary_keys": [
-            "programming_assignment_id",
-            "programming_assignment_submission_schema_part_id",
-            "programming_submission_id"
+            "doc_key",
+            "phoenix_specialization_premium_experience_order"
         ],
         "batch_id": 1
     },
     {
-        "edw_table": "coursera_warehouse.edw_prod.programming_submission_part_grid_grading_statuses",
-        "eds_equivalent_table": "prod.silver.programming_submission_part_grid_grading_statuses_vw",
+        "edw_table": "coursera_warehouse.edw_prod.phoenix_specialization_domains",
+        "eds_equivalent_table": "prod.silver.courral_phoenix_specializations_domains_vw",
         "status": "Done",
-        "is_table_replaced": "not_updated",
-        "issue_key": "EDSMIG-5825",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5775",
         "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.programming_submission_part_grid_grading_statuses",
-        "table": null,
-        "view_table": "silver.programming_submission_part_grid_grading_statuses_vw",
+        "eds_base_table": "prod.silver_base.courral_phoenix_specializations_domains",
+        "table": "courral_phoenix_specializations_domains",
+        "view_table": null,
         "primary_keys": [
-            "programming_assignment_id",
-            "programming_assignment_submission_schema_part_id",
-            "programming_submission_id"
+            "doc_key",
+            "phoenix_specialization_domain_order"
         ],
         "batch_id": 1
     },
     {
-        "edw_table": "coursera_warehouse.edw_prod.programming_submission_part_grid_submissions",
-        "eds_equivalent_table": "prod.silver.programming_submission_part_grid_submissions_vw",
+        "edw_table": "coursera_warehouse.edw_prod.professional_certificates",
+        "eds_equivalent_table": "prod.silver.courral_professional_certificates_vw",
         "status": "Done",
-        "is_table_replaced": "not_updated",
-        "issue_key": "EDSMIG-5826",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5815",
         "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.programming_submission_part_grid_submissions",
-        "table": null,
-        "view_table": "silver.programming_submission_part_grid_submissions_vw",
+        "eds_base_table": "prod.silver_base.courral_professional_certificates",
+        "table": "courral_professional_certificates",
+        "view_table": null,
         "primary_keys": [
-            "programming_assignment_id",
-            "programming_assignment_submission_schema_part_id",
-            "programming_submission_id"
+            "prof_cert_id"
         ],
         "batch_id": 1
     },
     {
-        "edw_table": "coursera_warehouse.edw_prod.programming_submission_part_text_submissions",
-        "eds_equivalent_table": "prod.silver.programming_submission_part_text_submissions_vw",
+        "edw_table": "coursera_warehouse.edw_prod.staff_graded_assignment_submission_parts",
+        "eds_equivalent_table": "prod.silver.courral_staff_graded_assignment_submission_parts_vw",
         "status": "Done",
-        "is_table_replaced": "not_updated",
-        "issue_key": "EDSMIG-5827",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5951",
         "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.programming_submission_part_text_submissions",
-        "table": null,
-        "view_table": "silver.programming_submission_part_text_submissions_vw",
+        "eds_base_table": "prod.silver_base.courral_staff_graded_assignment_submission_parts",
+        "table": "courral_staff_graded_assignment_submission_parts",
+        "view_table": "silver.courral_staff_graded_assignment_submission_parts",
         "primary_keys": [
-            "programming_assignment_id",
-            "programming_assignment_submission_schema_part_id",
-            "programming_submission_id"
-        ],
-        "batch_id": 1
-    },
-    {
-        "edw_table": "coursera_warehouse.edw_prod.programming_submission_parts",
-        "eds_equivalent_table": "prod.silver.programming_submission_parts_vw",
-        "status": "Done",
-        "is_table_replaced": "not_updated",
-        "issue_key": "EDSMIG-5828",
-        "eds_schema": "silver",
-        "eds_base_table": "prod.silver_base.programming_submission_parts",
-        "table": null,
-        "view_table": "silver.programming_submission_parts_vw",
-        "primary_keys": [
-            "programming_assignment_id",
-            "programming_assignment_submission_schema_part_id",
-            "programming_submission_id"
+            "version",
+            "doc_key",
+            "explode_on_index"
         ],
         "batch_id": 1
     }

@@ -1,0 +1,162 @@
+[
+    {
+        "edw_table": "coursera_warehouse.edw_prod.assessment_options",
+        "eds_equivalent_table": "prod.gold.quiz_assessment_options_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5053",
+        "eds_schema": "gold",
+        "eds_base_table": "prod.gold_base.quiz_assessment_options",
+        "table": null,
+        "view_table": "gold.quiz_assessment_options_vw",
+        "primary_keys": [
+            "assessment_question_id",
+            "assessment_option_id"
+        ],
+        "batch_id": 2
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.assessment_assessments_questions",
+        "eds_equivalent_table": "prod.gold.quiz_assessment_questions_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5070",
+        "eds_schema": "gold",
+        "eds_base_table": "prod.gold_base.quiz_assessment_questions",
+        "table": null,
+        "view_table": "gold.quiz_assessment_questions_vw",
+        "primary_keys": [
+            "assessment_id",
+            "assessment_question_id",
+            "assessment_question_internal_id"
+        ],
+        "batch_id": 2
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.assessment_math_expression_patterns",
+        "eds_equivalent_table": "prod.gold.quiz_assessment_math_expression_patterns_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5073",
+        "eds_schema": "gold",
+        "eds_base_table": "prod.gold_base.quiz_assessment_math_expression_patterns",
+        "table": null,
+        "view_table": "gold.quiz_assessment_math_expression_patterns_vw",
+        "primary_keys": [
+            "assessment_question_id",
+            "assessment_pattern_id"
+        ],
+        "batch_id": 2
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.phoenix_specializations",
+        "eds_equivalent_table": "prod.gold.phoenix_specializations_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5139",
+        "eds_schema": "gold",
+        "eds_base_table": "prod.gold_base.phoenix_specializations",
+        "table": null,
+        "view_table": "gold.phoenix_specializations_vw",
+        "primary_keys": [
+            "phoenix_specialization_id"
+        ],
+        "batch_id": 2
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.course_branch_items",
+        "eds_equivalent_table": "prod.gold.course_branch_items_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5365",
+        "eds_schema": "gold",
+        "eds_base_table": "prod.gold_base.course_branch_items",
+        "table": null,
+        "view_table": "gold.course_branch_items_vw",
+        "primary_keys": [
+            "course_branch_id",
+            "course_item_id"
+        ],
+        "batch_id": 2
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.course_branch_lessons",
+        "eds_equivalent_table": "prod.gold.course_branch_lessons_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5367",
+        "eds_schema": "gold",
+        "eds_base_table": "prod.gold_base.course_branch_lessons",
+        "table": null,
+        "view_table": "gold.course_branch_lessons_vw",
+        "primary_keys": [
+            "course_branch_id",
+            "course_lesson_id"
+        ],
+        "batch_id": 2
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.course_branch_modules",
+        "eds_equivalent_table": "prod.gold.course_branch_modules_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5369",
+        "eds_schema": "gold",
+        "eds_base_table": "prod.gold_base.course_branch_modules",
+        "table": null,
+        "view_table": "gold.course_branch_modules_vw",
+        "primary_keys": [
+            "course_branch_id",
+            "course_module_id"
+        ],
+        "batch_id": 2
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.curriculum_track_courses_all",
+        "eds_equivalent_table": "prod.gold.curriculum_track_courses_all_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5419",
+        "eds_schema": "gold",
+        "eds_base_table": "prod.gold_base.curriculum_track_courses_all",
+        "table": null,
+        "view_table": "gold.curriculum_track_courses_all_vw",
+        "primary_keys": [
+            "curriculum_id",
+            "track_id",
+            "course_id",
+            "program_id"
+        ],
+        "batch_id": 2
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.ecb_course_evaluators",
+        "eds_equivalent_table": "prod.gold.ecb_course_evaluators_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5478",
+        "eds_schema": "gold",
+        "eds_base_table": "prod.gold_base.ecb_course_evaluators",
+        "table": null,
+        "view_table": "gold.ecb_course_evaluators_vw",
+        "primary_keys": [
+            "ecb_evaluator_base_id"
+        ],
+        "batch_id": 2
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_prod.groups",
+        "eds_equivalent_table": "prod.gold.groups_vw",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-5580",
+        "eds_schema": "gold",
+        "eds_base_table": "prod.gold_base.groups",
+        "table": null,
+        "view_table": "gold.groups_vw",
+        "primary_keys": [
+            "group_id"
+        ],
+        "batch_id": 2
+    }
+]

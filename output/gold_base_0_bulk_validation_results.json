@@ -54,21 +54,6 @@
         "batch_id": 0
     },
     {
-        "edw_table": "coursera_warehouse.edw_core.l2_clicks",
-        "eds_equivalent_table": "prod.gold_base.clicks",
-        "status": "Done",
-        "is_table_replaced": "No",
-        "issue_key": "EDSMIG-1697",
-        "eds_schema": "gold_base",
-        "eds_base_table": "prod.gold_base_base.clicks",
-        "table": null,
-        "view_table": "gold_base.clicks",
-        "primary_keys": [
-            "event_guid"
-        ],
-        "batch_id": 0
-    },
-    {
         "edw_table": "coursera_warehouse.edw_core.l2_impressions",
         "eds_equivalent_table": "prod.gold_base.impressions",
         "status": "Done",
@@ -78,6 +63,21 @@
         "eds_base_table": "prod.gold_base_base.impressions",
         "table": null,
         "view_table": "gold_base.impressions",
+        "primary_keys": [
+            "event_guid"
+        ],
+        "batch_id": 0
+    },
+    {
+        "edw_table": "coursera_warehouse.edw_core.l2_clicks",
+        "eds_equivalent_table": "prod.gold_base.clicks",
+        "status": "Done",
+        "is_table_replaced": "No",
+        "issue_key": "EDSMIG-1697",
+        "eds_schema": "gold_base",
+        "eds_base_table": "prod.gold_base_base.clicks",
+        "table": null,
+        "view_table": "gold_base.clicks",
         "primary_keys": [
             "event_guid"
         ],
